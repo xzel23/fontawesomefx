@@ -1,0 +1,22 @@
+/*
+    Document   : icons.css
+    Created on : 07.02.2013, 10:20:37
+    Author     : Jens Deters
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.icon-white{
+    -fx-font-family: FontAwesome;
+    -fx-font-size: 6.0em;
+    -fx-text-fill: linear-gradient(to bottom, derive(white,20%) 10%, derive(white,-20%) 80%);
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.5) , 2, 0.0 , 1, 1 );
+}
+
+.icon-dark{
+    -fx-font-family: FontAwesome;
+    -fx-font-size: 6.0em;
+    -fx-text-fill: linear-gradient(to bottom, derive(dimgray,20%) 10%, derive(dimgray,-20%) 80%);
+    -fx-effect: innershadow( gaussian , rgba(255,255,255,0.5) , 2, 0.0 , 1, 1 );
+}
+
