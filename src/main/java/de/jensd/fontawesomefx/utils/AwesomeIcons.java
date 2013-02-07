@@ -8,10 +8,10 @@ package de.jensd.fontawesomefx.utils;
  *
  * @author Jens Deters
  */
-public class Icons
+public class AwesomeIcons
 {
 
-    private Icons()
+    private AwesomeIcons()
     {
         /* not needed*/
     }

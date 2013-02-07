@@ -1,22 +1,36 @@
-/*
-    Document   : icons.css
-    Created on : 07.02.2013, 10:20:37
-    Author     : Jens Deters
-    Description:
-        Purpose of the stylesheet follows.
-*/
 
-.icon-white{
-    -fx-font-family: FontAwesome;
-    -fx-font-size: 6.0em;
-    -fx-text-fill: linear-gradient(to bottom, derive(white,20%) 10%, derive(white,-20%) 80%);
-    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.5) , 2, 0.0 , 1, 1 );
+.root {
+    -fx-font-family: "System";
+    -fx-font-size: 13.0px;
+    -fx-base: #444444;
+    -fx-background: #2D2D2D;
+    -fx-background-color: -fx-background;
+    -fx-focus-color: yellowgreen;
+    -fx-accent: derive(yellowgreen, -30%);
+    -fx-focus-color:-fx-accent;
+    -fx-color: -fx-base;
+    -fx-control-inner-background: -fx-background;
+    -fx-inner-border: linear-gradient(to bottom, derive(-fx-color,73.6%) 0%, derive(-fx-color,29.200000000000003%) 100%);
+    -fx-body-color: linear-gradient( to bottom, derive(-fx-color, 34.0%) 0%, derive(-fx-color, -18.0%) 100%);
+    -fx-outer-border: derive(-fx-color,-16.036036036036037%);
+    -fx-shadow-highlight-color: derive(-fx-background,100.0%);
+    -fx-text-background-color: #FFFFFF;
+    -fx-text-base-color:#FFFFFF;
+    -fx-cell-hover-color: -fx-background;
+    -fx-cell-focus-inner-border: #85b9de;
 }
 
-.icon-dark{
+
+
+.icons{
     -fx-font-family: FontAwesome;
-    -fx-font-size: 6.0em;
-    -fx-text-fill: linear-gradient(to bottom, derive(dimgray,20%) 10%, derive(dimgray,-20%) 80%);
-    -fx-effect: innershadow( gaussian , rgba(255,255,255,0.5) , 2, 0.0 , 1, 1 );
+    -fx-font-size: 16px;
+    -fx-effect: innershadow( three-pass-box , derive(-fx-text-base-color,-70%) , 0.04em, 0.0 , 0.03em, 0.03em );
+    -fx-text-fill: linear-gradient(to bottom, derive(-fx-text-base-color,0%) 40%, derive(-fx-text-base-color,-10%) 80%);
 }
+
+.icons:hover{
+    -fx-effect: dropshadow( three-pass-box , derive(-fx-text-base-color,10%) , 1.0em, 0.0 , 0, 0);
+}
+
 
