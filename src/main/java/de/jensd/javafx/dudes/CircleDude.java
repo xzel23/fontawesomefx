@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.jensd.fontawesomefx.utils;
+package de.jensd.javafx.dudes;
 
 import java.util.List;
 import javafx.scene.Node;
@@ -11,7 +11,7 @@ import javafx.scene.Node;
  *
  * @author Jens Deters
  */
-public class LayoutUtils
+public class CircleDude
 {
 
     public static void arrangeInCircle(List<? extends Node> nodes, double centerX, double centerY, double radius)

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.jensd.fontawesomefx.utils;
+package de.jensd.fontawesomefx;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBuilder;

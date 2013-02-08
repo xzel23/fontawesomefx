@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.jensd.fontawesomefx.utils;
+package de.jensd.javafx.dudes;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,11 +17,11 @@ import javafx.scene.control.MenuItem;
  *
  * @author Lummerland
  */
-public class StyleTools
+public class StyleDude
 {
 
     private static final Logger LOGGER = Logger.
-            getLogger(StyleTools.class.getName());
+            getLogger(StyleDude.class.getName());
 
     public static MenuItem createMenuItem(String label, final Scene scene, String... cssFileNames)
     {
@@ -39,7 +39,7 @@ public class StyleTools
     {
         LOGGER.log(Level.INFO, "Attempt to load css: {0}", cssFileName);
         ObservableList<String> cssStyles = FXCollections.observableArrayList();
-        cssStyles.addAll(StyleTools.class.getResource(cssFileName)
+        cssStyles.addAll(StyleDude.class.getResource(cssFileName)
                 .toExternalForm());
         return cssStyles;
     }

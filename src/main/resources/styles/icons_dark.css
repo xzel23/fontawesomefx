@@ -1,6 +1,4 @@
 .root {
-    -fx-font-family: "System";
-    -fx-font-size: 13.0px;
     -fx-base: #444444;
     -fx-background: #2D2D2D;
     -fx-background-color: -fx-background;
@@ -9,9 +7,9 @@
     -fx-focus-color:-fx-accent;
     -fx-color: -fx-base;
     -fx-control-inner-background: -fx-background;
-    -fx-inner-border: linear-gradient(to bottom, derive(-fx-color,73.6%) 0%, derive(-fx-color,29.200000000000003%) 100%);
-    -fx-body-color: linear-gradient( to bottom, derive(-fx-color, 34.0%) 0%, derive(-fx-color, -18.0%) 100%);
-    -fx-outer-border: derive(-fx-color,-16.036036036036037%);
+    -fx-inner-border: linear-gradient(to bottom, derive(-fx-color,75%) 0%, derive(-fx-color,30%) 100%);
+    -fx-body-color: linear-gradient( to bottom, derive(-fx-color, 35%) 0%, derive(-fx-color, -20.0%) 100%);
+    -fx-outer-border: derive(-fx-color,-15%);
     -fx-shadow-highlight-color: derive(-fx-background,100.0%);
     -fx-text-background-color: #FFFFFF;
     -fx-text-base-color:#FFFFFF;

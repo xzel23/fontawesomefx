@@ -1,9 +1,9 @@
-package de.jensd.fontawesomefx;
+package de.jensd.fontawesomefx.demo;
 
-import de.jensd.fontawesomefx.utils.AwesomeFactory;
-import de.jensd.fontawesomefx.utils.AwesomeIcons;
-import de.jensd.fontawesomefx.utils.LayoutUtils;
-import de.jensd.fontawesomefx.utils.StyleTools;
+import de.jensd.fontawesomefx.AwesomeFactory;
+import de.jensd.fontawesomefx.AwesomeIcons;
+import de.jensd.javafx.dudes.CircleDude;
+import de.jensd.javafx.dudes.StyleDude;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -21,7 +21,10 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToolBar;
+import javafx.scene.effect.BlurType;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -70,7 +73,7 @@ public class App extends Application
 
 
         Button button1 = AwesomeFactory
-                .createIconButton(AwesomeIcons.ICON_REFRESH, "Reload");
+                .createIconButton(AwesomeIcons.ICON_REFRESH, "Reload Dummy");
         Button button2 = AwesomeFactory
                 .createIconButton(AwesomeIcons.ICON_REFRESH, 256);
         button2.setTranslateY(150.0);
@@ -92,6 +95,8 @@ public class App extends Application
 
 
         MenuButton styleChooser = new MenuButton("Choose Style");
+        styleChooser
+                .setEffect(new DropShadow(BlurType.GAUSSIAN, Color.YELLOWGREEN, 5, 1.0, 0, 0));
 
         AnchorPane.setTopAnchor(styleChooser, Double.MIN_VALUE);
         AnchorPane.setRightAnchor(styleChooser, Double.MIN_VALUE);
@@ -103,16 +108,18 @@ public class App extends Application
 
         Scene scene = new Scene(root, 500, 500);
         scene.getStylesheets()
-                .addAll("/styles/icons_light.css");
+                .addAll("/styles/icons.css");
 
-        MenuItem styleDark = StyleTools
+        MenuItem stylePlain = StyleDude
+                .createMenuItem("Plain", scene, "/styles/icons.css");
+        MenuItem styleDark = StyleDude
                 .createMenuItem("Dark", scene, "/styles/icons_dark.css");
-        MenuItem styleLight = StyleTools
+        MenuItem styleLight = StyleDude
                 .createMenuItem("Light", scene, "/styles/icons_light.css");
         styleChooser.getItems()
                 .clear();
         styleChooser.getItems()
-                .addAll(styleDark, styleLight);
+                .addAll(stylePlain, styleLight, styleDark);
 
 
         primaryStage.setScene(scene);
