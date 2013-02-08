@@ -3,13 +3,23 @@ package de.jensd.fontawesomefx;
 import de.jensd.fontawesomefx.utils.AwesomeFactory;
 import de.jensd.fontawesomefx.utils.AwesomeIcons;
 import de.jensd.fontawesomefx.utils.LayoutUtils;
+import de.jensd.fontawesomefx.utils.StyleTools;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToolBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
@@ -62,28 +72,48 @@ public class App extends Application
         Button button1 = AwesomeFactory
                 .createIconButton(AwesomeIcons.ICON_REFRESH, "Reload");
         Button button2 = AwesomeFactory
-                .createIconButton(AwesomeIcons.ICON_REFRESH, 24);
+                .createIconButton(AwesomeIcons.ICON_REFRESH, 256);
+        button2.setTranslateY(150.0);
         button2.setTranslateX(100.0);
 
         ToolBar toolBarHorizontal = new ToolBar();
         toolBarHorizontal.getItems()
                 .addAll(icons1);
-        toolBarHorizontal.setTranslateY(40.0);
+        toolBarHorizontal.getItems()
+                .addAll(button1);
+        toolBarHorizontal.setTranslateY(20.0);
 
         ToolBar toolBarVertical = new ToolBar();
         toolBarVertical.setOrientation(Orientation.VERTICAL);
         toolBarVertical.getItems()
                 .addAll(icons2);
-        toolBarVertical.setTranslateY(90.0);
+        toolBarVertical.setTranslateY(80.0);
 
-        root
-                .setStyle("-fx-background-color: linear-gradient(to bottom, derive(white,-50%) 10%, derive(white,-80%) 80%);");
+
+
+        MenuButton styleChooser = new MenuButton("Choose Style");
+
+        AnchorPane.setTopAnchor(styleChooser, Double.MIN_VALUE);
+        AnchorPane.setRightAnchor(styleChooser, Double.MIN_VALUE);
+
+
+
         root.getChildren()
-                .addAll(button1, button2, toolBarHorizontal, toolBarVertical);
+                .addAll(button2, toolBarHorizontal, toolBarVertical, styleChooser);
 
         Scene scene = new Scene(root, 500, 500);
         scene.getStylesheets()
-                .addAll("/styles/icons.css");
+                .addAll("/styles/icons_light.css");
+
+        MenuItem styleDark = StyleTools
+                .createMenuItem("Dark", scene, "/styles/icons_dark.css");
+        MenuItem styleLight = StyleTools
+                .createMenuItem("Light", scene, "/styles/icons_light.css");
+        styleChooser.getItems()
+                .clear();
+        styleChooser.getItems()
+                .addAll(styleDark, styleLight);
+
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("FontAwesome for JavaFX DEMO");
