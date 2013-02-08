@@ -52,20 +52,36 @@ public class App extends Application
                 .createIconLabel(AwesomeIcons.ICON_TAGS, 32));
         icons1.add(AwesomeFactory
                 .createIconLabel(AwesomeIcons.ICON_TASKS, 32));
-        icons1.add(AwesomeFactory
-                .createIconLabel(AwesomeIcons.ICON_THUMBS_UP, 32));
-        icons1.add(AwesomeFactory
-                .createIconLabel(AwesomeIcons.ICON_THUMBS_DOWN, 32));
+
+        Label up = AwesomeFactory
+                .createIconLabel(AwesomeIcons.ICON_THUMBS_UP, 32);
+        up.setDisable(true);
+        Label down = AwesomeFactory
+                .createIconLabel(AwesomeIcons.ICON_THUMBS_DOWN, 32);
+        down.setDisable(true);
+
+        icons1.add(up);
+        icons1.add(down);
+
+
+
+
 
         ObservableList<Label> icons2 = FXCollections
                 .observableArrayList();
 
         icons2.add(AwesomeFactory
                 .createIconLabel(AwesomeIcons.ICON_PICTURE, 32));
-        icons2.add(AwesomeFactory
-                .createIconLabel(AwesomeIcons.ICON_TAGS, 32));
-        icons2.add(AwesomeFactory
-                .createIconLabel(AwesomeIcons.ICON_TASKS, 32));
+
+        Label tags = AwesomeFactory
+                .createIconLabel(AwesomeIcons.ICON_TAGS, 32);
+        tags.setDisable(true);
+        Label tasks = AwesomeFactory
+                .createIconLabel(AwesomeIcons.ICON_TASKS, 32);
+        tasks.setDisable(true);
+
+        icons2.add(tags);
+        icons2.add(tasks);
         icons2.add(AwesomeFactory
                 .createIconLabel(AwesomeIcons.ICON_THUMBS_UP, 32));
         icons2.add(AwesomeFactory
