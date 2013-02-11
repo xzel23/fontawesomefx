@@ -52,8 +52,6 @@ public class StyleDude
             public void handle(ActionEvent t)
             {
                 scene.getStylesheets()
-                        .clear();
-                scene.getStylesheets()
                         .addAll(cssStyle);
             }
         };
