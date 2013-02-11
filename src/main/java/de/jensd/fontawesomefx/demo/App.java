@@ -132,14 +132,16 @@ public class App extends Application
                 .createMenuItem("Dark", scene, "/styles/icons_dark.css");
         MenuItem styleLight = StyleDude
                 .createMenuItem("Light", scene, "/styles/icons_light.css");
+        MenuItem styleBlue = StyleDude
+                .createMenuItem("Blue", scene, "/styles/icons_blue.css");
         styleChooser.getItems()
                 .clear();
         styleChooser.getItems()
-                .addAll(stylePlain, styleLight, styleDark);
+                .addAll(stylePlain, styleLight, styleDark, styleBlue);
 
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("FontAwesome for JavaFX DEMO");
+        primaryStage.setTitle("FontAwesomeFX DEMO");
         primaryStage.show();
 
 
