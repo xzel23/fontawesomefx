@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package de.jensd.javafx.dudes;
 
 import java.util.logging.Level;
@@ -15,7 +11,9 @@ import javafx.scene.control.MenuItem;
 
 /**
  *
- * @author Lummerland
+ * @author Jens Deters
+ * @since 15.02.2013
+ * @version 1.0
  */
 public class StyleDude
 {

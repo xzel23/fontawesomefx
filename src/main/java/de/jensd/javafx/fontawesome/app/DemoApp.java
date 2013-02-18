@@ -21,8 +21,10 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
  *
+ * @author Jens Deters
+ * @since 15.02.2013
+ * @version 1.0
  */
 public class DemoApp extends Application
 {
