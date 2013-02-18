@@ -14,7 +14,7 @@ import javafx.scene.Node;
 public class CircleDude
 {
 
-    public static void arrangeInCircle(List<? extends Node> nodes, double centerX, double centerY, double radius)
+    public static void layoutInCircle(List<? extends Node> nodes, double centerX, double centerY, double radius)
     {
         double angle = 0;
         double angleStep = 360 / nodes.size();
