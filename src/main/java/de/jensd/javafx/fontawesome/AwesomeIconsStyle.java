@@ -21,6 +21,7 @@ public enum AwesomeIconsStyle {
   private AwesomeIconsStyle(String stylePath) {
     this.stylePath = stylePath;
   }
+  
 
   @Override
   public String toString() {
