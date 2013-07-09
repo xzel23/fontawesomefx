@@ -1,4 +1,4 @@
-package de.jensd.javafx.fontawesome;
+package de.jensd.fx.fontawesome;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBuilder;

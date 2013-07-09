@@ -1,4 +1,4 @@
-package de.jensd.javafx.fontawesome;
+package de.jensd.fx.fontawesome;
 
 /**
  * @author Jens
