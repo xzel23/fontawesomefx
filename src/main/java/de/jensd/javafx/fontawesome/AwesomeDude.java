@@ -9,55 +9,61 @@ import javafx.scene.text.Font;
 /**
  *
  * @author Jens Deters
- * @since 15.02.2013
- * @version 1.0
  */
 public class AwesomeDude {
 
-    public static final String FONT_AWESOME_TTF = "/META-INF/resources/webjars/font-awesome/3.2.1/font/fontawesome-webfont.ttf";
-    public static final int DEFAULT_FONT_SIZE = 16;
-    public static final Font FONT_AWESOME =
-            Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF).toExternalForm(), DEFAULT_FONT_SIZE);
+    public final static String FONT_AWESOME_TTF_PATH = "/font/fontawesome-webfont.ttf";
+    public final static double DEFAULT_FONT_SIZE = 16.0;
+    public Font fontAwesome;
+    private static AwesomeDude me;
 
-    public static Button createIconButton(AwesomeIcons icon) {
+    private AwesomeDude() {
+    }
+
+    public static AwesomeDude get() {
+        if (me == null) {
+            me = new AwesomeDude();
+        }
+        return me;
+    }
+
+    public void loadFontAwesome() {
+        fontAwesome =
+                Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), DEFAULT_FONT_SIZE);
+
+    }
+
+    public Font getFontAwesome() {
+        return fontAwesome;
+    }
+
+    public Label createIconLabel(AwesomeIcon icon, double iconSize) {
+        Label label = new Label(icon.toString());
+        label.getStyleClass().add("awesome");
+        label.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + "px;");
+        return label;
+    }
+
+    public Button createIconButton(AwesomeIcon icon) {
         return createIconButton(icon, "", DEFAULT_FONT_SIZE);
     }
 
-    public static Button createIconButton(AwesomeIcons icon, String text) {
+    public Button createIconButton(AwesomeIcon icon, String text) {
         return createIconButton(icon, text, DEFAULT_FONT_SIZE);
     }
 
-    public static Button createIconButton(AwesomeIcons icon, int iconSize) {
+    public Button createIconButton(AwesomeIcon icon, double iconSize) {
         return createIconButton(icon, "", iconSize);
     }
 
-    public static Button createIconButton(AwesomeIcons icon, String text, int iconSize) {
+    public Button createIconButton(AwesomeIcon icon, String text, double iconSize) {
         Label label = createIconLabel(icon);
-        label.setStyle("-fx-font-size: " + iconSize + "px;");
-        return ButtonBuilder.create()
-                .text(text)
-                .graphic(label)
-                .build();
+        Button button = new Button(text);
+        button.setGraphic(label);
+        return button;
     }
 
-    public static Label createIconLabel(AwesomeIcons icon, String style) {
-        return LabelBuilder.create()
-                .text(icon.toString())
-                .font(FONT_AWESOME)
-                .style(style)
-                .build();
-    }
-
-    public static Label createIconLabel(AwesomeIcons icon) {
+    public Label createIconLabel(AwesomeIcon icon) {
         return createIconLabel(icon, 16);
-    }
-
-    public static Label createIconLabel(AwesomeIcons icon, int iconSize) {
-        return LabelBuilder.create()
-                .text(icon.toString())
-                .font(FONT_AWESOME)
-                .styleClass("icons")
-                .style("-fx-font-size: " + iconSize + "px;")
-                .build();
     }
 }

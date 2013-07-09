@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.jensd</groupId>
   <artifactId>fontawesomefx</artifactId>
-  <version>1.0.2</version>
+  <version>8.0.0</version>
   <packaging>jar</packaging>
   <name>FontAwesomeFX</name>
   <inceptionYear>2013</inceptionYear>
@@ -101,18 +101,6 @@
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle</groupId>
-      <artifactId>javafx</artifactId>
-      <version>2.2</version>
-      <systemPath>${java.home}/lib/jfxrt.jar</systemPath>
-      <scope>system</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.webjars</groupId>
-      <artifactId>font-awesome</artifactId>
-      <version>3.2.1</version>
     </dependency>
   </dependencies>
 </project>
