@@ -66,4 +66,5 @@ public class AwesomeDude {
     public Label createIconLabel(AwesomeIcon icon) {
         return createIconLabel(icon, 16);
     }
+
 }
