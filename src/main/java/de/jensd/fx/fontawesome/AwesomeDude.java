@@ -13,7 +13,7 @@ import javafx.scene.text.Font;
 public class AwesomeDude {
 
     public final static String FONT_AWESOME_TTF_PATH = "/font/fontawesome-webfont.ttf";
-    public final static String DEFAULT_FONT_SIZE = "1.2em";
+    public final static String DEFAULT_ICON_SIZE = "16.0";
     public Font fontAwesome;
     private static AwesomeDude me;
 
@@ -48,13 +48,16 @@ public class AwesomeDude {
     }
 
     public Button createIconButton(AwesomeIcon icon, String text) {
-        return createIconButton(icon, text);
+        Label label = createIconLabel(icon, DEFAULT_ICON_SIZE);
+        Button button = new Button(text);
+        button.setGraphic(label);
+        return button;
     }
 
     public Button createIconButton(AwesomeIcon icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
         Label label = createIconLabel(icon, iconSize);
         Button button = new Button(text);
-        button.setStyle("-fx-fone-size: 0.8em;");
+        button.setStyle("-fx-font-size: " + fontSize);
         button.setGraphic(label);
         button.setContentDisplay(contentDisplay);
         return button;
@@ -69,6 +72,6 @@ public class AwesomeDude {
     }
 
     public Label createIconLabel(AwesomeIcon icon) {
-        return createIconLabel(icon, DEFAULT_FONT_SIZE);
+        return createIconLabel(icon, DEFAULT_ICON_SIZE);
     }
 }
