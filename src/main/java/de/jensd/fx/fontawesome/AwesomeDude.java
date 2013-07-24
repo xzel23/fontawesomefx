@@ -14,47 +14,30 @@ public class AwesomeDude {
 
     public final static String FONT_AWESOME_TTF_PATH = "/font/fontawesome-webfont.ttf";
     public final static String DEFAULT_ICON_SIZE = "16.0";
-    public Font fontAwesome;
-    private static AwesomeDude me;
 
-    private AwesomeDude() {
+    public static void load() {
+        Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
     }
 
-    public static AwesomeDude get() {
-        if (me == null) {
-            me = new AwesomeDude();
-        }
-        return me;
-    }
-
-    public void loadFontAwesome() {
-        fontAwesome =
-                Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
-    }
-
-    public Font getFontAwesome() {
-        return fontAwesome;
-    }
-
-    public Label createIconLabel(AwesomeIcon icon, String iconSize) {
+    public static Label createIconLabel(AwesomeIcon icon, String iconSize) {
         Label label = new Label(icon.toString());
         label.getStyleClass().add("awesome");
         label.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
         return label;
     }
 
-    public Button createIconButton(AwesomeIcon icon) {
+    public static Button createIconButton(AwesomeIcon icon) {
         return createIconButton(icon, "");
     }
 
-    public Button createIconButton(AwesomeIcon icon, String text) {
+    public static Button createIconButton(AwesomeIcon icon, String text) {
         Label label = createIconLabel(icon, DEFAULT_ICON_SIZE);
         Button button = new Button(text);
         button.setGraphic(label);
         return button;
     }
 
-    public Button createIconButton(AwesomeIcon icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+    public static Button createIconButton(AwesomeIcon icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
         Label label = createIconLabel(icon, iconSize);
         Button button = new Button(text);
         button.setStyle("-fx-font-size: " + fontSize);
@@ -63,7 +46,7 @@ public class AwesomeDude {
         return button;
     }
 
-    public ToggleButton createIconToggleButton(AwesomeIcon icon, String text, String iconSize, ContentDisplay contentDisplay) {
+    public static ToggleButton createIconToggleButton(AwesomeIcon icon, String text, String iconSize, ContentDisplay contentDisplay) {
         Label label = createIconLabel(icon, iconSize);
         ToggleButton button = new ToggleButton(text);
         button.setGraphic(label);
@@ -71,7 +54,7 @@ public class AwesomeDude {
         return button;
     }
 
-    public Label createIconLabel(AwesomeIcon icon) {
+    public static Label createIconLabel(AwesomeIcon icon) {
         return createIconLabel(icon, DEFAULT_ICON_SIZE);
     }
 }
