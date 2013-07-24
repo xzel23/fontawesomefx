@@ -14,8 +14,9 @@ public class AwesomeDude {
 
     public final static String FONT_AWESOME_TTF_PATH = "/font/fontawesome-webfont.ttf";
     public final static String DEFAULT_ICON_SIZE = "16.0";
+    public final static String DEFAULT_FONT_SIZE = "12.0";
 
-    public static void load() {
+    static {
         Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
     }
 
@@ -47,8 +48,13 @@ public class AwesomeDude {
     }
 
     public static ToggleButton createIconToggleButton(AwesomeIcon icon, String text, String iconSize, ContentDisplay contentDisplay) {
+        return createIconToggleButton(icon, text, iconSize, DEFAULT_FONT_SIZE, contentDisplay);
+    }
+
+    public static ToggleButton createIconToggleButton(AwesomeIcon icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
         Label label = createIconLabel(icon, iconSize);
         ToggleButton button = new ToggleButton(text);
+        button.setStyle("-fx-font-size: " + fontSize);
         button.setGraphic(label);
         button.setContentDisplay(contentDisplay);
         return button;
