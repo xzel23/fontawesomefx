@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.jensd</groupId>
   <artifactId>fontawesomefx</artifactId>
-  <version>8.0.0</version>
+  <version>8.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>FontAwesomeFX</name>
   <inceptionYear>2013</inceptionYear>
@@ -47,7 +47,6 @@
           <target>1.7</target>
         </configuration>
       </plugin>
- <!--
            <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
@@ -62,7 +61,6 @@
           </execution>
         </executions>
       </plugin>
--->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
