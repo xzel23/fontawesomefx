@@ -3,7 +3,10 @@ package de.jensd.fx.fontawesome;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.TreeItem;
 import javafx.scene.text.Font;
 
 /**
@@ -14,7 +17,7 @@ public class AwesomeDude {
 
     public final static String FONT_AWESOME_TTF_PATH = "/font/fontawesome-webfont.ttf";
     public final static String DEFAULT_ICON_SIZE = "16.0";
-    public final static String DEFAULT_FONT_SIZE = "12.0";
+    public final static String DEFAULT_FONT_SIZE = "1em";
 
     static {
         Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
@@ -63,34 +66,40 @@ public class AwesomeDude {
     public static Label createIconLabel(AwesomeIcon icon) {
         return createIconLabel(icon, DEFAULT_ICON_SIZE);
     }
+    
+    /*
+     * 
+     * 
+     * 
+     */
 
-    public static void setIcon(Label label, AwesomeIcon icon) {
-        setIcon(label, icon, DEFAULT_ICON_SIZE);
+    public static void setIcon(Labeled labeled, AwesomeIcon icon) {
+        setIcon(labeled, icon, DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(Label label, AwesomeIcon icon, ContentDisplay contentDisplay) {
-        setIcon(label, icon, DEFAULT_ICON_SIZE, contentDisplay);
+    public static void setIcon(Labeled labeled, AwesomeIcon icon, ContentDisplay contentDisplay) {
+        setIcon(labeled, icon, DEFAULT_ICON_SIZE, contentDisplay);
     }
 
-    public static void setIcon(Label label, AwesomeIcon icon, String iconSize) {
-        setIcon(label, icon, iconSize, ContentDisplay.LEFT);
+    public static void setIcon(Labeled labeled, AwesomeIcon icon, String iconSize) {
+        setIcon(labeled, icon, iconSize, ContentDisplay.LEFT);
     }
 
-    public static void setIcon(Label label, AwesomeIcon icon, String iconSize, ContentDisplay contentDisplay) {
-        label.setGraphic(createIconLabel(icon));
-        label.setContentDisplay(contentDisplay);
-        label.getStyleClass().add("awesome");
-        label.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
+    public static void setIcon(Labeled labeled, AwesomeIcon icon, String iconSize, ContentDisplay contentDisplay) {
+        labeled.setGraphic(createIconLabel(icon));
+        labeled.setContentDisplay(contentDisplay);
+        labeled.getStyleClass().add("awesome");
+        labeled.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
     }
 
-    public static void setIcon(Button button, AwesomeIcon icon, String fontSize, String iconSize, ContentDisplay contentDisplay) {
+    public static void setIcon(MenuItem menuItem, AwesomeIcon icon) {
+        setIcon(menuItem, icon, DEFAULT_FONT_SIZE, DEFAULT_ICON_SIZE);
+    }
+
+    public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String fontSize, String iconSize) {
         Label label = createIconLabel(icon, iconSize);
-        button.setStyle("-fx-font-size: " + fontSize);
-        button.setGraphic(label);
-        button.setContentDisplay(contentDisplay);
+        menuItem.setStyle("-fx-font-size: " + fontSize);
+        menuItem.setGraphic(label);
     }
-
-    public static void setIcon(ToggleButton button, AwesomeIcon icon, String fontSize, String iconSize, ContentDisplay contentDisplay) {
-        setIcon(button, icon, fontSize, iconSize, contentDisplay);
-    }
+    
 }
