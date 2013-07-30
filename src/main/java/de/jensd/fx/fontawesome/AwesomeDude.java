@@ -86,16 +86,18 @@ public class AwesomeDude {
     }
 
     public static void setIcon(Labeled labeled, AwesomeIcon icon, String iconSize, ContentDisplay contentDisplay) {
-        labeled.setGraphic(createIconLabel(icon));
+        labeled.setGraphic(createIconLabel(icon,iconSize));
         labeled.setContentDisplay(contentDisplay);
-        labeled.getStyleClass().add("awesome");
-        labeled.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
     }
 
     public static void setIcon(MenuItem menuItem, AwesomeIcon icon) {
         setIcon(menuItem, icon, DEFAULT_FONT_SIZE, DEFAULT_ICON_SIZE);
     }
 
+     public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String iconSize) {
+        setIcon(menuItem, icon, DEFAULT_FONT_SIZE, iconSize);
+    }
+    
     public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String fontSize, String iconSize) {
         Label label = createIconLabel(icon, iconSize);
         menuItem.setStyle("-fx-font-size: " + fontSize);
