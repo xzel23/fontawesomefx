@@ -9,7 +9,7 @@ This font fits perfectly into JavaFX as
 This project provides a dude with which it should be as easy to use these icons in JavaFX apps.
 
 #Usage
-Refer to my latest [blog posts][2][3].
+Refer to [blog post1][2] [blog post2][3].
 
 #Maven
 
