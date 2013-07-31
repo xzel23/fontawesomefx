@@ -9,18 +9,19 @@ This font fits perfectly into JavaFX as
 This project provides a dude with which it should be as easy to use these icons in JavaFX apps.
 
 #Usage
-Refer to my latest [blog post][2].
+Refer to my latest [blog posts][2][3].
 
 #Maven
 
     <dependency>
        <groupId>org.controlsfx</groupId>
        <artifactId>controlsfx</artifactId>
-       <version>8.0.0</version>
+       <version>8.0.1</version>
     </dependency>
 
 
 
 [1]: http://fortawesome.github.com/Font-Awesome/
 [2]: http://www.jensd.de/wordpress/?p=692
+[3]: http://www.jensd.de/wordpress/?p=773
 
