@@ -22,6 +22,7 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Tab;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.text.Font;
 
@@ -82,12 +83,19 @@ public class AwesomeDude {
     public static Label createIconLabel(AwesomeIcon icon) {
         return createIconLabel(icon, DEFAULT_ICON_SIZE);
     }
-    
+
     /*
      * 
      * 
      * 
      */
+    public static void setIcon(Tab tab, AwesomeIcon icon) {
+        setIcon(tab, icon, DEFAULT_ICON_SIZE);
+    }
+
+    public static void setIcon(Tab tab, AwesomeIcon icon, String iconSize) {
+        tab.setGraphic(createIconLabel(icon, iconSize));
+    }
 
     public static void setIcon(Labeled labeled, AwesomeIcon icon) {
         setIcon(labeled, icon, DEFAULT_ICON_SIZE);
@@ -102,7 +110,7 @@ public class AwesomeDude {
     }
 
     public static void setIcon(Labeled labeled, AwesomeIcon icon, String iconSize, ContentDisplay contentDisplay) {
-        labeled.setGraphic(createIconLabel(icon,iconSize));
+        labeled.setGraphic(createIconLabel(icon, iconSize));
         labeled.setContentDisplay(contentDisplay);
     }
 
@@ -110,14 +118,13 @@ public class AwesomeDude {
         setIcon(menuItem, icon, DEFAULT_FONT_SIZE, DEFAULT_ICON_SIZE);
     }
 
-     public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String iconSize) {
+    public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String iconSize) {
         setIcon(menuItem, icon, DEFAULT_FONT_SIZE, iconSize);
     }
-    
+
     public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String fontSize, String iconSize) {
         Label label = createIconLabel(icon, iconSize);
         menuItem.setStyle("-fx-font-size: " + fontSize);
         menuItem.setGraphic(label);
     }
-    
 }
