@@ -16,12 +16,12 @@ Refer to [blog post1][2] [blog post2][3].
     <dependency>
        <groupId>org.controlsfx</groupId>
        <artifactId>controlsfx</artifactId>
-       <version>8.0.1</version>
+       <version>8.0.3-SNAPSHOT</version>
     </dependency>
 
 
 
 [1]: http://fortawesome.github.com/Font-Awesome/
 [2]: http://www.jensd.de/wordpress/?p=692
-[3]: http://www.jensd.de/wordpress/?p=773
+[3]: http://www.jensd.de/wordpress/?p=733
 
