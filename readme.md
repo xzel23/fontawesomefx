@@ -4,9 +4,12 @@ This font fits perfectly into JavaFX as
 
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
-* incredible lightweight (one font 249 icons)
+* incredible lightweight (one font 369 icons)
 
-This project provides a dude with which it should be as easy to use these icons in JavaFX apps.
+This project provides a helper class (AwesomeDude) for easy usage of these icons in JavaFX apps.
+
+Currently FontAwesome 4.0.1 is supported.
+
 
 #Usage
 Refer to [blog post1][2] [blog post2][3].
@@ -16,7 +19,7 @@ Refer to [blog post1][2] [blog post2][3].
     <dependency>
        <groupId>org.controlsfx</groupId>
        <artifactId>controlsfx</artifactId>
-       <version>8.0.3-SNAPSHOT</version>
+       <version>8.0.4</version>
     </dependency>
 
 
