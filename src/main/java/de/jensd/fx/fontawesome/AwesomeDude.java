@@ -24,6 +24,7 @@ import javafx.scene.control.Labeled;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.TreeItem;
 import javafx.scene.text.Font;
 
 /**
@@ -127,4 +128,14 @@ public class AwesomeDude {
         menuItem.setStyle("-fx-font-size: " + fontSize);
         menuItem.setGraphic(label);
     }
+    
+    public static void setIcon(TreeItem treeItem, AwesomeIcon icon) {
+        setIcon(treeItem, icon, DEFAULT_ICON_SIZE);
+    }
+
+    public static void setIcon(TreeItem treeItem, AwesomeIcon icon, String iconSize) {
+        Label label = createIconLabel(icon, iconSize);
+        treeItem.setGraphic(label);
+    }
+
 }
