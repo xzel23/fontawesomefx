@@ -19,7 +19,7 @@ Refer to [blog post1][2] [blog post2][3].
     <dependency>
        <groupId>org.controlsfx</groupId>
        <artifactId>controlsfx</artifactId>
-       <version>8.0.5</version>
+       <version>8.0.6</version>
     </dependency>
 
 
