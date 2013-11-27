@@ -111,6 +111,9 @@ public class AwesomeDude {
     }
 
     public static void setIcon(Labeled labeled, AwesomeIcon icon, String iconSize, ContentDisplay contentDisplay) {
+        if(labeled == null){
+            throw new IllegalArgumentException("The component must not be 'null'!");
+        }
         labeled.setGraphic(createIconLabel(icon, iconSize));
         labeled.setContentDisplay(contentDisplay);
     }
@@ -124,6 +127,9 @@ public class AwesomeDude {
     }
 
     public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String fontSize, String iconSize) {
+        if(menuItem == null){
+            throw new IllegalArgumentException("The menu item must not be 'null'!");
+        }
         Label label = createIconLabel(icon, iconSize);
         menuItem.setStyle("-fx-font-size: " + fontSize);
         menuItem.setGraphic(label);
@@ -134,6 +140,9 @@ public class AwesomeDude {
     }
 
     public static void setIcon(TreeItem treeItem, AwesomeIcon icon, String iconSize) {
+        if(treeItem == null){
+            throw new IllegalArgumentException("The tree item must not be 'null'!");
+        }
         Label label = createIconLabel(icon, iconSize);
         treeItem.setGraphic(label);
     }
