@@ -22,9 +22,12 @@ Refer to [blog post1][2] [blog post2][3].
        <version>8.0.6</version>
     </dependency>
 
-
+#License
+FontAwesomeFX is licensed under the [Apache 2.0 license][4].
+If this license is not suitable, please contact me to discuss an alternative license.
 
 [1]: http://fortawesome.github.com/Font-Awesome/
 [2]: http://www.jensd.de/wordpress/?p=692
 [3]: http://www.jensd.de/wordpress/?p=733
+[4]: http://www.apache.org/licenses/LICENSE-2.0.html
 
