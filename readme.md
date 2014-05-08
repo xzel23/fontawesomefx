@@ -17,9 +17,9 @@ Refer to [blog post1][2] [blog post2][3].
 #Maven
 
     <dependency>
-       <groupId>org.controlsfx</groupId>
-       <artifactId>controlsfx</artifactId>
-       <version>8.0.6</version>
+        <groupId>de.jensd</groupId>
+        <artifactId>fontawesomefx</artifactId>
+        <version>8.0.6</version>
     </dependency>
 
 #License
