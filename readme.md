@@ -8,7 +8,8 @@ This font fits perfectly into JavaFX as
 
 This project provides a helper class (AwesomeDude) for easy usage of these icons in JavaFX apps.
 
-Currently FontAwesome 4.1.0 is supported.
+
+#Currently FontAwesome 4.1.0 is supported.
 
 
 #Usage
