@@ -15,11 +15,10 @@ Currently FontAwesome 4.1.0 is supported.
 Refer to [blog post1][2] [blog post2][3].
 
 #Maven
-    (currently support for 4.0.1 only, will be updated soon)
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.0.6</version>
+        <version>8.0.7</version>
     </dependency>
 
 #License
