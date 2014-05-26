@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="300.0" prefWidth="600.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox fx:id="headerBox" alignment="CENTER" prefHeight="100.0">
+         <children>
+            <Label text="%message.CopyToClipboarInfo" />
+         </children></HBox>
+      <ScrollPane fx:id="iconsScrollPane" VBox.vgrow="ALWAYS">
+        <content>
+            <FlowPane fx:id="iconsBox" hgap="4.0" layoutX="-54.0" layoutY="-45.0" vgap="4.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</fx:root>

@@ -541,6 +541,10 @@ public enum AwesomeIcon {
         return character;
     }
 
+    public String toUnicode() {
+        return String.format("\\u%04x", (int) character);
+    }
+
     @Override
     public String toString() {
         return character.toString();
