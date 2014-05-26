@@ -1,18 +1,17 @@
 /**
- * Copyright (c) 2013,2014 Jens Deters
- * http://www.jensd.de
+ * Copyright (c) 2013,2014 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
  */
 package de.jensd.fx.fontawesome;
@@ -41,10 +40,23 @@ public class AwesomeDude {
         Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
     }
 
+    public static Label createIconLabel(AwesomeIcon icon) {
+        return createIconLabel(icon, DEFAULT_ICON_SIZE);
+    }
+
     public static Label createIconLabel(AwesomeIcon icon, String iconSize) {
         Label label = new Label(icon.toString());
         label.getStyleClass().add("awesome");
         label.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
+        return label;
+    }
+
+    public static Label createIconLabel(AwesomeIcon icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+        Label iconLabel = createIconLabel(icon, iconSize);
+        Label label = new Label(text);
+        label.setStyle("-fx-font-size: " + fontSize);
+        label.setGraphic(iconLabel);
+        label.setContentDisplay(contentDisplay);
         return label;
     }
 
@@ -81,9 +93,6 @@ public class AwesomeDude {
         return button;
     }
 
-    public static Label createIconLabel(AwesomeIcon icon) {
-        return createIconLabel(icon, DEFAULT_ICON_SIZE);
-    }
 
     /*
      * 
@@ -111,7 +120,7 @@ public class AwesomeDude {
     }
 
     public static void setIcon(Labeled labeled, AwesomeIcon icon, String iconSize, ContentDisplay contentDisplay) {
-        if(labeled == null){
+        if (labeled == null) {
             throw new IllegalArgumentException("The component must not be 'null'!");
         }
         labeled.setGraphic(createIconLabel(icon, iconSize));
@@ -127,20 +136,20 @@ public class AwesomeDude {
     }
 
     public static void setIcon(MenuItem menuItem, AwesomeIcon icon, String fontSize, String iconSize) {
-        if(menuItem == null){
+        if (menuItem == null) {
             throw new IllegalArgumentException("The menu item must not be 'null'!");
         }
         Label label = createIconLabel(icon, iconSize);
         menuItem.setStyle("-fx-font-size: " + fontSize);
         menuItem.setGraphic(label);
     }
-    
+
     public static void setIcon(TreeItem treeItem, AwesomeIcon icon) {
         setIcon(treeItem, icon, DEFAULT_ICON_SIZE);
     }
 
     public static void setIcon(TreeItem treeItem, AwesomeIcon icon, String iconSize) {
-        if(treeItem == null){
+        if (treeItem == null) {
             throw new IllegalArgumentException("The tree item must not be 'null'!");
         }
         Label label = createIconLabel(icon, iconSize);
