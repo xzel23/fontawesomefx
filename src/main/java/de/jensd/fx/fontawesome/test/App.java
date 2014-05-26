@@ -45,7 +45,7 @@ public class App extends Application {
         VBox root = new VBox();
 
         Label githubLabel = AwesomeDude.createIconLabel(AwesomeIcon.GITHUB);
-        Label ambulanceLabel = AwesomeDude.createIconLabel(AwesomeIcon.AMBULANCE, "60.0");
+        Label ambulanceLabel = AwesomeDude.createIconLabel(AwesomeIcon.PLUS_SQUARE_ALT, "60.0");
         Button starButton = AwesomeDude.createIconButton(AwesomeIcon.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
         Button cloudButton = AwesomeDude.createIconButton(AwesomeIcon.CLOUD, "Download");
         ToggleButton toggleButton = AwesomeDude.createIconToggleButton(AwesomeIcon.LOCK, "Lock", "60.0", ContentDisplay.TOP);
