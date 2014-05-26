@@ -19,7 +19,7 @@ Refer to [blog post1][2] [blog post2][3].
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.0.7</version>
+        <version>8.0.8</version>
     </dependency>
 
 #License
