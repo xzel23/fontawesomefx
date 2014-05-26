@@ -32,7 +32,7 @@ public class IconOverview extends Application {
         iconsPane.setVgap(4);
         iconsPane.setHgap(4);
         Scene scene = new Scene(new ScrollPane(iconsPane), 800, 600);
-        iconsPane.prefWidthProperty().bind(scene.widthProperty());
+        iconsPane.prefWidthProperty().bind(scene.widthProperty().subtract(20.0));
         primaryStage.setTitle("FontAwesomeFX Icons-Overview");
         primaryStage.setScene(scene);
         primaryStage.show();
