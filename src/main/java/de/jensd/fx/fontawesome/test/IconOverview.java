@@ -31,6 +31,7 @@ public class IconOverview extends Application {
     public void start(Stage primaryStage) {
         IconsBrowser iconsBrowser = new IconsBrowser();
         Scene scene = new Scene(iconsBrowser, 800, 600);
+        scene.getStylesheets().add("/styles/iconsbrowser.css");
         primaryStage.setTitle("FontAwesomeFX Icons-Overview");
         primaryStage.setScene(scene);
         primaryStage.show();
