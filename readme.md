@@ -4,12 +4,12 @@ This font fits perfectly into JavaFX as
 
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
-* incredible lightweight (one font 439 icons)
+* incredible lightweight (one font 479 icons)
 
 This project provides a helper class (AwesomeDude) for easy usage of these icons in JavaFX apps.
 
 
-#Currently FontAwesome 4.1.0 is supported.
+#Currently FontAwesome 4.2.0 is supported.
 
 
 #Usage
@@ -19,7 +19,7 @@ Refer to [blog post1][2] [blog post2][3].
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.0.8</version>
+        <version>8.0.9</version>
     </dependency>
 
 #License
@@ -30,4 +30,3 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [2]: http://www.jensd.de/wordpress/?p=692
 [3]: http://www.jensd.de/wordpress/?p=733
 [4]: http://www.apache.org/licenses/LICENSE-2.0.html
-
