@@ -1,17 +1,14 @@
 /**
  * Copyright (c) 2013,2014 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS"
+ * BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.fontawesome;
@@ -20,8 +17,8 @@ package de.jensd.fx.fontawesome;
  *
  * Icon Enum based on Font-Awesome v4.1.0
  *
- * Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers
- * do not read off random characters that represent icons
+ * Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent
+ * icons
  *
  * @author Jens Deters
  */
@@ -40,6 +37,8 @@ public enum AwesomeIcon {
     TH('\uf00a'),
     TH_LIST('\uf00b'),
     CHECK('\uf00c'),
+    REMOVE('\uf00d'),
+    CLOSE('\uf00d'),
     TIMES('\uf00d'),
     SEARCH_PLUS('\uf00e'),
     SEARCH_MINUS('\uf010'),
@@ -73,7 +72,7 @@ public enum AwesomeIcon {
     TAGS('\uf02c'),
     BOOK('\uf02d'),
     BOOKMARK('\uf02e'),
-    PRINT('\uf02F'),
+    PRINT('\uf02f'),
     CAMERA('\uf030'),
     FONT('\uf031'),
     BOLD('\uf032'),
@@ -96,8 +95,8 @@ public enum AwesomeIcon {
     MAP_MARKER('\uf041'),
     ADJUST('\uf042'),
     TINT('\uf043'),
-    EDIT('\uf03e'),
-    PENCIL_SQUARE_ALT('\uf03e'),
+    EDIT('\uf044'),
+    PENCIL_SQUARE_ALT('\uf044'),
     SHARE_SQUARE_ALT('\uf045'),
     CHECK_SQUARE_ALT('\uf046'),
     ARROWS('\uf047'),
@@ -152,10 +151,11 @@ public enum AwesomeIcon {
     RETWEET('\uf079'),
     SHOPPING_CART('\uf07a'),
     FOLDER('\uf07b'),
-    FOLDER_OPEN('\uf07c'),
+    FOLDER_ALTPEN('\uf07c'),
     ARROWS_V('\uf07d'),
     ARROWS_H('\uf07e'),
     BAR_CHART_ALT('\uf080'),
+    BAR_CHART('\uf080'),
     TWITTER_SQUARE('\uf081'),
     FACEBOOK_SQUARE('\uf082'),
     CAMERA_RETRO('\uf083'),
@@ -222,7 +222,7 @@ public enum AwesomeIcon {
     REORDER('\uf0c9'),
     BARS('\uf0c9'),
     LIST_UL('\uf0ca'),
-    LIST_OL('\uf0cb'),
+    LIST_ALTL('\uf0cb'),
     STRIKETHROUGH('\uf0cc'),
     UNDERLINE('\uf0cd'),
     TABLE('\uf0ce'),
@@ -301,7 +301,7 @@ public enum AwesomeIcon {
     REPLY('\uf112'),
     GITHUB_ALT('\uf113'),
     FOLDER_ALT('\uf114'),
-    FOLDER_OPEN_ALT('\uf115'),
+    FOLDER_ALTPEN_ALT('\uf115'),
     SMILE_ALT('\uf118'),
     FROWN_ALT('\uf119'),
     MEH_ALT('\uf11a'),
@@ -398,7 +398,7 @@ public enum AwesomeIcon {
     XING_SQUARE('\uf169'),
     YOUTUBE_PLAY('\uf16a'),
     DROPBOX('\uf16b'),
-    STACK_OVERFLOW('\uf16c'),
+    STACK_ALTVERFLOW('\uf16c'),
     INSTAGRAM('\uf16d'),
     FLICKR('\uf16e'),
     ADN('\uf170'),
@@ -458,7 +458,6 @@ public enum AwesomeIcon {
     STUMBLEUPON('\uf1a4'),
     DELICIOUS('\uf1a5'),
     DIGG('\uf1a6'),
-    PIED_PIPER_SQUARE('\uf1a7'),
     PIED_PIPER('\uf1a7'),
     PIED_PIPER_ALT('\uf1a8'),
     DRUPAL('\uf1a9'),
@@ -503,6 +502,7 @@ public enum AwesomeIcon {
     CODEPEN('\uf1cb'),
     JSFIDDLE('\uf1cc'),
     LIFE_BOUY('\uf1cd'),
+    LIFE_BUOY('\uf1cd'),
     LIFE_SAVER('\uf1cd'),
     SUPPORT('\uf1cd'),
     LIFE_RING('\uf1cd'),
@@ -529,7 +529,50 @@ public enum AwesomeIcon {
     SLIDERS('\uf1de'),
     SHARE_ALT('\uf1e0'),
     SHARE_ALT_SQUARE('\uf1e1'),
-    BOMB('\uf1e2');
+    BOMB('\uf1e2'),
+    SOCCER_BALL_ALT('\uf1e3'),
+    FUTBOL_ALT('\uf1e3'),
+    TTY('\uf1e4'),
+    BINOCULARS('\uf1e5'),
+    PLUG('\uf1e6'),
+    SLIDESHARE('\uf1e7'),
+    TWITCH('\uf1e8'),
+    YELP('\uf1e9'),
+    NEWSPAPER_ALT('\uf1ea'),
+    WIFI('\uf1eb'),
+    CALCULATOR('\uf1ec'),
+    PAYPAL('\uf1ed'),
+    GOOGLE_WALLET('\uf1ee'),
+    CC_VISA('\uf1f0'),
+    CC_MASTERCARD('\uf1f1'),
+    CC_DISCOVER('\uf1f2'),
+    CC_AMEX('\uf1f3'),
+    CC_PAYPAL('\uf1f4'),
+    CC_STRIPE('\uf1f5'),
+    BELL_SLASH('\uf1f6'),
+    BELL_SLASH_ALT('\uf1f7'),
+    TRASH('\uf1f8'),
+    COPYRIGHT('\uf1f9'),
+    AT('\uf1fa'),
+    EYEDROPPER('\uf1fb'),
+    PAINT_BRUSH('\uf1fc'),
+    BIRTHDAY_CAKE('\uf1fd'),
+    AREA_CHART('\uf1fe'),
+    PIE_CHART('\uf200'),
+    LINE_CHART('\uf201'),
+    LASTFM('\uf202'),
+    LASTFM_SQUARE('\uf203'),
+    TOGGLE_OFF('\uf204'),
+    TOGGLE_ALTN('\uf205'),
+    BICYCLE('\uf206'),
+    BUS('\uf207'),
+    IOXHOST('\uf208'),
+    ANGELLIST('\uf209'),
+    CC('\uf20a'),
+    SHEKEL('\uf20b'),
+    SHEQEL('\uf20b'),
+    ILS('\uf20b'),
+    MEANPATH('\uf20c');
 
     private final Character character;
 

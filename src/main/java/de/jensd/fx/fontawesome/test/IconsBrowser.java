@@ -32,6 +32,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.Clipboard;
@@ -54,6 +55,8 @@ public class IconsBrowser extends VBox {
 
     @FXML
     private HBox headerBox;
+    @FXML
+    private Label numberOfIconsLabel;
     @FXML
     private ScrollPane iconsScrollPane;
 
@@ -81,6 +84,8 @@ public class IconsBrowser extends VBox {
         List list = Stream.of(AwesomeIcon.values()).sorted(iconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         iconsBox.getChildren().addAll(list);
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
+        
+        numberOfIconsLabel.setText(list.size()+"");
     }
 
     private static Button createIconButton(final AwesomeIcon icon, final String text) {
