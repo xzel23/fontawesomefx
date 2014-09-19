@@ -18,8 +18,9 @@ package de.jensd.fx.fontawesome.test;
 
 import de.jensd.fx.fontawesome.AwesomeDude;
 import de.jensd.fx.fontawesome.AwesomeIcon;
-import de.jensd.fx.fontawesome.AwesomeStackIcon;
+import de.jensd.fx.fontawesome.AwesomeIconsStack;
 import de.jensd.fx.fontawesome.AwesomeStyle;
+import de.jensd.fx.fontawesome.Icon;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -53,53 +54,86 @@ public class App extends Application {
         Button cloudButton = AwesomeDude.createIconButton(AwesomeIcon.CLOUD, "Download");
         ToggleButton toggleButton = AwesomeDude.createIconToggleButton(AwesomeIcon.LOCK, "Lock", "60.0", ContentDisplay.TOP);
 
-        Region stackedIcon1 = AwesomeStackIcon.create();
+        Region stackedIcon1 = AwesomeIconsStack.create().add(Icon.create());
 
-        Region stackedIcon2 = AwesomeStackIcon.create()
-                .baseIcon(AwesomeIcon.SQUARE)
-                .baseIconSize("3em")
-                .baseIconStyleClass("stack-base")
-                .topIcon(AwesomeIcon.STAR)
-                .topIconSize("2em")
-                .topIconStyleClass("stack-top");
+        Region stackedIcon2 = AwesomeIconsStack.create()
+                .add(Icon.create()
+                        .icon(AwesomeIcon.SQUARE)
+                        .size("3em")
+                        .styleClass("stack-base"))
+                .add(Icon.create()
+                        .icon(AwesomeIcon.STAR)
+                        .size("2em")
+                        .styleClass("stack-top")
+                );
 
-        Region stackedIcon3 = AwesomeStackIcon.create()
-                .baseIcon(AwesomeIcon.SQUARE)
-                .baseIconStyle("-fx-font-size: 4em; -fx-text-fill: yellowgreen;")
-                .topIcon(AwesomeIcon.APPLE)
-                .topIconStyle("-fx-font-size: 3em; -fx-text-fill: white;");
+        Region stackedIcon3 = AwesomeIconsStack.create()
+                .add(Icon.create()
+                        .icon(AwesomeIcon.SQUARE)
+                        .style("-fx-font-size: 4em; -fx-text-fill: yellowgreen;"))
+                .add(Icon.create()
+                        .icon(AwesomeIcon.APPLE)
+                        .style("-fx-font-size: 3em; -fx-text-fill: white;")
+                );
 
-        Region stackedIcon4 = AwesomeStackIcon.create()
-                .baseIcon(AwesomeIcon.SQUARE)
-                .baseIconStyle("-fx-font-size: 4em; -fx-text-fill: yellowgreen;")
-                .topIcon(AwesomeIcon.APPLE)
-                .topIconStyle("-fx-font-size: 3em; -fx-text-fill: black;");
+        Region stackedIcon4 = AwesomeIconsStack.create()
+                .add(Icon.create()
+                        .icon(AwesomeIcon.SQUARE)
+                        .style("-fx-font-size: 4em; -fx-text-fill: yellowgreen;"))
+                .add(Icon.create()
+                        .icon(AwesomeIcon.APPLE)
+                        .style("-fx-font-size: 3em; -fx-text-fill: black;")
+                );
 
-        Region stackedIcon5 = AwesomeStackIcon.create()
-                .baseIcon(AwesomeIcon.BUG)
-                .baseIconStyle("-fx-font-size: 2em; -fx-text-fill: black;")
-                .topIcon(AwesomeIcon.BAN)
-                .topIconStyle("-fx-font-size: 4em; -fx-text-fill: red; -fx-opacity: 0.5;");
+        Region stackedIcon5 = AwesomeIconsStack.create()
+                .add(Icon.create()
+                        .icon(AwesomeIcon.BUG)
+                        .style("-fx-font-size: 2em; -fx-text-fill: black;"))
+                .add(Icon.create()
+                        .icon(AwesomeIcon.BAN)
+                        .style("-fx-font-size: 4em; -fx-text-fill: red; -fx-opacity: 0.5;")
+                );
 
-        Region stackedIcon6 = AwesomeStackIcon.create()
-                .baseIcon(AwesomeIcon.CIRCLE)
-                .baseIconStyle("-fx-font-size: 8em; -fx-text-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
-                .topIcon(AwesomeIcon.TWITTER)
-                .topIconStyle("-fx-font-size: 4em; -fx-text-fill: white;");
-        
-        Region stackedIcon7 = AwesomeStackIcon.create()
-                .baseIcon(AwesomeIcon.CIRCLE)
-                .baseIconStyle("-fx-font-size: 12em; -fx-text-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
-                .topIcon(AwesomeIcon.BITBUCKET)
-                .topIconStyle("-fx-font-size: 6em; "
-                        + "-fx-text-fill: linear-gradient(#ffffff 0%, #d2d2d2); "
-                        + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );");
+        Region stackedIcon6 = AwesomeIconsStack.create()
+                .add(Icon.create()
+                        .icon(AwesomeIcon.CIRCLE)
+                        .style("-fx-font-size: 8em; -fx-text-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"))
+                .add(Icon.create()
+                        .icon(AwesomeIcon.TWITTER)
+                        .style("-fx-font-size: 4em; -fx-text-fill: white;")
+                );
+
+        Region stackedIcon7 = AwesomeIconsStack.create()
+                .add(Icon.create()
+                        .icon(AwesomeIcon.CIRCLE)
+                        .style("-fx-font-size: 12em; -fx-text-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"))
+                .add(Icon.create()
+                        .icon(AwesomeIcon.BITBUCKET)
+                        .style("-fx-font-size: 6em; "
+                                + "-fx-text-fill: linear-gradient(#ffffff, #d2d2d2); "
+                                + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
+                );
 
         HBox stackIconBox = new HBox();
         stackIconBox.setSpacing(5.0);
         stackIconBox.getChildren().addAll(stackedIcon1, stackedIcon2, stackedIcon3, stackedIcon4, stackedIcon5, stackedIcon6, stackedIcon7);
 
-        root.getChildren().addAll(createMenubar(), githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox);
+        Region iconStack1 = AwesomeIconsStack.create()
+                .add(Icon.create()
+                        .icon(AwesomeIcon.CIRCLE)
+                        .style("-fx-font-size: 12em; -fx-text-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"))
+                .add(Icon.create()
+                        .icon(AwesomeIcon.BITBUCKET)
+                        .style("-fx-font-size: 6em; "
+                                + "-fx-text-fill: linear-gradient(#ffffff 0%, #d2d2d2); "
+                                + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );"))
+                .add(new Icon(AwesomeIcon.BAN, null, "-fx-font-size: 12em; -fx-text-fill: red; -fx-opacity: 0.5;", null));
+
+        HBox stackIconBox2 = new HBox();
+        stackIconBox2.setSpacing(5.0);
+        stackIconBox2.getChildren().addAll(iconStack1);
+
+        root.getChildren().addAll(createMenubar(), githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox, stackIconBox2);
 
         Scene scene = new Scene(root, 500, 800);
         scene.getStylesheets().addAll(AwesomeStyle.PLAIN.getStylePath());

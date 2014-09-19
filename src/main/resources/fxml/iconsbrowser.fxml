@@ -7,6 +7,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import de.jensd.fx.fontawesome.*?>
 
 <fx:root prefHeight="300.0" prefWidth="600.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -32,6 +33,7 @@
          <children>
             <Label text="%summary.label.numberOfIcons" />
             <Label fx:id="numberOfIconsLabel" text="numberOfIconsLabel" GridPane.columnIndex="1" />
+            <Icon awesomeIcon="STAR" size="4em" style="-fx-font-size: 6em; -fx-text-fill: linear-gradient(#ffffff, #d2d2d2);" />
          </children>
       </GridPane>
       <ScrollPane fx:id="iconsScrollPane" VBox.vgrow="ALWAYS">
