@@ -22,6 +22,7 @@ import de.jensd.fx.fontawesome.AwesomeIconsStack;
 import de.jensd.fx.fontawesome.AwesomeStyle;
 import de.jensd.fx.fontawesome.Icon;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -47,6 +48,7 @@ public class App extends Application {
 
         VBox root = new VBox();
         root.setSpacing(10.0);
+        root.setPadding(new Insets(30.0));
 
         Label githubLabel = AwesomeDude.createIconLabel(AwesomeIcon.GITHUB);
         Label ambulanceLabel = AwesomeDude.createIconLabel(AwesomeIcon.PLUS_SQUARE_ALT, "60.0");
