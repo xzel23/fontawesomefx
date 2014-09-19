@@ -13,12 +13,11 @@ This project provides a helper class (AwesomeDude) for easy usage of these icons
 
 
 #Usage
-* [blog post1][2]
-* [blog post2][3]
-
-* [8.0.7/8.0.8 announcement][7]
-* [8.0.9 announcement][6]
 * [8.0.10 announcement][5]
+* [8.0.9 announcement][6]
+* [8.0.7/8.0.8 announcement][7]
+* [blog post2][3]
+* [blog post1][2]
 
 #Maven
     <dependency>
