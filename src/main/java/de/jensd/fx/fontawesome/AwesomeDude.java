@@ -59,7 +59,7 @@ public class AwesomeDude {
         label.setContentDisplay(contentDisplay);
         return label;
     }
-
+    
     public static Button createIconButton(AwesomeIcon icon) {
         return createIconButton(icon, "");
     }
