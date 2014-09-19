@@ -1,17 +1,14 @@
 /**
  * Copyright (c) 2013,2014 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS"
+ * BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.fontawesome.test;
@@ -48,7 +45,6 @@ public class App extends Application {
 
         VBox root = new VBox();
         root.setSpacing(10.0);
-        root.setPadding(new Insets(30.0));
 
         Label githubLabel = AwesomeDude.createIconLabel(AwesomeIcon.GITHUB);
         Label ambulanceLabel = AwesomeDude.createIconLabel(AwesomeIcon.PLUS_SQUARE_ALT, "60.0");
@@ -118,6 +114,7 @@ public class App extends Application {
 
         HBox stackIconBox = new HBox();
         stackIconBox.setSpacing(5.0);
+        stackIconBox.setPadding(new Insets(10.0));
         stackIconBox.getChildren().addAll(stackedIcon1, stackedIcon2, stackedIcon3, stackedIcon4, stackedIcon5, stackedIcon6, stackedIcon7);
 
         Region iconStack1 = AwesomeIconsStack.create()
@@ -133,6 +130,7 @@ public class App extends Application {
 
         HBox stackIconBox2 = new HBox();
         stackIconBox2.setSpacing(5.0);
+        stackIconBox2.setPadding(new Insets(10.0));
         stackIconBox2.getChildren().addAll(iconStack1);
 
         root.getChildren().addAll(createMenubar(), githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox, stackIconBox2);
@@ -175,7 +173,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        System.setProperty("prism.lcdtext", "true");
+        System.setProperty("prism.lcdtext", "false");
         launch(args);
     }
 }
