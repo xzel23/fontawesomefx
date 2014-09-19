@@ -13,9 +13,12 @@ This project provides a helper class (AwesomeDude) for easy usage of these icons
 
 
 #Usage
-Refer to [blog post1][2] [blog post2][3].
-[8.0.9][6]
-[8.0.10][5]
+* [blog post1][2]
+* [blog post2][3]
+
+* [8.0.7/8.0.8 announcement][7]
+* [8.0.9 announcement][6]
+* [8.0.10 announcement][5]
 
 #Maven
     <dependency>
@@ -34,3 +37,4 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [4]: http://www.apache.org/licenses/LICENSE-2.0.html
 [5]: http://www.jensd.de/wordpress/?p=1556
 [6]: http://www.jensd.de/wordpress/?p=1457
+[7]: http://www.jensd.de/wordpress/?p=1182
