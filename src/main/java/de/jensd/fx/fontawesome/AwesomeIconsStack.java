@@ -24,9 +24,6 @@ import javafx.scene.layout.StackPane;
  */
 public class AwesomeIconsStack extends StackPane {
 
-    private AwesomeIconsStack() {
-    }
-
     public static AwesomeIconsStack create() {
         return new AwesomeIconsStack();
     }
