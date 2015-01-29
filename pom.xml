@@ -18,6 +18,7 @@
         <connection>scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git</connection>
         <developerConnection>scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git</developerConnection>
         <url>https://bitbucket.org/Jerady/fontawesomefx</url>
+        <tag>fontawesomefx-8.0.10-SNAPSHOT</tag>
     </scm>
     <developers>
         <developer>
@@ -31,12 +32,25 @@
             </roles>
         </developer>
     </developers>
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
+    <organization>
+        <name>www.jensd.de</name>
+    </organization>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mainClass>de.jensd.fx.fontawesome.test.IconOverviewApp</mainClass>
+    </properties>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <build>
+        <finalName>FontAwesomeFX</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -47,7 +61,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-           <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.4</version>
@@ -89,10 +103,6 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
