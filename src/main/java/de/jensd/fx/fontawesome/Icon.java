@@ -43,7 +43,7 @@ public class Icon extends Label {
         size = (size == null || size.isEmpty()) ? "2em" : size;
         // make sure FontAwesome is assigned with propriate size:
         String stylePrefix = String.format("-fx-font-family: FontAwesome; -fx-font-size: %s;", size);
-        setStyle(stylePrefix + style);
+        setStyle(stylePrefix + (style == null ? "" : style));
     }
 
     public Icon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size, @NamedArg("style") String style, @NamedArg("styleClass") String styleClass) {
