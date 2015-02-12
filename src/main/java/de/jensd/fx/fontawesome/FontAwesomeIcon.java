@@ -16,24 +16,24 @@ package de.jensd.fx.fontawesome;
 import static de.jensd.fx.fontawesome.AwesomeDude.FONT_AWESOME_TTF_PATH;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 /**
  *
  * @author Jens Deters
  */
-public class Icon extends Label {
+public class FontAwesomeIcon extends Text {
 
     @FXML
-    void initialize() {
+    public void init() {
     }
 
     static {
         Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
     }
 
-    public Icon(AwesomeIcon icon, String size, String style, String styleClass) {
+    public FontAwesomeIcon(AwesomeIconEnum icon, String size, String style, String styleClass) {
         setText(icon.toString());
         // add least add "awesome"-class
         getStyleClass().add("awesome");
@@ -46,46 +46,46 @@ public class Icon extends Label {
         setStyle(stylePrefix + (style == null ? "" : style));
     }
 
-    public Icon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size, @NamedArg("style") String style, @NamedArg("styleClass") String styleClass) {
-        this(AwesomeIcon.valueOf(awesomeIcon), size, style, styleClass);
+    public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size, @NamedArg("style") String style, @NamedArg("styleClass") String styleClass) {
+        this(AwesomeIconEnum.valueOf(awesomeIcon), size, style, styleClass);
     }
 
-    public Icon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size, @NamedArg("styleClass") String styleClass) {
-        this(AwesomeIcon.valueOf(awesomeIcon), size, null, styleClass);
+    public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size, @NamedArg("styleClass") String styleClass) {
+        this(AwesomeIconEnum.valueOf(awesomeIcon), size, null, styleClass);
     }
 
-    public Icon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size) {
-        this(AwesomeIcon.valueOf(awesomeIcon), size, null, null);
+    public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size) {
+        this(AwesomeIconEnum.valueOf(awesomeIcon), size, null, null);
     }
 
-    public Icon(@NamedArg("awesomeIcon") String awesomeIcon) {
-        this(AwesomeIcon.valueOf(awesomeIcon), "2em", null, null);
+    public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon) {
+        this(AwesomeIconEnum.valueOf(awesomeIcon), "2em", null, null);
     }
 
-    private Icon() {
-        this(AwesomeIcon.STAR, "2em", null, null);
+    private FontAwesomeIcon() {
+        this(AwesomeIconEnum.STAR, "2em", null, null);
     }
 
-    public static Icon create() {
-        return new Icon();
+    public static FontAwesomeIcon create() {
+        return new FontAwesomeIcon();
     }
 
-    public Icon icon(AwesomeIcon icon) {
+    public FontAwesomeIcon icon(AwesomeIconEnum icon) {
         setText(icon.toString());
         return this;
     }
 
-    public Icon size(String iconSize) {
+    public FontAwesomeIcon size(String iconSize) {
         setStyle("-fx-font-size: " + iconSize + ";");
         return this;
     }
 
-    public Icon style(String style) {
+    public FontAwesomeIcon style(String style) {
         setStyle(style);
         return this;
     }
 
-    public Icon styleClass(String styleClass) {
+    public FontAwesomeIcon styleClass(String styleClass) {
         getStyleClass().add(styleClass);
         return this;
     }

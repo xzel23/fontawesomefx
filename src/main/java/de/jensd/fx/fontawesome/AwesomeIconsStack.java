@@ -29,12 +29,12 @@ public class AwesomeIconsStack extends StackPane {
     }
 
 
-    public AwesomeIconsStack add(Icon icon) {
+    public AwesomeIconsStack add(FontAwesomeIcon icon) {
         getChildren().add(icon);
         return this;
     }
 
-    public AwesomeIconsStack remove(Icon icon) {
+    public AwesomeIconsStack remove(FontAwesomeIcon icon) {
         getChildren().remove(icon);
         return this;
     }
