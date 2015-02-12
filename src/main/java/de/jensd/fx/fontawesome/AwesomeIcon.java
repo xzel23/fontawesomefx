@@ -618,9 +618,9 @@ public enum AwesomeIcon {
     YOUTUBE_PLAY('\uf16A'),
     YOUTUBE_SQUARE('\uf166');
 
-    private final Character character;
+    private final char character;
 
-    private AwesomeIcon(Character character) {
+    private AwesomeIcon(char character) {
         this.character = character;
     }
 
@@ -628,12 +628,18 @@ public enum AwesomeIcon {
         return character;
     }
 
-    public String toUnicode() {
+    public String asUnicode() {
         return String.format("\\u%04x", (int) character);
     }
 
+    public String asString() {
+        return Character.toString(character);
+    }
+    
     @Override
     public String toString() {
-        return character.toString();
+        return Character.toString(character);
     }
+    
+    
 }

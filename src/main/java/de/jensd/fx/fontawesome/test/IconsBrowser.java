@@ -1,24 +1,24 @@
 /**
- * Copyright (c) 2013,2014 Jens Deters
- * http://www.jensd.de
+ * Copyright (c) 2013,2014 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
  */
 package de.jensd.fx.fontawesome.test;
 
 import de.jensd.fx.fontawesome.AwesomeDude;
 import de.jensd.fx.fontawesome.AwesomeIcon;
+import de.jensd.weathericons.WeatherIcon;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -40,6 +40,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -60,6 +61,9 @@ public class IconsBrowser extends VBox {
     @FXML
     private ScrollPane iconsScrollPane;
 
+    private List<Button> listAwesome;
+    private List<Button> listWeather;
+
     public IconsBrowser() {
         init();
     }
@@ -79,18 +83,53 @@ public class IconsBrowser extends VBox {
 
     @FXML
     void initialize() {
-
-        AwesomeIconNameComparator iconNameComparator = new AwesomeIconNameComparator();
-        List list = Stream.of(AwesomeIcon.values()).sorted(iconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
-        iconsBox.getChildren().addAll(list);
+        AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
+        WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
+        listAwesome = Stream.of(AwesomeIcon.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        listWeather = Stream.of(WeatherIcon.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
-        
-        numberOfIconsLabel.setText(list.size()+"");
+    }
+
+    private void updateBrowser(List iconsList) {
+        iconsBox.getChildren().clear();
+        iconsBox.getChildren().addAll(iconsList);
+        numberOfIconsLabel.setText(iconsList.size() + "");
+        iconsScrollPane.setVvalue(0.0); 
+    }
+
+    @FXML
+    public void onShowAwesomeIcons() {
+        updateBrowser(listAwesome);
+    }
+
+    @FXML
+    public void onShowWeatherIcons() {
+        updateBrowser(listWeather);
     }
 
     private static Button createIconButton(final AwesomeIcon icon, final String text) {
-        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.toUnicode()));
-        Button b = AwesomeDude.createIconButton(icon, text, "2em", "0.8em", ContentDisplay.TOP);
+        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.asUnicode()));
+        Text iconText = AwesomeDude.createIcon(icon, "2em");
+        Button b = new Button(text);
+        b.setContentDisplay(ContentDisplay.TOP);
+        b.setGraphic(iconText);
+        b.setTooltip(tooltip);
+        b.setPrefWidth(180.0);
+        b.setOnAction((ActionEvent t) -> {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            final ClipboardContent content = new ClipboardContent();
+            content.putString(icon.name());
+            clipboard.setContent(content);
+        });
+        return b;
+    }
+
+    private static Button createIconButton(final WeatherIcon icon, final String text) {
+        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.asUnicode()));
+        Text iconText = AwesomeDude.createIcon(icon, "2em");
+        Button b = new Button(text);
+        b.setContentDisplay(ContentDisplay.TOP);
+        b.setGraphic(iconText);
         b.setTooltip(tooltip);
         b.setPrefWidth(180.0);
         b.setOnAction((ActionEvent t) -> {

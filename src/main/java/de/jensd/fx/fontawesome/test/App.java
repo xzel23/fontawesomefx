@@ -23,7 +23,6 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -32,6 +31,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -46,8 +46,8 @@ public class App extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Label githubLabel = AwesomeDude.createIconLabel(AwesomeIcon.GITHUB);
-        Label ambulanceLabel = AwesomeDude.createIconLabel(AwesomeIcon.PLUS_SQUARE_ALT, "60.0");
+        Text githubLabel = AwesomeDude.createIcon(AwesomeIcon.GITHUB);
+        Text ambulanceLabel = AwesomeDude.createIcon(AwesomeIcon.PLUS_SQUARE_ALT, "60.0");
         Button starButton = AwesomeDude.createIconButton(AwesomeIcon.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
         Button cloudButton = AwesomeDude.createIconButton(AwesomeIcon.CLOUD, "Download");
         ToggleButton toggleButton = AwesomeDude.createIconToggleButton(AwesomeIcon.LOCK, "Lock", "60.0", ContentDisplay.TOP);

@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author Jens Deters
  */
-public class IconOverviewApp extends Application {
+public class IconBrowserApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {

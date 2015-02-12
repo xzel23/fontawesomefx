@@ -10,9 +10,13 @@
     -fx-text-fill: -icons-color;
 }
 
-.awesome:hover{
-
+.weather{
+    -fx-font-family:  'weather icons';
+    -fx-font-size: 16px;
+    -fx-text-fill: -icons-color;
 }
+
+
 .stack-base{
     -fx-font-family: FontAwesome; 
     -fx-font-size: 3em;
