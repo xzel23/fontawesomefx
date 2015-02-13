@@ -14,7 +14,7 @@
 package de.jensd.fx.fontawesome.test;
 
 import de.jensd.fx.fontawesome.AwesomeDude;
-import de.jensd.fx.fontawesome.AwesomeIconEnum;
+import de.jensd.fx.fontawesome.AwesomeIcon;
 import de.jensd.fx.fontawesome.AwesomeStyle;
 import de.jensd.weathericons.WeatherIconEnum;
 import javafx.application.Application;
@@ -39,7 +39,7 @@ public class AppWeatherIcons extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text star = AwesomeDude.createIcon(AwesomeIconEnum.STAR,"4em");
+        Text star = AwesomeDude.createIcon(AwesomeIcon.STAR,"4em");
         Text thermometer = AwesomeDude.createIcon(WeatherIconEnum.THERMOMETER, "4em");
 
         root.getChildren().addAll(star, thermometer);
@@ -61,13 +61,13 @@ public class AppWeatherIcons extends Application {
         MenuBar menuBar = new MenuBar();
 
         MenuItem openItem = new MenuItem("Open");
-        AwesomeDude.setIcon(openItem, AwesomeIconEnum.FILE);
+        AwesomeDude.setIcon(openItem, AwesomeIcon.FILE);
         MenuItem saveItem = new MenuItem("Save");
-        AwesomeDude.setIcon(saveItem, AwesomeIconEnum.DOWNLOAD);
+        AwesomeDude.setIcon(saveItem, AwesomeIcon.DOWNLOAD);
         MenuItem saveAsItem = new MenuItem("Save As...");
-        AwesomeDude.setIcon(saveAsItem, AwesomeIconEnum.DOWNLOAD);
+        AwesomeDude.setIcon(saveAsItem, AwesomeIcon.DOWNLOAD);
         MenuItem exitItem = new MenuItem("Exit");
-        AwesomeDude.setIcon(exitItem, AwesomeIconEnum.SIGN_OUT);
+        AwesomeDude.setIcon(exitItem, AwesomeIcon.SIGN_OUT);
 
         Menu menuFile = new Menu("File");
         menuFile.getItems().add(openItem);

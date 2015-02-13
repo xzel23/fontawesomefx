@@ -33,7 +33,7 @@ public class FontAwesomeIcon extends Text {
         Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
     }
 
-    public FontAwesomeIcon(AwesomeIconEnum icon, String size, String style, String styleClass) {
+    public FontAwesomeIcon(AwesomeIcon icon, String size, String style, String styleClass) {
         setText(icon.toString());
         // add least add "awesome"-class
         getStyleClass().add("awesome");
@@ -47,30 +47,30 @@ public class FontAwesomeIcon extends Text {
     }
 
     public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size, @NamedArg("style") String style, @NamedArg("styleClass") String styleClass) {
-        this(AwesomeIconEnum.valueOf(awesomeIcon), size, style, styleClass);
+        this(AwesomeIcon.valueOf(awesomeIcon), size, style, styleClass);
     }
 
     public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size, @NamedArg("styleClass") String styleClass) {
-        this(AwesomeIconEnum.valueOf(awesomeIcon), size, null, styleClass);
+        this(AwesomeIcon.valueOf(awesomeIcon), size, null, styleClass);
     }
 
     public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon, @NamedArg("size") String size) {
-        this(AwesomeIconEnum.valueOf(awesomeIcon), size, null, null);
+        this(AwesomeIcon.valueOf(awesomeIcon), size, null, null);
     }
 
     public FontAwesomeIcon(@NamedArg("awesomeIcon") String awesomeIcon) {
-        this(AwesomeIconEnum.valueOf(awesomeIcon), "2em", null, null);
+        this(AwesomeIcon.valueOf(awesomeIcon), "2em", null, null);
     }
 
     private FontAwesomeIcon() {
-        this(AwesomeIconEnum.STAR, "2em", null, null);
+        this(AwesomeIcon.STAR, "2em", null, null);
     }
 
     public static FontAwesomeIcon create() {
         return new FontAwesomeIcon();
     }
 
-    public FontAwesomeIcon icon(AwesomeIconEnum icon) {
+    public FontAwesomeIcon icon(AwesomeIcon icon) {
         setText(icon.toString());
         return this;
     }

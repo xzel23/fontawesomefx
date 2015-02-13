@@ -17,7 +17,7 @@
 package de.jensd.fx.fontawesome.test;
 
 import de.jensd.fx.fontawesome.AwesomeDude;
-import de.jensd.fx.fontawesome.AwesomeIconEnum;
+import de.jensd.fx.fontawesome.AwesomeIcon;
 import de.jensd.weathericons.WeatherIconEnum;
 import java.io.IOException;
 import java.net.URL;
@@ -85,7 +85,7 @@ public class IconsBrowser extends VBox {
     void initialize() {
         AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
         WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
-        listAwesome = Stream.of(AwesomeIconEnum.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        listAwesome = Stream.of(AwesomeIcon.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         listWeather = Stream.of(WeatherIconEnum.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
     }
@@ -107,7 +107,7 @@ public class IconsBrowser extends VBox {
         updateBrowser(listWeather);
     }
 
-    private static Button createIconButton(final AwesomeIconEnum icon, final String text) {
+    private static Button createIconButton(final AwesomeIcon icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.asUnicode()));
         Text iconText = AwesomeDude.createIcon(icon, "2em");
         Button b = new Button(text);

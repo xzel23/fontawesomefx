@@ -22,7 +22,7 @@ package de.jensd.fx.fontawesome;
  *
  * @author Jens Deters
  */
-public enum AwesomeIconEnum {
+public enum AwesomeIcon {
 
     ADJUST('\uf042'),
     ADN('\uf170'),
@@ -620,7 +620,7 @@ public enum AwesomeIconEnum {
 
     private final char character;
 
-    private AwesomeIconEnum(char character) {
+    private AwesomeIcon(char character) {
         this.character = character;
     }
 
