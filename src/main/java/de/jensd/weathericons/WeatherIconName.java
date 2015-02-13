@@ -22,7 +22,7 @@ package de.jensd.weathericons;
  *
  * @author Jens Deters (mail@jensd.de)
  */
-public enum WeatherIconEnum {
+public enum WeatherIconName {
 
     ALIEN('\uf075'),
     BEAFORT_0('\uf0b7'),
@@ -204,7 +204,7 @@ public enum WeatherIconEnum {
 
     private final char character;
 
-    private WeatherIconEnum(char character) {
+    private WeatherIconName(char character) {
         this.character = character;
     }
 
@@ -212,11 +212,11 @@ public enum WeatherIconEnum {
         return character;
     }
 
-    public String asUnicode() {
+    public String unicodeToString() {
         return String.format("\\u%04x", (int) character);
     }
     
-    public String asString(){
+    public String characterToString(){
         return Character.toString(character);
     }
     

@@ -16,17 +16,17 @@
  *
  */package de.jensd.fx.fontawesome.test;
 
-import de.jensd.weathericons.WeatherIconEnum;
+import de.jensd.weathericons.WeatherIconName;
 import java.util.Comparator;
 
 /**
  *
  * @author Jens Deters
  */
-public class WeatherIconNameComparator implements Comparator<WeatherIconEnum> {
+public class WeatherIconNameComparator implements Comparator<WeatherIconName> {
 
     @Override
-    public int compare(WeatherIconEnum o1, WeatherIconEnum o2) {
+    public int compare(WeatherIconName o1, WeatherIconName o2) {
         if(o1 != null && o2 != null){
             return o1.name().compareTo(o2.name());
         }

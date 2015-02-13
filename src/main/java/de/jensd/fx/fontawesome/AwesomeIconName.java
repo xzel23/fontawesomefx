@@ -22,7 +22,7 @@ package de.jensd.fx.fontawesome;
  *
  * @author Jens Deters
  */
-public enum AwesomeIcon {
+public enum AwesomeIconName {
 
     ADJUST('\uf042'),
     ADN('\uf170'),
@@ -620,7 +620,7 @@ public enum AwesomeIcon {
 
     private final char character;
 
-    private AwesomeIcon(char character) {
+    private AwesomeIconName(char character) {
         this.character = character;
     }
 
@@ -628,11 +628,11 @@ public enum AwesomeIcon {
         return character;
     }
 
-    public String asUnicode() {
+    public String unicodeToString() {
         return String.format("\\u%04x", (int) character);
     }
 
-    public String asString() {
+    public String characterToString() {
         return Character.toString(character);
     }
     

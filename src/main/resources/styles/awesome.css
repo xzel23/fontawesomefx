@@ -8,12 +8,16 @@
     -fx-font-family:  FontAwesome;
     -fx-font-size: 16px;
     -fx-text-fill: -icons-color;
+    -fx-fill: -icons-color;
+
 }
 
 .weather{
     -fx-font-family:  'weather icons';
     -fx-font-size: 16px;
     -fx-text-fill: -icons-color;
+    -fx-fill: -icons-color;
+
 }
 
 
@@ -21,12 +25,14 @@
     -fx-font-family: FontAwesome; 
     -fx-font-size: 3em;
     -fx-text-fill: -base-icons-color;
+    -fx-fill: -base-icons-color;
 }
 
 .stack-top{
     -fx-font-family: FontAwesome; 
     -fx-font-size: 2em;
     -fx-text-fill: -top-icons-color;
+    -fx-fill: -top-icons-color;
 }
 
 

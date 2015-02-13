@@ -50,7 +50,6 @@
         </repository>
     </distributionManagement>
     <build>
-        <finalName>FontAwesomeFX</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

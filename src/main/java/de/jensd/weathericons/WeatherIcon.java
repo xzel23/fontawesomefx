@@ -7,6 +7,8 @@ package de.jensd.weathericons;
 
 import de.jensd.fx.fontawesome.AwesomeDude;
 import static de.jensd.fx.fontawesome.AwesomeDude.WEATHER_ICONS_TTF_PATH;
+import de.jensd.fx.fontawesome.AwesomeIconName;
+import de.jensd.fx.fontawesome.FontAwesomeIcon;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.text.Font;
@@ -22,11 +24,8 @@ public class WeatherIcon extends Text {
         Font.loadFont(AwesomeDude.class.getResource(WEATHER_ICONS_TTF_PATH).toExternalForm(), 10.0);
     }
 
-    public void initialze() {
-    }
-
-    public WeatherIcon(WeatherIconEnum icon, String size, String style, String styleClass) {
-        setText(icon.asString());
+    public WeatherIcon(WeatherIconName icon, String size, String style, String styleClass) {
+        setText(icon.characterToString());
         getStyleClass().add("weather");
         if (styleClass != null && !styleClass.isEmpty()) {
             getStyleClass().add(styleClass);
@@ -37,23 +36,23 @@ public class WeatherIcon extends Text {
     }
 
     public WeatherIcon(String iconName, String size, String style, String styleClass) {
-        this(WeatherIconEnum.valueOf(iconName), size, style, styleClass);
+        this(WeatherIconName.valueOf(iconName), size, style, styleClass);
     }
 
-    public WeatherIcon(String iconName,String size,String styleClass) {
-        this(WeatherIconEnum.valueOf(iconName), size, null, styleClass);
-    }
-
-    public WeatherIcon(String iconName, String size) {
-        this(WeatherIconEnum.valueOf(iconName), size, null, null);
+    public WeatherIcon(String iconName, String size, String styleClass) {
+        this(WeatherIconName.valueOf(iconName), size, null, styleClass);
     }
 
     public WeatherIcon(String iconName) {
-        this(WeatherIconEnum.valueOf(iconName), "2em", null, null);
+        this(WeatherIconName.valueOf(iconName), "2em", null, null);
+    }
+
+    public WeatherIcon(String iconName, String size) {
+        this(WeatherIconName.valueOf(iconName), size, null, null);
     }
 
     public WeatherIcon() {
-        this(WeatherIconEnum.UMBRELLA, "2em", null, null);
+        this(WeatherIconName.UMBRELLA, "2em", null, null);
     }
 
     private StringProperty size;
@@ -79,7 +78,7 @@ public class WeatherIcon extends Text {
 
     public final StringProperty iconNameProperty() {
         if (iconName == null) {
-            iconName = new SimpleStringProperty(WeatherIconEnum.UMBRELLA.asString());
+            iconName = new SimpleStringProperty(WeatherIconName.UMBRELLA.characterToString());
         }
         return iconName;
     }
@@ -89,8 +88,9 @@ public class WeatherIcon extends Text {
     }
 
     public void setIconName(String iconName) {
-        setText(WeatherIconEnum.valueOf(iconName).asString());
+        setText(WeatherIconName.valueOf(iconName).characterToString());
         iconNameProperty().setValue(iconName);
     }
+
 
 }
