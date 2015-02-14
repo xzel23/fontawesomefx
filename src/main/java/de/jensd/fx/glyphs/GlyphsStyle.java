@@ -15,21 +15,22 @@
  * limitations under the License.
  *
  */
-package de.jensd.fx.fontawesome;
+package de.jensd.fx.glyphs;
 
 /**
  * @author Jens Deters
  */
-public enum AwesomeStyle {
+public enum GlyphsStyle {
 
-    PLAIN("/styles/awesome.css"),
-    DARK("/styles/awesome_dark.css"),
-    LIGHT("/styles/awesome_light.css"),
-    BLUE("/styles/awesome_blue.css"),
-    RED("/styles/awesome_red.css");
+    DEFAULT("/styles/glyphs.css"),
+    DARK("/styles/glyphs_dark.css"),
+    LIGHT("/styles/glyphs_light.css"),
+    BLUE("/styles/glyphs_blue.css"),
+    RED("/styles/glyphs_red.css");
+    
     private final String stylePath;
 
-    private AwesomeStyle(String stylePath) {
+    private GlyphsStyle(String stylePath) {
         this.stylePath = stylePath;
     }
 

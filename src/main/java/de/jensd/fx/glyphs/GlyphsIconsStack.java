@@ -14,27 +14,28 @@
  * the License.
  *
  */
-package de.jensd.fx.fontawesome;
+package de.jensd.fx.glyphs;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.scene.layout.StackPane;
 
 /**
  *
  * @author Jens Deters
  */
-public class AwesomeIconsStack extends StackPane {
+public class GlyphsIconsStack extends StackPane {
 
-    public static AwesomeIconsStack create() {
-        return new AwesomeIconsStack();
+    public static GlyphsIconsStack create() {
+        return new GlyphsIconsStack();
     }
 
 
-    public AwesomeIconsStack add(FontAwesomeIcon icon) {
+    public GlyphsIconsStack add(FontAwesomeIcon icon) {
         getChildren().add(icon);
         return this;
     }
 
-    public AwesomeIconsStack remove(FontAwesomeIcon icon) {
+    public GlyphsIconsStack remove(FontAwesomeIcon icon) {
         getChildren().remove(icon);
         return this;
     }

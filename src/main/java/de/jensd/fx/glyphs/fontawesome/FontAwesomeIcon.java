@@ -9,10 +9,12 @@
  * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
-package de.jensd.fx.fontawesome;
+package de.jensd.fx.glyphs.fontawesome;
 
-import static de.jensd.fx.fontawesome.AwesomeDude.FONT_AWESOME_TTF_PATH;
-import de.jensd.weathericons.WeatherIconName;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.GlyphsDude;
+import static de.jensd.fx.glyphs.GlyphsDude.FONT_AWESOME_TTF_PATH;
+import de.jensd.fx.glyphs.weathericons.WeatherIconName;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
@@ -26,7 +28,7 @@ import javafx.scene.text.Text;
 public class FontAwesomeIcon extends Text {
 
     static {
-        Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(GlyphsDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
     }
 
     private static String ICON_STYLE_CLASS = "awesome";
@@ -38,7 +40,7 @@ public class FontAwesomeIcon extends Text {
     public void init() {
     }
 
-    public FontAwesomeIcon(AwesomeIconName icon, String size, String style, String styleClass) {
+    public FontAwesomeIcon(FontAwesomeIconName icon, String size, String style, String styleClass) {
         setText(icon.characterToString());
         getStyleClass().add(ICON_STYLE_CLASS);
         if (styleClass != null && !styleClass.isEmpty()) {
@@ -50,23 +52,23 @@ public class FontAwesomeIcon extends Text {
     }
 
     public FontAwesomeIcon(String iconName, String size, String style, String styleClass) {
-        this(AwesomeIconName.valueOf(iconName), size, style, styleClass);
+        this(FontAwesomeIconName.valueOf(iconName), size, style, styleClass);
     }
 
     public FontAwesomeIcon(String iconName, String size, String styleClass) {
-        this(AwesomeIconName.valueOf(iconName), size, null, styleClass);
+        this(FontAwesomeIconName.valueOf(iconName), size, null, styleClass);
     }
 
     public FontAwesomeIcon(String iconName, String size) {
-        this(AwesomeIconName.valueOf(iconName), size, null, null);
+        this(FontAwesomeIconName.valueOf(iconName), size, null, null);
     }
 
     public FontAwesomeIcon(String iconName) {
-        this(AwesomeIconName.valueOf(iconName), "2em", null, null);
+        this(FontAwesomeIconName.valueOf(iconName), "2em", null, null);
     }
 
     public FontAwesomeIcon() {
-        this(AwesomeIconName.SQUARE, "2em", null, null);
+        this(FontAwesomeIconName.SQUARE, "2em", null, null);
     }
 
     public static FontAwesomeIcon create() {
@@ -108,7 +110,7 @@ public class FontAwesomeIcon extends Text {
 
     public final StringProperty iconNameProperty() {
         if (iconName == null) {
-            iconName = new SimpleStringProperty(AwesomeIconName.UMBRELLA.characterToString());
+            iconName = new SimpleStringProperty(FontAwesomeIconName.UMBRELLA.characterToString());
         }
         return iconName;
     }
@@ -118,16 +120,16 @@ public class FontAwesomeIcon extends Text {
     }
 
     public void setIconName(String iconName) {
-        setText(AwesomeIconName.valueOf(iconName).characterToString());
+        setText(FontAwesomeIconName.valueOf(iconName).characterToString());
         iconNameProperty().setValue(iconName);
     }
 
-    public FontAwesomeIcon icon(AwesomeIconName icon) {
+    public FontAwesomeIcon icon(FontAwesomeIconName icon) {
         setIcon(icon);
         return this;
     }
 
-    public void setIcon(AwesomeIconName icon) {
+    public void setIcon(FontAwesomeIconName icon) {
         setIconName(icon.name());
     }
 

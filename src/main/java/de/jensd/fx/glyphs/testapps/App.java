@@ -9,13 +9,13 @@
  * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
-package de.jensd.fx.fontawesome.test;
+package de.jensd.fx.glyphs.testapps;
 
-import de.jensd.fx.fontawesome.AwesomeDude;
-import de.jensd.fx.fontawesome.AwesomeIconName;
-import de.jensd.fx.fontawesome.AwesomeIconsStack;
-import de.jensd.fx.fontawesome.AwesomeStyle;
-import de.jensd.fx.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.GlyphsIconsStack;
+import de.jensd.fx.glyphs.GlyphsStyle;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -44,68 +44,68 @@ public class App extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text githubLabel = AwesomeDude.createIcon(AwesomeIconName.GITHUB);
-        Text ambulanceLabel = AwesomeDude.createIcon(AwesomeIconName.PLUS_SQUARE_ALT, "60.0");
-        Button starButton = AwesomeDude.createIconButton(AwesomeIconName.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
-        Button cloudButton = AwesomeDude.createIconButton(AwesomeIconName.CLOUD, "Download");
-        ToggleButton toggleButton = AwesomeDude.createIconToggleButton(AwesomeIconName.LOCK, "Lock", "60.0", ContentDisplay.TOP);
+        Text githubLabel = GlyphsDude.createIcon(FontAwesomeIconName.GITHUB);
+        Text ambulanceLabel = GlyphsDude.createIcon(FontAwesomeIconName.PLUS_SQUARE_ALT, "60.0");
+        Button starButton = GlyphsDude.createIconButton(FontAwesomeIconName.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
+        Button cloudButton = GlyphsDude.createIconButton(FontAwesomeIconName.CLOUD, "Download");
+        ToggleButton toggleButton = GlyphsDude.createIconToggleButton(FontAwesomeIconName.LOCK, "Lock", "60.0", ContentDisplay.TOP);
 
-        Region stackedIcon1 = AwesomeIconsStack.create().add(new FontAwesomeIcon());
+        Region stackedIcon1 = GlyphsIconsStack.create().add(new FontAwesomeIcon());
 
-        System.out.println("xxx" + AwesomeIconName.SQUARE.name());
-        Region stackedIcon2 = AwesomeIconsStack.create()
+        System.out.println("xxx" + FontAwesomeIconName.SQUARE.name());
+        Region stackedIcon2 = GlyphsIconsStack.create()
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.SQUARE)
+                        .icon(FontAwesomeIconName.SQUARE)
                         .size("3em")
                         .styleClass("stack-base"))
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.STAR)
+                        .icon(FontAwesomeIconName.STAR)
                         .size("2em")
                         .styleClass("stack-top")
                 );
 
-        Region stackedIcon3 = AwesomeIconsStack.create()
+        Region stackedIcon3 = GlyphsIconsStack.create()
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.SQUARE)
+                        .icon(FontAwesomeIconName.SQUARE)
                         .style("-fx-font-size: 4em; -fx-fill: yellowgreen;"))
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.APPLE)
+                        .icon(FontAwesomeIconName.APPLE)
                         .style("-fx-font-size: 3em; -fx-fill: white;")
                 );
 
-        Region stackedIcon4 = AwesomeIconsStack.create()
+        Region stackedIcon4 = GlyphsIconsStack.create()
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.SQUARE)
+                        .icon(FontAwesomeIconName.SQUARE)
                         .style("-fx-font-size: 4em; -fx-fill: yellowgreen;"))
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.APPLE)
+                        .icon(FontAwesomeIconName.APPLE)
                         .style("-fx-font-size: 3em; -fx-fill: black;")
                 );
 
-        Region stackedIcon5 = AwesomeIconsStack.create()
+        Region stackedIcon5 = GlyphsIconsStack.create()
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.BUG)
+                        .icon(FontAwesomeIconName.BUG)
                         .style("-fx-font-size: 2em; -fx-fill: black;"))
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.BAN)
+                        .icon(FontAwesomeIconName.BAN)
                         .style("-fx-font-size: 4em; -fx-fill: red; -fx-opacity: 0.5;")
                 );
 
-        Region stackedIcon6 = AwesomeIconsStack.create()
+        Region stackedIcon6 = GlyphsIconsStack.create()
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.CIRCLE)
+                        .icon(FontAwesomeIconName.CIRCLE)
                         .style("-fx-font-size: 8em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"))
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.TWITTER)
+                        .icon(FontAwesomeIconName.TWITTER)
                         .style("-fx-font-size: 4em; -fx-fill: white;")
                 );
 
-        Region stackedIcon7 = AwesomeIconsStack.create()
+        Region stackedIcon7 = GlyphsIconsStack.create()
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.CIRCLE)
+                        .icon(FontAwesomeIconName.CIRCLE)
                         .style("-fx-font-size: 12em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"))
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.BITBUCKET)
+                        .icon(FontAwesomeIconName.BITBUCKET)
                         .style("-fx-font-size: 6em; "
                                 + "-fx-fill: linear-gradient(#ffffff, #d2d2d2); "
                                 + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
@@ -116,16 +116,16 @@ public class App extends Application {
         stackIconBox.setPadding(new Insets(10.0));
         stackIconBox.getChildren().addAll(stackedIcon1, stackedIcon2, stackedIcon3, stackedIcon4, stackedIcon5, stackedIcon6, stackedIcon7);
 
-        Region iconStack1 = AwesomeIconsStack.create()
+        Region iconStack1 = GlyphsIconsStack.create()
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.CIRCLE)
+                        .icon(FontAwesomeIconName.CIRCLE)
                         .style("-fx-font-size: 12em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"))
                 .add(FontAwesomeIcon.create()
-                        .icon(AwesomeIconName.BITBUCKET)
+                        .icon(FontAwesomeIconName.BITBUCKET)
                         .style("-fx-font-size: 6em; "
                                 + "-fx-fill: linear-gradient(#ffffff 0%, #d2d2d2); "
                                 + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );"))
-                .add(new FontAwesomeIcon(AwesomeIconName.BAN, null, "-fx-font-size: 12em; -fx-fill: red; -fx-opacity: 0.5;", null));
+                .add(new FontAwesomeIcon(FontAwesomeIconName.BAN, null, "-fx-font-size: 12em; -fx-fill: red; -fx-opacity: 0.5;", null));
 
         HBox stackIconBox2 = new HBox();
         stackIconBox2.setSpacing(5.0);
@@ -135,7 +135,7 @@ public class App extends Application {
         root.getChildren().addAll(createMenubar(), githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox, stackIconBox2);
 
         Scene scene = new Scene(root, 500, 800);
-        scene.getStylesheets().addAll(AwesomeStyle.PLAIN.getStylePath());
+        scene.getStylesheets().addAll(GlyphsStyle.DEFAULT.getStylePath());
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("FontAwesomeFX demo");
@@ -148,13 +148,13 @@ public class App extends Application {
         MenuBar menuBar = new MenuBar();
 
         MenuItem openItem = new MenuItem("Open");
-        AwesomeDude.setIcon(openItem, AwesomeIconName.FILE);
+        GlyphsDude.setIcon(openItem, FontAwesomeIconName.FILE);
         MenuItem saveItem = new MenuItem("Save");
-        AwesomeDude.setIcon(saveItem, AwesomeIconName.DOWNLOAD);
+        GlyphsDude.setIcon(saveItem, FontAwesomeIconName.DOWNLOAD);
         MenuItem saveAsItem = new MenuItem("Save As...");
-        AwesomeDude.setIcon(saveAsItem, AwesomeIconName.DOWNLOAD);
+        GlyphsDude.setIcon(saveAsItem, FontAwesomeIconName.DOWNLOAD);
         MenuItem exitItem = new MenuItem("Exit");
-        AwesomeDude.setIcon(exitItem, AwesomeIconName.SIGN_OUT);
+        GlyphsDude.setIcon(exitItem, FontAwesomeIconName.SIGN_OUT);
 
         Menu menuFile = new Menu("File");
         menuFile.getItems().add(openItem);

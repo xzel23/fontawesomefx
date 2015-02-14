@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- */package de.jensd.fx.fontawesome.test;
+ */package de.jensd.fx.glyphs.testapps;
 
-import de.jensd.weathericons.WeatherIconName;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
 import java.util.Comparator;
 
 /**
  *
  * @author Jens Deters
  */
-public class WeatherIconNameComparator implements Comparator<WeatherIconName> {
+public class AwesomeIconNameComparator implements Comparator<FontAwesomeIconName> {
 
     @Override
-    public int compare(WeatherIconName o1, WeatherIconName o2) {
+    public int compare(FontAwesomeIconName o1, FontAwesomeIconName o2) {
         if(o1 != null && o2 != null){
             return o1.name().compareTo(o2.name());
         }

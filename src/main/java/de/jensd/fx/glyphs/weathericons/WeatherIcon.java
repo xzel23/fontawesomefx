@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.jensd.weathericons;
+package de.jensd.fx.glyphs.weathericons;
 
-import de.jensd.fx.fontawesome.AwesomeDude;
-import static de.jensd.fx.fontawesome.AwesomeDude.WEATHER_ICONS_TTF_PATH;
-import de.jensd.fx.fontawesome.AwesomeIconName;
-import de.jensd.fx.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.GlyphsDude;
+import static de.jensd.fx.glyphs.GlyphsDude.WEATHER_ICONS_TTF_PATH;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.text.Font;
@@ -21,7 +21,7 @@ import javafx.scene.text.Text;
 public class WeatherIcon extends Text {
 
     static {
-        Font.loadFont(AwesomeDude.class.getResource(WEATHER_ICONS_TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(GlyphsDude.class.getResource(WEATHER_ICONS_TTF_PATH).toExternalForm(), 10.0);
     }
 
     public WeatherIcon(WeatherIconName icon, String size, String style, String styleClass) {

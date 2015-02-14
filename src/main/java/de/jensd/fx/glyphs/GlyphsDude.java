@@ -14,9 +14,10 @@
  * the License.
  *
  */
-package de.jensd.fx.fontawesome;
+package de.jensd.fx.glyphs;
 
-import de.jensd.weathericons.WeatherIconName;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.weathericons.WeatherIconName;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
@@ -32,7 +33,7 @@ import javafx.scene.text.Text;
  *
  * @author Jens Deters
  */
-public class AwesomeDude {
+public class GlyphsDude {
 
     public final static String FONT_AWESOME_TTF_PATH = "/font/fontawesome-webfont.ttf";
     public final static String WEATHER_ICONS_TTF_PATH = "/font/weathericons-regular-webfont.ttf";
@@ -40,8 +41,8 @@ public class AwesomeDude {
     public final static String DEFAULT_FONT_SIZE = "1em";
 
     static {
-        Font.loadFont(AwesomeDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
-        Font.loadFont(AwesomeDude.class.getResource(WEATHER_ICONS_TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(GlyphsDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(GlyphsDude.class.getResource(WEATHER_ICONS_TTF_PATH).toExternalForm(), 10.0);
     }
 
     /*
@@ -49,7 +50,7 @@ public class AwesomeDude {
      *
      */
     public static Text createIcon(WeatherIconName icon) {
-        return AwesomeDude.createIcon(icon, DEFAULT_ICON_SIZE);
+        return GlyphsDude.createIcon(icon, DEFAULT_ICON_SIZE);
     }
 
     public static Text createIcon(WeatherIconName icon, String iconSize) {
@@ -63,19 +64,19 @@ public class AwesomeDude {
      * Font Awesome stuff 
      *
      */
-    public static Text createIcon(AwesomeIconName icon) {
-        return AwesomeDude.createIcon(icon, DEFAULT_ICON_SIZE);
+    public static Text createIcon(FontAwesomeIconName icon) {
+        return GlyphsDude.createIcon(icon, DEFAULT_ICON_SIZE);
     }
 
-    public static Text createIcon(AwesomeIconName icon, String iconSize) {
+    public static Text createIcon(FontAwesomeIconName icon, String iconSize) {
         Text text = new Text(icon.characterToString());
         text.getStyleClass().add("awesome");
         text.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
         return text;
     }
 
-    public static Label createIconLabel(AwesomeIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
-        Text iconLabel = AwesomeDude.createIcon(icon, iconSize);
+    public static Label createIconLabel(FontAwesomeIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+        Text iconLabel = GlyphsDude.createIcon(icon, iconSize);
         Label label = new Label(text);
         label.setStyle("-fx-font-size: " + fontSize);
         label.setGraphic(iconLabel);
@@ -83,19 +84,19 @@ public class AwesomeDude {
         return label;
     }
 
-    public static Button createIconButton(AwesomeIconName icon) {
+    public static Button createIconButton(FontAwesomeIconName icon) {
         return createIconButton(icon, "");
     }
 
-    public static Button createIconButton(AwesomeIconName icon, String text) {
-        Text label = AwesomeDude.createIcon(icon, DEFAULT_ICON_SIZE);
+    public static Button createIconButton(FontAwesomeIconName icon, String text) {
+        Text label = GlyphsDude.createIcon(icon, DEFAULT_ICON_SIZE);
         Button button = new Button(text);
         button.setGraphic(label);
         return button;
     }
 
-    public static Button createIconButton(AwesomeIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
-        Text label = AwesomeDude.createIcon(icon, iconSize);
+    public static Button createIconButton(FontAwesomeIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+        Text label = GlyphsDude.createIcon(icon, iconSize);
         Button button = new Button(text);
         button.setStyle("-fx-font-size: " + fontSize);
         button.setGraphic(label);
@@ -103,12 +104,12 @@ public class AwesomeDude {
         return button;
     }
 
-    public static ToggleButton createIconToggleButton(AwesomeIconName icon, String text, String iconSize, ContentDisplay contentDisplay) {
+    public static ToggleButton createIconToggleButton(FontAwesomeIconName icon, String text, String iconSize, ContentDisplay contentDisplay) {
         return createIconToggleButton(icon, text, iconSize, DEFAULT_FONT_SIZE, contentDisplay);
     }
 
-    public static ToggleButton createIconToggleButton(AwesomeIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
-        Text label = AwesomeDude.createIcon(icon, iconSize);
+    public static ToggleButton createIconToggleButton(FontAwesomeIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+        Text label = GlyphsDude.createIcon(icon, iconSize);
         ToggleButton button = new ToggleButton(text);
         button.setStyle("-fx-font-size: " + fontSize);
         button.setGraphic(label);
@@ -122,60 +123,60 @@ public class AwesomeDude {
      * 
      * 
      */
-    public static void setIcon(Tab tab, AwesomeIconName icon) {
+    public static void setIcon(Tab tab, FontAwesomeIconName icon) {
         setIcon(tab, icon, DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(Tab tab, AwesomeIconName icon, String iconSize) {
-        tab.setGraphic(AwesomeDude.createIcon(icon, iconSize));
+    public static void setIcon(Tab tab, FontAwesomeIconName icon, String iconSize) {
+        tab.setGraphic(GlyphsDude.createIcon(icon, iconSize));
     }
 
-    public static void setIcon(Labeled labeled, AwesomeIconName icon) {
+    public static void setIcon(Labeled labeled, FontAwesomeIconName icon) {
         setIcon(labeled, icon, DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(Labeled labeled, AwesomeIconName icon, ContentDisplay contentDisplay) {
+    public static void setIcon(Labeled labeled, FontAwesomeIconName icon, ContentDisplay contentDisplay) {
         setIcon(labeled, icon, DEFAULT_ICON_SIZE, contentDisplay);
     }
 
-    public static void setIcon(Labeled labeled, AwesomeIconName icon, String iconSize) {
+    public static void setIcon(Labeled labeled, FontAwesomeIconName icon, String iconSize) {
         setIcon(labeled, icon, iconSize, ContentDisplay.LEFT);
     }
 
-    public static void setIcon(Labeled labeled, AwesomeIconName icon, String iconSize, ContentDisplay contentDisplay) {
+    public static void setIcon(Labeled labeled, FontAwesomeIconName icon, String iconSize, ContentDisplay contentDisplay) {
         if (labeled == null) {
             throw new IllegalArgumentException("The component must not be 'null'!");
         }
-        labeled.setGraphic(AwesomeDude.createIcon(icon, iconSize));
+        labeled.setGraphic(GlyphsDude.createIcon(icon, iconSize));
         labeled.setContentDisplay(contentDisplay);
     }
 
-    public static void setIcon(MenuItem menuItem, AwesomeIconName icon) {
+    public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon) {
         setIcon(menuItem, icon, DEFAULT_FONT_SIZE, DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(MenuItem menuItem, AwesomeIconName icon, String iconSize) {
+    public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon, String iconSize) {
         setIcon(menuItem, icon, DEFAULT_FONT_SIZE, iconSize);
     }
 
-    public static void setIcon(MenuItem menuItem, AwesomeIconName icon, String fontSize, String iconSize) {
+    public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon, String fontSize, String iconSize) {
         if (menuItem == null) {
             throw new IllegalArgumentException("The menu item must not be 'null'!");
         }
-        Text label = AwesomeDude.createIcon(icon, iconSize);
+        Text label = GlyphsDude.createIcon(icon, iconSize);
         menuItem.setStyle("-fx-font-size: " + fontSize);
         menuItem.setGraphic(label);
     }
 
-    public static void setIcon(TreeItem treeItem, AwesomeIconName icon) {
+    public static void setIcon(TreeItem treeItem, FontAwesomeIconName icon) {
         setIcon(treeItem, icon, DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(TreeItem treeItem, AwesomeIconName icon, String iconSize) {
+    public static void setIcon(TreeItem treeItem, FontAwesomeIconName icon, String iconSize) {
         if (treeItem == null) {
             throw new IllegalArgumentException("The tree item must not be 'null'!");
         }
-        Text label = AwesomeDude.createIcon(icon, iconSize);
+        Text label = GlyphsDude.createIcon(icon, iconSize);
         treeItem.setGraphic(label);
     }
 

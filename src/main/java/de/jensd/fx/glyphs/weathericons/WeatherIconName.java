@@ -14,7 +14,7 @@
  * the License.
  *
  */
-package de.jensd.weathericons;
+package de.jensd.fx.glyphs.weathericons;
 
 /**
  *

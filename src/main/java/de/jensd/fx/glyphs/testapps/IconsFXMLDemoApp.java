@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  *
  */
-package de.jensd.fx.fontawesome.test;
+package de.jensd.fx.glyphs.testapps;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -21,14 +21,14 @@ import javafx.stage.Stage;
  *
  * @author Jens Deters
  */
-public class IconBrowserApp extends Application {
+public class IconsFXMLDemoApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        IconsBrowser iconsBrowser = new IconsBrowser();
-        Scene scene = new Scene(iconsBrowser, 800, 600);
+        IconsFXMLDemo iconsFXMLDemo = new IconsFXMLDemo();
+        Scene scene = new Scene(iconsFXMLDemo, 800, 600);
         scene.getStylesheets().add("/styles/iconsbrowser.css");
-        primaryStage.setTitle("FontAwesomeFX Icons-Overview");
+        primaryStage.setTitle("FontAwesomeFX Icons-FXML-Demo");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

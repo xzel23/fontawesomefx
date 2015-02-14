@@ -11,12 +11,12 @@
  * governing permissions and limitations under the License.
  *
  */
-package de.jensd.fx.fontawesome.test;
+package de.jensd.fx.glyphs.testapps;
 
-import de.jensd.fx.fontawesome.AwesomeDude;
-import de.jensd.fx.fontawesome.AwesomeIconName;
-import de.jensd.fx.fontawesome.AwesomeStyle;
-import de.jensd.weathericons.WeatherIconName;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.GlyphsStyle;
+import de.jensd.fx.glyphs.weathericons.WeatherIconName;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -39,8 +39,8 @@ public class AppWeatherIcons extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text star = AwesomeDude.createIcon(AwesomeIconName.STAR,"4em");
-        Text thermometer = AwesomeDude.createIcon(WeatherIconName.THERMOMETER, "4em");
+        Text star = GlyphsDude.createIcon(FontAwesomeIconName.STAR,"4em");
+        Text thermometer = GlyphsDude.createIcon(WeatherIconName.THERMOMETER, "4em");
 
         root.getChildren().addAll(star, thermometer);
         
@@ -48,7 +48,7 @@ public class AppWeatherIcons extends Application {
         
         
         Scene scene = new Scene(root, 500, 800);
-        scene.getStylesheets().addAll(AwesomeStyle.PLAIN.getStylePath());
+        scene.getStylesheets().addAll(GlyphsStyle.DEFAULT.getStylePath());
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("FontAwesomeFX demo");
@@ -61,13 +61,13 @@ public class AppWeatherIcons extends Application {
         MenuBar menuBar = new MenuBar();
 
         MenuItem openItem = new MenuItem("Open");
-        AwesomeDude.setIcon(openItem, AwesomeIconName.FILE);
+        GlyphsDude.setIcon(openItem, FontAwesomeIconName.FILE);
         MenuItem saveItem = new MenuItem("Save");
-        AwesomeDude.setIcon(saveItem, AwesomeIconName.DOWNLOAD);
+        GlyphsDude.setIcon(saveItem, FontAwesomeIconName.DOWNLOAD);
         MenuItem saveAsItem = new MenuItem("Save As...");
-        AwesomeDude.setIcon(saveAsItem, AwesomeIconName.DOWNLOAD);
+        GlyphsDude.setIcon(saveAsItem, FontAwesomeIconName.DOWNLOAD);
         MenuItem exitItem = new MenuItem("Exit");
-        AwesomeDude.setIcon(exitItem, AwesomeIconName.SIGN_OUT);
+        GlyphsDude.setIcon(exitItem, FontAwesomeIconName.SIGN_OUT);
 
         Menu menuFile = new Menu("File");
         menuFile.getItems().add(openItem);

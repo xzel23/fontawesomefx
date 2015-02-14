@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  *
  */
-package de.jensd.fx.fontawesome.test;
+package de.jensd.fx.glyphs.testapps;
 
 import java.io.IOException;
 import java.net.URL;

@@ -14,11 +14,11 @@
  * the License.
  *
  */
-package de.jensd.fx.fontawesome.test;
+package de.jensd.fx.glyphs.testapps;
 
-import de.jensd.fx.fontawesome.AwesomeDude;
-import de.jensd.fx.fontawesome.AwesomeIconName;
-import de.jensd.weathericons.WeatherIconName;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.weathericons.WeatherIconName;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -85,7 +85,7 @@ public class IconsBrowser extends VBox {
     void initialize() {
         AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
         WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
-        listAwesome = Stream.of(AwesomeIconName.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        listAwesome = Stream.of(FontAwesomeIconName.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         listWeather = Stream.of(WeatherIconName.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
     }
@@ -107,9 +107,9 @@ public class IconsBrowser extends VBox {
         updateBrowser(listWeather);
     }
 
-    private static Button createIconButton(final AwesomeIconName icon, final String text) {
+    private static Button createIconButton(final FontAwesomeIconName icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-        Text iconText = AwesomeDude.createIcon(icon, "2em");
+        Text iconText = GlyphsDude.createIcon(icon, "2em");
         Button b = new Button(text);
         b.setContentDisplay(ContentDisplay.TOP);
         b.setGraphic(iconText);
@@ -126,7 +126,7 @@ public class IconsBrowser extends VBox {
 
     private static Button createIconButton(final WeatherIconName icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-        Text iconText = AwesomeDude.createIcon(icon, "2em");
+        Text iconText = GlyphsDude.createIcon(icon, "2em");
         Button b = new Button(text);
         b.setContentDisplay(ContentDisplay.TOP);
         b.setGraphic(iconText);

@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  *
  */
-package de.jensd.fx.fontawesome;
+package de.jensd.fx.glyphs.fontawesome;
 
 /**
  *
@@ -22,7 +22,7 @@ package de.jensd.fx.fontawesome;
  *
  * @author Jens Deters
  */
-public enum AwesomeIconName {
+public enum FontAwesomeIconName {
 
     ADJUST('\uf042'),
     ADN('\uf170'),
@@ -620,7 +620,7 @@ public enum AwesomeIconName {
 
     private final char character;
 
-    private AwesomeIconName(char character) {
+    private FontAwesomeIconName(char character) {
         this.character = character;
     }
 

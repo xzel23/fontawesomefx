@@ -2,10 +2,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.jensd</groupId>
     <artifactId>fontawesomefx</artifactId>
-    <version>8.0.14-SNAPSHOT</version>
+    <version>8.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>FontAwesomeFX</name>
-    <inceptionYear>2013</inceptionYear>
+    <inceptionYear>2015</inceptionYear>
     <description>Use Font Awesome as icon-provider with JavaFX.</description>
     <url>http://www.jensd.de</url>
     <licenses>
