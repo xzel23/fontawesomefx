@@ -23,19 +23,19 @@ import javafx.scene.layout.StackPane;
  *
  * @author Jens Deters
  */
-public class GlyphsIconsStack extends StackPane {
+public class GlyphsStack extends StackPane {
 
-    public static GlyphsIconsStack create() {
-        return new GlyphsIconsStack();
+    public static GlyphsStack create() {
+        return new GlyphsStack();
     }
 
 
-    public GlyphsIconsStack add(FontAwesomeIcon icon) {
+    public GlyphsStack add(FontAwesomeIcon icon) {
         getChildren().add(icon);
         return this;
     }
 
-    public GlyphsIconsStack remove(FontAwesomeIcon icon) {
+    public GlyphsStack remove(FontAwesomeIcon icon) {
         getChildren().remove(icon);
         return this;
     }

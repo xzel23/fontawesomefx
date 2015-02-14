@@ -21,11 +21,11 @@ import javafx.stage.Stage;
  *
  * @author Jens Deters
  */
-public class IconsFXMLDemoApp extends Application {
+public class GlyphsFXMLDemoApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        IconsFXMLDemo iconsFXMLDemo = new IconsFXMLDemo();
+        GlyphsFXMLDemo iconsFXMLDemo = new GlyphsFXMLDemo();
         Scene scene = new Scene(iconsFXMLDemo, 800, 600);
         scene.getStylesheets().add("/styles/iconsbrowser.css");
         primaryStage.setTitle("FontAwesomeFX Icons-FXML-Demo");

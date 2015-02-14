@@ -13,6 +13,8 @@
  */
 package de.jensd.fx.glyphs.fontawesome;
 
+import de.jensd.fx.glyphs.GlyphIconName;
+
 /**
  *
  * Icon Enum based on Font-Awesome v4.1.0
@@ -22,7 +24,7 @@ package de.jensd.fx.glyphs.fontawesome;
  *
  * @author Jens Deters
  */
-public enum FontAwesomeIconName {
+public enum FontAwesomeIconName implements GlyphIconName {
 
     ADJUST('\uf042'),
     ADN('\uf170'),
@@ -624,14 +626,17 @@ public enum FontAwesomeIconName {
         this.character = character;
     }
 
-    public Character getChar() {
+    @Override
+    public char getChar() {
         return character;
     }
 
+    @Override
     public String unicodeToString() {
         return String.format("\\u%04x", (int) character);
     }
 
+    @Override
     public String characterToString() {
         return Character.toString(character);
     }

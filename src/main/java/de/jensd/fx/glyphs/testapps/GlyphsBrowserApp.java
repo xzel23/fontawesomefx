@@ -21,11 +21,11 @@ import javafx.stage.Stage;
  *
  * @author Jens Deters
  */
-public class IconBrowserApp extends Application {
+public class GlyphsBrowserApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        IconsBrowser iconsBrowser = new IconsBrowser();
+        GlyphsBrowser iconsBrowser = new GlyphsBrowser();
         Scene scene = new Scene(iconsBrowser, 800, 600);
         scene.getStylesheets().add("/styles/iconsbrowser.css");
         primaryStage.setTitle("FontAwesomeFX Icons-Overview");

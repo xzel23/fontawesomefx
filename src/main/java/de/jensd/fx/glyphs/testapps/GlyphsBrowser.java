@@ -46,7 +46,7 @@ import javafx.scene.text.Text;
  *
  * @author Jens Deters
  */
-public class IconsBrowser extends VBox {
+public class GlyphsBrowser extends VBox {
 
     @FXML
     private ResourceBundle resources;
@@ -64,20 +64,20 @@ public class IconsBrowser extends VBox {
     private List<Button> listAwesome;
     private List<Button> listWeather;
 
-    public IconsBrowser() {
+    public GlyphsBrowser() {
         init();
     }
 
     private void init() {
         try {
             ResourceBundle resourceBundle = ResourceBundle.getBundle("i18n/messages");
-            URL fxmlURL = getClass().getResource("/fxml/iconsbrowser.fxml");
+            URL fxmlURL = getClass().getResource("/fxml/glyphs_browser.fxml");
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL, resourceBundle);
             fxmlLoader.setRoot(this);
             fxmlLoader.setController(this);
             fxmlLoader.load();
         } catch (IOException ex) {
-            Logger.getLogger(IconsBrowser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GlyphsBrowser.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

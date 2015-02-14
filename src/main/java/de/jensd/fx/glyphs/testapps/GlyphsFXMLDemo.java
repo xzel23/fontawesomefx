@@ -26,22 +26,22 @@ import javafx.scene.layout.VBox;
  *
  * @author Jens Deters
  */
-public class IconsFXMLDemo extends VBox {
+public class GlyphsFXMLDemo extends VBox {
 
-    public IconsFXMLDemo() {
+    public GlyphsFXMLDemo() {
         init();
     }
 
     private void init() {
         try {
             ResourceBundle resourceBundle = ResourceBundle.getBundle("i18n/messages");
-            URL fxmlURL = getClass().getResource("/fxml/iconsdemo.fxml");
+            URL fxmlURL = getClass().getResource("/fxml/glyphs_fxml_demo.fxml");
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL, resourceBundle);
             fxmlLoader.setRoot(this);
             fxmlLoader.setController(this);
             fxmlLoader.load();
         } catch (IOException ex) {
-            Logger.getLogger(IconsFXMLDemo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GlyphsFXMLDemo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

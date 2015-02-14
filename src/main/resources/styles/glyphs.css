@@ -1,10 +1,7 @@
 .root{
     -icons-color: -fx-text-base-color;
-    -icons-hover-effect: dropshadow( three-pass-box , derive(-icons-color,0%) , 0.01em, 0.0 , 0, 0);
-    -icons-selected-effect: dropshadow( three-pass-box , derive(-icons-color,0%) , 0.01em, 0.0 , 0, 0);
     -top-icons-color: white;
     -base-icons-color: black;
-
 }
 
 .awesome{
@@ -12,14 +9,6 @@
     -fx-font-size: 16px;
     -fx-text-fill: -icons-color;
     -fx-fill: -icons-color;
-}
-
-.awesome:hover{
-    -fx-effect: -icons-hover-effect;
-}
-
-.awesome:selected{
-    -fx-effect: -icons-selected-effect;
 }
 
 .weather{
