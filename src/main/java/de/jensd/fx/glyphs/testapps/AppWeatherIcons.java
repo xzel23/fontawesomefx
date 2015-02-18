@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013,2014 Jens Deters http://www.jensd.de
+ * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
  *
@@ -13,7 +13,6 @@ package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
-import de.jensd.fx.glyphs.GlyphsStyle;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import de.jensd.fx.glyphs.weathericons.WeatherIconName;
 import javafx.application.Application;

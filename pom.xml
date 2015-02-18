@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <name>FontAwesomeFX</name>
     <inceptionYear>2015</inceptionYear>
-    <description>Use Font Awesome as icon-provider with JavaFX.</description>
+    <description>Use WebFonts as icon source for JavaFX applications.</description>
     <url>http://www.jensd.de</url>
     <licenses>
         <license>
@@ -37,7 +37,7 @@
     </organization>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>de.jensd.fx.fontawesome.test.IconOverviewApp</mainClass>
+        <mainClass>de.jensd.fx.glyphs.testapps.GlyphsBrowserApp</mainClass>
     </properties>
     <distributionManagement>
         <snapshotRepository>

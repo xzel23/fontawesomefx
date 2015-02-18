@@ -15,7 +15,7 @@ import de.jensd.fx.glyphs.GlyphIcon;
 import javafx.scene.text.Font;
 
 /**
- *
+ * 
  * @author Jens Deters
  */
 public class FontAwesomeIcon extends GlyphIcon<FontAwesomeIconName> {

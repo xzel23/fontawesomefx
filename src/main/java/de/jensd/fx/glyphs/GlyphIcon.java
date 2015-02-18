@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014 Jens Deters http://www.jensd.de
+ * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -23,11 +23,12 @@ import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
 /**
- *
+ * A GlyphIcon represents an Icon Node.
+ * 
  * @author Jens Deters
  * @param <T>
  */
-public class GlyphIcon<T extends Enum<T>> extends Text {
+public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     public final static String DEFAULT_ICON_SIZE = "16.0";
     public final static String DEFAULT_FONT_SIZE = "1em";
