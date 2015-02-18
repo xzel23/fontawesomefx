@@ -13,7 +13,6 @@
  */
 package de.jensd.fx.glyphs;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.scene.layout.StackPane;
 
 /**
@@ -27,12 +26,12 @@ public class GlyphsStack extends StackPane {
     }
 
 
-    public GlyphsStack add(FontAwesomeIcon icon) {
+    public GlyphsStack add(GlyphIcon icon) {
         getChildren().add(icon);
         return this;
     }
 
-    public GlyphsStack remove(FontAwesomeIcon icon) {
+    public GlyphsStack remove(GlyphIcon icon) {
         getChildren().remove(icon);
         return this;
     }
