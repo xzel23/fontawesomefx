@@ -648,9 +648,4 @@ public enum FontAwesomeIconName implements GlyphIconName {
         return "FontAwesome";
     }
 
-    @Override
-    public String getFontPath() {
-        return "/de/jensd/fx/glyphs/fontawesome/fontawesome-webfont.ttf";
-    }
-
 }
