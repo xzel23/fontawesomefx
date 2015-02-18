@@ -51,16 +51,16 @@ public class App extends Application {
         ToggleButton toggleButton = GlyphsDude.createIconToggleButton(FontAwesomeIconName.LOCK, "Lock", "60.0", ContentDisplay.TOP);
         Region stackedIcon1 = GlyphsStack.create().add(new FontAwesomeIcon());
 //        Region stackedIcon2 = GlyphsStack.create()
-//                .add(FontAwesomeIcon.create()
+//                .add(FontAwesomeIcon.
 //                        .icon(FontAwesomeIconName.SQUARE)
 //                        .size("3em")
-//                        .styleClass("stack-base"))
+//                        .glyphStyleClass("stack-base"))
 //                .add(FontAwesomeIcon.create()
 //                        .icon(FontAwesomeIconName.STAR)
 //                        .size("2em")
-//                        .styleClass("stack-top")
+//                        .glyphStyleClass("stack-top")
 //                );
-//
+
 //        Region stackedIcon3 = GlyphsStack.create()
 //                .add(FontAwesomeIcon.create()
 //                        .icon(FontAwesomeIconName.SQUARE)
@@ -107,7 +107,6 @@ public class App extends Application {
 //                                + "-fx-fill: linear-gradient(#ffffff, #d2d2d2); "
 //                                + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
 //                );
-
         HBox stackIconBox = new HBox();
         stackIconBox.setSpacing(5.0);
         stackIconBox.setPadding(new Insets(10.0));
@@ -129,7 +128,7 @@ public class App extends Application {
 //        stackIconBox2.setPadding(new Insets(10.0));
 //        stackIconBox2.getChildren().addAll(iconStack1);
 //
-//        root.getChildren().addAll(createMenubar(), githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox, stackIconBox2);
+        root.getChildren().addAll(createMenubar(), githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox);
 
         Scene scene = new Scene(root, 500, 800);
         scene.getStylesheets().addAll(GlyphsStyle.RED.getStylePath());

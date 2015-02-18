@@ -14,4 +14,8 @@ public interface GlyphIconName {
 
     char getChar();
 
+    String getFontFamily();
+    
+    String getFontPath();
+
 }

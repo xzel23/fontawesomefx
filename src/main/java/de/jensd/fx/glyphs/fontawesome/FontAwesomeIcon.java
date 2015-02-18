@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014 Jens Deters http://www.jensd.de
+ * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
  *
@@ -11,30 +11,27 @@
  */
 package de.jensd.fx.glyphs.fontawesome;
 
-import de.jensd.fx.glyphs.GlyphIcon;
-import de.jensd.fx.glyphs.GlyphsDude;
-import static de.jensd.fx.glyphs.GlyphsDude.FONT_AWESOME_TTF_PATH;
+import de.jensd.fx.glyphs.Glyph;
 import javafx.scene.text.Font;
 
 /**
  *
  * @author Jens Deters
  */
-public class FontAwesomeIcon extends GlyphIcon {
+public class FontAwesomeIcon extends Glyph<FontAwesomeIconName> {
+
+    public final static String TTF_PATH = "/de/jensd/fx/glyphs/fontawesome/fontawesome-webfont.ttf";
 
     static {
-        Font.loadFont(GlyphsDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(FontAwesomeIcon.class.getResource(TTF_PATH).toExternalForm(), 10.0);
     }
 
     public FontAwesomeIcon() {
-        setGlyphStyleClass("awesome");
-        setGlyphFontFamily("FontAwesome");
         setIcon(FontAwesomeIconName.ANCHOR);
     }
 
-    @Override
-    protected String lookupIconChar(String iconName) {
-        return FontAwesomeIconName.valueOf(iconName).characterToString();
+    public static FontAwesomeIcon create() {
+        return new FontAwesomeIcon();
     }
 
 }

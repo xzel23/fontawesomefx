@@ -1,22 +1,19 @@
 /**
  * Copyright (c) 2013,2014 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.glyphs;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import de.jensd.fx.glyphs.weathericons.WeatherIconName;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -35,14 +32,12 @@ import javafx.scene.text.Text;
  */
 public class GlyphsDude {
 
-    public final static String FONT_AWESOME_TTF_PATH = "/font/fontawesome-webfont.ttf";
-    public final static String WEATHER_ICONS_TTF_PATH = "/font/weathericons-regular-webfont.ttf";
     public final static String DEFAULT_ICON_SIZE = "16.0";
     public final static String DEFAULT_FONT_SIZE = "1em";
 
     static {
-        Font.loadFont(GlyphsDude.class.getResource(FONT_AWESOME_TTF_PATH).toExternalForm(), 10.0);
-        Font.loadFont(GlyphsDude.class.getResource(WEATHER_ICONS_TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(GlyphsDude.class.getResource(FontAwesomeIcon.TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(GlyphsDude.class.getResource(WeatherIcon.TTF_PATH).toExternalForm(), 10.0);
     }
 
     /*
@@ -55,8 +50,7 @@ public class GlyphsDude {
 
     public static Text createIcon(WeatherIconName icon, String iconSize) {
         Text text = new Text(icon.characterToString());
-        text.getStyleClass().add("weather");
-        text.setStyle("-fx-font-family: 'weather icons'; -fx-font-size: " + iconSize + ";");
+        text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;",icon.getFontFamily(), iconSize));
         return text;
     }
 
@@ -70,7 +64,7 @@ public class GlyphsDude {
 
     public static Text createIcon(FontAwesomeIconName icon, String iconSize) {
         Text text = new Text(icon.characterToString());
-        text.getStyleClass().add("awesome");
+        text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.getFontFamily(), iconSize));
         text.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
         return text;
     }
@@ -123,6 +117,7 @@ public class GlyphsDude {
      * 
      * 
      */
+    
     public static void setIcon(Tab tab, FontAwesomeIconName icon) {
         setIcon(tab, icon, DEFAULT_ICON_SIZE);
     }

@@ -220,4 +220,14 @@ public enum WeatherIconName implements GlyphIconName {
         return Character.toString(character);
     }
 
+    @Override
+    public String getFontFamily() {
+        return "\'weather icons\'";
+    }
+
+    @Override
+    public String getFontPath() {
+        return "/de/jensd/fx/glyphs/weathericons/weathericons-regular-webfont.ttf";
+    }
+
 }

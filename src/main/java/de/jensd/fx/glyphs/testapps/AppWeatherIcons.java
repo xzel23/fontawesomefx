@@ -1,14 +1,12 @@
 /**
  * Copyright (c) 2013,2014 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS"
- * BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.glyphs.testapps;
@@ -16,6 +14,7 @@ package de.jensd.fx.glyphs.testapps;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
 import de.jensd.fx.glyphs.GlyphsStyle;
+import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import de.jensd.fx.glyphs.weathericons.WeatherIconName;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -39,17 +38,16 @@ public class AppWeatherIcons extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text star = GlyphsDude.createIcon(FontAwesomeIconName.STAR,"4em");
+        Text star = GlyphsDude.createIcon(FontAwesomeIconName.STAR, "4em");
         Text thermometer = GlyphsDude.createIcon(WeatherIconName.THERMOMETER, "4em");
 
-        root.getChildren().addAll(star, thermometer);
+        WeatherIcon umbrellaIcon = new WeatherIcon();
         
+                
         
-        
-        
-        Scene scene = new Scene(root, 500, 800);
-        scene.getStylesheets().addAll(GlyphsStyle.DEFAULT.getStylePath());
+        root.getChildren().addAll(star, thermometer, umbrellaIcon);
 
+        Scene scene = new Scene(root, 500, 800);
         primaryStage.setScene(scene);
         primaryStage.setTitle("FontAwesomeFX demo");
         primaryStage.show();
