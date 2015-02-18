@@ -26,7 +26,7 @@ import javafx.scene.text.Text;
  * A GlyphIcon represents an Icon Node.
  * 
  * @author Jens Deters
- * @param <T>
+ * @param <T> The type of GlyphIconName enum.
  */
 public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
