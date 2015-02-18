@@ -11,14 +11,14 @@
  */
 package de.jensd.fx.glyphs.fontawesome;
 
-import de.jensd.fx.glyphs.Glyph;
+import de.jensd.fx.glyphs.GlyphIcon;
 import javafx.scene.text.Font;
 
 /**
  *
  * @author Jens Deters
  */
-public class FontAwesomeIcon extends Glyph<FontAwesomeIconName> {
+public class FontAwesomeIcon extends GlyphIcon<FontAwesomeIconName> {
 
     public final static String TTF_PATH = "/de/jensd/fx/glyphs/fontawesome/fontawesome-webfont.ttf";
 

@@ -32,9 +32,6 @@ import javafx.scene.text.Text;
  */
 public class GlyphsDude {
 
-    public final static String DEFAULT_ICON_SIZE = "16.0";
-    public final static String DEFAULT_FONT_SIZE = "1em";
-
     static {
         Font.loadFont(GlyphsDude.class.getResource(FontAwesomeIcon.TTF_PATH).toExternalForm(), 10.0);
         Font.loadFont(GlyphsDude.class.getResource(WeatherIcon.TTF_PATH).toExternalForm(), 10.0);
@@ -45,7 +42,7 @@ public class GlyphsDude {
      *
      */
     public static Text createIcon(WeatherIconName icon) {
-        return GlyphsDude.createIcon(icon, DEFAULT_ICON_SIZE);
+        return GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
     public static Text createIcon(WeatherIconName icon, String iconSize) {
@@ -59,7 +56,7 @@ public class GlyphsDude {
      *
      */
     public static Text createIcon(FontAwesomeIconName icon) {
-        return GlyphsDude.createIcon(icon, DEFAULT_ICON_SIZE);
+        return GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
     public static Text createIcon(FontAwesomeIconName icon, String iconSize) {
@@ -83,7 +80,7 @@ public class GlyphsDude {
     }
 
     public static Button createIconButton(FontAwesomeIconName icon, String text) {
-        Text label = GlyphsDude.createIcon(icon, DEFAULT_ICON_SIZE);
+        Text label = GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
         Button button = new Button(text);
         button.setGraphic(label);
         return button;
@@ -99,7 +96,7 @@ public class GlyphsDude {
     }
 
     public static ToggleButton createIconToggleButton(FontAwesomeIconName icon, String text, String iconSize, ContentDisplay contentDisplay) {
-        return createIconToggleButton(icon, text, iconSize, DEFAULT_FONT_SIZE, contentDisplay);
+        return createIconToggleButton(icon, text, iconSize, GlyphIcon.DEFAULT_FONT_SIZE, contentDisplay);
     }
 
     public static ToggleButton createIconToggleButton(FontAwesomeIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
@@ -119,7 +116,7 @@ public class GlyphsDude {
      */
     
     public static void setIcon(Tab tab, FontAwesomeIconName icon) {
-        setIcon(tab, icon, DEFAULT_ICON_SIZE);
+        setIcon(tab, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
     public static void setIcon(Tab tab, FontAwesomeIconName icon, String iconSize) {
@@ -127,11 +124,11 @@ public class GlyphsDude {
     }
 
     public static void setIcon(Labeled labeled, FontAwesomeIconName icon) {
-        setIcon(labeled, icon, DEFAULT_ICON_SIZE);
+        setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
     public static void setIcon(Labeled labeled, FontAwesomeIconName icon, ContentDisplay contentDisplay) {
-        setIcon(labeled, icon, DEFAULT_ICON_SIZE, contentDisplay);
+        setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE, contentDisplay);
     }
 
     public static void setIcon(Labeled labeled, FontAwesomeIconName icon, String iconSize) {
@@ -147,11 +144,11 @@ public class GlyphsDude {
     }
 
     public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon) {
-        setIcon(menuItem, icon, DEFAULT_FONT_SIZE, DEFAULT_ICON_SIZE);
+        setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
     public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon, String iconSize) {
-        setIcon(menuItem, icon, DEFAULT_FONT_SIZE, iconSize);
+        setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, iconSize);
     }
 
     public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon, String fontSize, String iconSize) {
@@ -164,7 +161,7 @@ public class GlyphsDude {
     }
 
     public static void setIcon(TreeItem treeItem, FontAwesomeIconName icon) {
-        setIcon(treeItem, icon, DEFAULT_ICON_SIZE);
+        setIcon(treeItem, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
     public static void setIcon(TreeItem treeItem, FontAwesomeIconName icon, String iconSize) {

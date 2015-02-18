@@ -1,16 +1,22 @@
 /**
  * Copyright (c) 2014 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
  */
 package de.jensd.fx.glyphs;
 
+import java.lang.reflect.ParameterizedType;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
@@ -19,17 +25,29 @@ import javafx.scene.text.Text;
 /**
  *
  * @author Jens Deters
+ * @param <T>
  */
-public abstract class GlyphIcon extends Text {
+public class GlyphIcon<T extends Enum<T>> extends Text {
+
+    public final static String DEFAULT_ICON_SIZE = "16.0";
+    public final static String DEFAULT_FONT_SIZE = "1em";
 
     private StringProperty glyphStyleClass;
-    private StringProperty glyphFontFamily;
     private StringProperty size;
     private StringProperty glyphStyle;
     private StringProperty iconName;
+    private final Class<T> typeOfT;
 
     @FXML
     public void init() {
+
+    }
+
+    public GlyphIcon() {
+        this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
+                .getGenericSuperclass())
+                .getActualTypeArguments()[0];
+        setGlyphStyleClass(null);
 
     }
 
@@ -54,21 +72,6 @@ public abstract class GlyphIcon extends Text {
         return this;
     }
 
-    public StringProperty glyphFontFamilyProperty() {
-        if (glyphFontFamily == null) {
-            glyphFontFamily = new SimpleStringProperty();
-        }
-        return glyphFontFamily;
-    }
-
-    public String getGlyphFontFamily() {
-        return glyphFontFamilyProperty().getValue();
-    }
-
-    public void setGlyphFontFamily(String glyphFontFamily) {
-        glyphFontFamilyProperty().setValue(glyphFontFamily);
-    }
-
     public final StringProperty glyphStyleProperty() {
         if (glyphStyle == null) {
             glyphStyle = new SimpleStringProperty("");
@@ -90,15 +93,19 @@ public abstract class GlyphIcon extends Text {
         return this;
     }
 
+    private GlyphIconName getGlyphIconName() {
+        return ((GlyphIconName) Enum.valueOf(typeOfT, getIconName()));
+    }
+
     private void updateStyle() {
-        setText(lookupIconChar(getIconName()));
-        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", getGlyphFontFamily(), getSize(), getGlyphStyle());
+        setText(getGlyphIconName().characterToString());
+        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", getGlyphIconName().getFontFamily(), getSize(), getGlyphStyle());
         setStyle(style);
     }
 
     public final StringProperty sizeProperty() {
         if (size == null) {
-            size = new SimpleStringProperty("1em");
+            size = new SimpleStringProperty(DEFAULT_FONT_SIZE);
         }
         return size;
     }
@@ -108,7 +115,7 @@ public abstract class GlyphIcon extends Text {
     }
 
     public final void setSize(String size) {
-        size = (size == null || size.isEmpty()) ? "1em" : size;
+        size = (size == null || size.isEmpty()) ? DEFAULT_FONT_SIZE : size;
         sizeProperty().setValue(size);
         updateStyle();
     }
@@ -137,12 +144,5 @@ public abstract class GlyphIcon extends Text {
     public final void setIcon(GlyphIconName icon) {
         setIconName(icon.name());
     }
-
-    public final GlyphIcon icon(GlyphIconName icon) {
-        setIcon(icon);
-        return this;
-    }
-
-    protected abstract String lookupIconChar(String iconName);
 
 }

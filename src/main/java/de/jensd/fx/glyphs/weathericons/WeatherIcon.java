@@ -5,14 +5,14 @@
  */
 package de.jensd.fx.glyphs.weathericons;
 
-import de.jensd.fx.glyphs.Glyph;
+import de.jensd.fx.glyphs.GlyphIcon;
 import javafx.scene.text.Font;
 
 /**
  *
  * @author Jens Deters (mail@jensd.de)
  */
-public class WeatherIcon extends Glyph<WeatherIconName> {
+public class WeatherIcon extends GlyphIcon<WeatherIconName> {
 
     public final static String TTF_PATH = "/de/jensd/fx/glyphs/weathericons/weathericons-regular-webfont.ttf";
     public final static String FONT_FAMILY = "\'weather icons\'";
