@@ -64,7 +64,7 @@ public class GlyphsDude {
 
     public static Text createIcon(WeatherIconName icon, String iconSize) {
         Text text = new Text(icon.characterToString());
-        text.getStyleClass().add("weather-icon");
+        text.getStyleClass().add("glyph-icon");
         text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;",icon.getFontFamily(), iconSize));
         return text;
     }
@@ -79,7 +79,7 @@ public class GlyphsDude {
 
     public static Text createIcon(FontAwesomeIconName icon, String iconSize) {
         Text text = new Text(icon.characterToString());
-        text.getStyleClass().add("font-awesome");
+        text.getStyleClass().add("glyph-icon");
         text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.getFontFamily(), iconSize));
         return text;
     }

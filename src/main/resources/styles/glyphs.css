@@ -4,16 +4,7 @@
     -base-icons-color: black;
 }
 
-.font-awesome{
-    -fx-font-family:  FontAwesome;
-    -fx-font-size: 16px;
-    -fx-text-fill: -icons-color;
-    -fx-fill: -icons-color;
-}
-
-.weather-icon{
-    -fx-font-family:  'weather icons';
-    -fx-font-size: 16px;
+.glyph-icon{
     -fx-text-fill: -icons-color;
     -fx-fill: -icons-color;
 }

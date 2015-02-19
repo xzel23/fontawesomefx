@@ -48,7 +48,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
-        setGlyphStyleClass(null);
+        setGlyphStyleClass("glyph-icon");
 
     }
 
