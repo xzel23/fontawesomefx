@@ -1,5 +1,5 @@
 .root{
-    -icons-color: -fx-text-base-color;
+    -icons-color: red;//-fx-text-base-color;
     -top-icons-color: white;
     -base-icons-color: black;
 }
@@ -16,7 +16,6 @@
     -fx-font-size: 16px;
     -fx-text-fill: -icons-color;
     -fx-fill: -icons-color;
-
 }
 
 .stack-base{
@@ -29,6 +28,15 @@
     -fx-font-size: 2em;
     -fx-text-fill: -top-icons-color;
     -fx-fill: -top-icons-color;
+}
+
+
+.exit-button{
+    -icons-color: gray;
+}
+
+.alien-button{
+    -icons-color: yellowgreen;
 }
 
 

@@ -1,17 +1,12 @@
 /**
  * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.glyphs.testapps;
@@ -52,6 +47,15 @@ public class App extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
+        Button testButton = new Button();
+        testButton.getStyleClass().add("exit-button");
+        GlyphsDude.setIcon(testButton, FontAwesomeIconName.POWER_OFF, "6em");
+
+        Button testButton2 = new Button();
+        testButton2.getStyleClass().add("alien-button");
+        GlyphsDude.setIcon(testButton2, WeatherIconName.ALIEN, "6em");
+
+        
         Text githubLabel = GlyphsDude.createIcon(FontAwesomeIconName.GITHUB);
         Text ambulanceLabel = GlyphsDude.createIcon(FontAwesomeIconName.PLUS_SQUARE_ALT, "60.0");
         Button starButton = GlyphsDude.createIconButton(FontAwesomeIconName.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
@@ -158,8 +162,7 @@ public class App extends Application {
                         .build()
                 );
 
-        
-         Region iconStack3 = GlyphsStack.create()
+        Region iconStack3 = GlyphsStack.create()
                 .add(GlyphsBuilder.create(FontAwesomeIcon.class)
                         .icon(FontAwesomeIconName.CIRCLE)
                         .size("12em")
@@ -169,8 +172,8 @@ public class App extends Application {
                 .add(GlyphsBuilder.create(WeatherIcon.class)
                         .icon(WeatherIconName.RAIN)
                         .size("4em")
-                        .style("-fx-fill: linear-gradient(#ffffff 0%, #d2d2d2); " +
-                               "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
+                        .style("-fx-fill: linear-gradient(#ffffff 0%, #d2d2d2); "
+                                + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
                         .build()
                 )
                 .add(GlyphsBuilder.create(FontAwesomeIcon.class)
@@ -180,16 +183,15 @@ public class App extends Application {
                         .build()
                 );
 
-      
         HBox stackIconBox2 = new HBox();
         stackIconBox2.setSpacing(5.0);
         stackIconBox2.setPadding(new Insets(10.0));
         stackIconBox2.getChildren().addAll(iconStack1, iconStack3);
 
-        root.getChildren().addAll(createMenubar(), githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
+        root.getChildren().addAll(createMenubar(), testButton, testButton2, githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 
         Scene scene = new Scene(root, 500, 800);
-        scene.getStylesheets().addAll(GlyphsStyle.RED.getStylePath());
+        scene.getStylesheets().addAll(GlyphsStyle.DEFAULT.getStylePath());
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("FontAwesomeFX demo");

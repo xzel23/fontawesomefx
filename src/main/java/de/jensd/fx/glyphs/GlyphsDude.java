@@ -39,6 +39,21 @@ public class GlyphsDude {
         Font.loadFont(GlyphsDude.class.getResource(WeatherIcon.TTF_PATH).toExternalForm(), 10.0);
     }
 
+    
+    public static Text createIcon(GlyphIconName icon) {
+        return GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
+    }
+
+    public static Text createIcon(GlyphIconName icon, String iconSize) {
+        if(icon instanceof FontAwesomeIconName){
+            return createIcon((FontAwesomeIconName)icon, iconSize);
+        }else if(icon instanceof WeatherIconName){
+            return createIcon((WeatherIconName)icon, iconSize);
+        }
+        return new Text("ICON NOT FOUND");
+    }
+    
+    
     /*
      * Weather Icons stuff 
      *
@@ -49,6 +64,7 @@ public class GlyphsDude {
 
     public static Text createIcon(WeatherIconName icon, String iconSize) {
         Text text = new Text(icon.characterToString());
+        text.getStyleClass().add("weather-icon");
         text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;",icon.getFontFamily(), iconSize));
         return text;
     }
@@ -63,8 +79,8 @@ public class GlyphsDude {
 
     public static Text createIcon(FontAwesomeIconName icon, String iconSize) {
         Text text = new Text(icon.characterToString());
+        text.getStyleClass().add("font-awesome");
         text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.getFontFamily(), iconSize));
-        text.setStyle("-fx-font-family: FontAwesome; -fx-font-size: " + iconSize + ";");
         return text;
     }
 
@@ -117,27 +133,27 @@ public class GlyphsDude {
      * 
      */
     
-    public static void setIcon(Tab tab, FontAwesomeIconName icon) {
+    public static void setIcon(Tab tab, GlyphIconName icon) {
         setIcon(tab, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(Tab tab, FontAwesomeIconName icon, String iconSize) {
+    public static void setIcon(Tab tab, GlyphIconName icon, String iconSize) {
         tab.setGraphic(GlyphsDude.createIcon(icon, iconSize));
     }
 
-    public static void setIcon(Labeled labeled, FontAwesomeIconName icon) {
+    public static void setIcon(Labeled labeled, GlyphIconName icon) {
         setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(Labeled labeled, FontAwesomeIconName icon, ContentDisplay contentDisplay) {
+    public static void setIcon(Labeled labeled, GlyphIconName icon, ContentDisplay contentDisplay) {
         setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE, contentDisplay);
     }
 
-    public static void setIcon(Labeled labeled, FontAwesomeIconName icon, String iconSize) {
+    public static void setIcon(Labeled labeled, GlyphIconName icon, String iconSize) {
         setIcon(labeled, icon, iconSize, ContentDisplay.LEFT);
     }
 
-    public static void setIcon(Labeled labeled, FontAwesomeIconName icon, String iconSize, ContentDisplay contentDisplay) {
+    public static void setIcon(Labeled labeled, GlyphIconName icon, String iconSize, ContentDisplay contentDisplay) {
         if (labeled == null) {
             throw new IllegalArgumentException("The component must not be 'null'!");
         }
@@ -145,15 +161,15 @@ public class GlyphsDude {
         labeled.setContentDisplay(contentDisplay);
     }
 
-    public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon) {
+    public static void setIcon(MenuItem menuItem, GlyphIconName icon) {
         setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon, String iconSize) {
+    public static void setIcon(MenuItem menuItem, GlyphIconName icon, String iconSize) {
         setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, iconSize);
     }
 
-    public static void setIcon(MenuItem menuItem, FontAwesomeIconName icon, String fontSize, String iconSize) {
+    public static void setIcon(MenuItem menuItem, GlyphIconName icon, String fontSize, String iconSize) {
         if (menuItem == null) {
             throw new IllegalArgumentException("The menu item must not be 'null'!");
         }
