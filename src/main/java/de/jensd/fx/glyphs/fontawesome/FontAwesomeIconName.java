@@ -638,14 +638,14 @@ public enum FontAwesomeIconName implements GlyphIconName {
         return Character.toString(character);
     }
 
-    @Override
-    public String toString() {
-        return Character.toString(character);
-    }
+//    @Override
+//    public String toString() {
+//        return Character.toString(character);
+//    }
 
     @Override
     public String getFontFamily() {
         return "FontAwesome";
     }
-
+    
 }

@@ -17,6 +17,7 @@
 package de.jensd.fx.glyphs;
 
 import java.lang.reflect.ParameterizedType;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
