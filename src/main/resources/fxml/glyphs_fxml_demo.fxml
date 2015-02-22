@@ -14,12 +14,13 @@
     <children>
         <VBox alignment="CENTER" spacing="10.0">
             <children>
-                <FontAwesomeIcon iconName="STAR" size="12em" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"/>
-                <WeatherIcon iconName="CLOUD" size="12em" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"/>
+                <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="STAR" size="12em" />
+            <WeatherIcon />
+                <WeatherIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="CLOUD" size="12em" />
                 <StackPane>
                     <children>
-                        <FontAwesomeIcon iconName="CIRCLE" size="24em" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"/>
-                        <FontAwesomeIcon iconName="BITBUCKET" size="12em" glyphStyle="-fx-fill: linear-gradient(#ffffff, #d2d2d2); -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );"/>
+                        <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="CIRCLE" size="24em" />
+                        <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#ffffff, #d2d2d2); -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );" iconName="BITBUCKET" size="12em" />
                     </children>
                 </StackPane>
             </children>

@@ -29,7 +29,7 @@ public class GlyphsBuilder {
     }
     
     public GlyphsBuilder icon(GlyphIconName glyphIconName){
-        glyphIcon.setIcon(glyphIconName);
+        glyphIcon.setIconName(glyphIconName.name());
         return this;
     }
 
