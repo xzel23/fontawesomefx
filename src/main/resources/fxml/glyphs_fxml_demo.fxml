@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -14,13 +16,35 @@
     <children>
         <VBox alignment="CENTER" spacing="10.0">
             <children>
-                <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="STAR" size="12em" />
-            <WeatherIcon />
-                <WeatherIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="CLOUD" size="12em" />
+            <Button mnemonicParsing="false" text="Button">
+               <graphic>
+                  <WeatherIcon />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="Button">
+               <graphic>
+                      <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="AMBULANCE" size="12em" />
+               </graphic>
+            </Button>
+            <Label text="Label" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                      <WeatherIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="RAIN" size="12em" textAlignment="CENTER" />
+                  <WeatherIcon />
+                  <Label alignment="CENTER" text="Label">
+                     <font>
+                        <Font size="93.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
                 <StackPane>
                     <children>
                         <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="CIRCLE" size="24em" />
-                        <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#ffffff, #d2d2d2); -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );" iconName="BITBUCKET" size="12em" />
+                        <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#ffffff, #d2d2d2); -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );" glyphStyleClass="" size="12em" />
                     </children>
                 </StackPane>
             </children>

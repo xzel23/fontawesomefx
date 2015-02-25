@@ -13,7 +13,7 @@
  */
 package de.jensd.fx.glyphs.weathericons;
 
-import de.jensd.fx.glyphs.GlyphIconName;
+import de.jensd.fx.glyphs.GlyphIcons;
 
 /**
  *
@@ -21,7 +21,7 @@ import de.jensd.fx.glyphs.GlyphIconName;
  *
  * @author Jens Deters (mail@jensd.de)
  */
-public enum WeatherIconName implements GlyphIconName {
+public enum WeatherIcons implements GlyphIcons {
 
     ALIEN('\uf075'),
     BEAFORT_0('\uf0b7'),
@@ -203,7 +203,7 @@ public enum WeatherIconName implements GlyphIconName {
 
     private final char character;
 
-    private WeatherIconName(char character) {
+    private WeatherIcons(char character) {
         this.character = character;
     }
 

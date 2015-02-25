@@ -12,9 +12,9 @@
 package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphsDude;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
-import de.jensd.fx.glyphs.weathericons.WeatherIconName;
+import de.jensd.fx.glyphs.weathericons.WeatherIcons;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -37,8 +37,8 @@ public class AppWeatherIcons extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text star = GlyphsDude.createIcon(FontAwesomeIconName.STAR, "4em");
-        Text thermometer = GlyphsDude.createIcon(WeatherIconName.THERMOMETER, "4em");
+        Text star = GlyphsDude.createIcon(FontAwesomeIcons.STAR, "4em");
+        Text thermometer = GlyphsDude.createIcon(WeatherIcons.THERMOMETER, "4em");
 
         WeatherIcon umbrellaIcon = new WeatherIcon();
         
@@ -58,13 +58,13 @@ public class AppWeatherIcons extends Application {
         MenuBar menuBar = new MenuBar();
 
         MenuItem openItem = new MenuItem("Open");
-        GlyphsDude.setIcon(openItem, FontAwesomeIconName.FILE);
+        GlyphsDude.setIcon(openItem, FontAwesomeIcons.FILE);
         MenuItem saveItem = new MenuItem("Save");
-        GlyphsDude.setIcon(saveItem, FontAwesomeIconName.DOWNLOAD);
+        GlyphsDude.setIcon(saveItem, FontAwesomeIcons.DOWNLOAD);
         MenuItem saveAsItem = new MenuItem("Save As...");
-        GlyphsDude.setIcon(saveAsItem, FontAwesomeIconName.DOWNLOAD);
+        GlyphsDude.setIcon(saveAsItem, FontAwesomeIcons.DOWNLOAD);
         MenuItem exitItem = new MenuItem("Exit");
-        GlyphsDude.setIcon(exitItem, FontAwesomeIconName.SIGN_OUT);
+        GlyphsDude.setIcon(exitItem, FontAwesomeIcons.SIGN_OUT);
 
         Menu menuFile = new Menu("File");
         menuFile.getItems().add(openItem);

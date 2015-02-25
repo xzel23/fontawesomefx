@@ -11,7 +11,7 @@
  */
 package de.jensd.fx.glyphs.fontawesome;
 
-import de.jensd.fx.glyphs.GlyphIconName;
+import de.jensd.fx.glyphs.GlyphIcons;
 
 /**
  *
@@ -21,7 +21,7 @@ import de.jensd.fx.glyphs.GlyphIconName;
  *
  * @author Jens Deters
  */
-public enum FontAwesomeIconName implements GlyphIconName {
+public enum FontAwesomeIcons implements GlyphIcons {
 
     ADJUST('\uf042'),
     ADN('\uf170'),
@@ -619,7 +619,7 @@ public enum FontAwesomeIconName implements GlyphIconName {
 
     private final char character;
 
-    private FontAwesomeIconName(char character) {
+    private FontAwesomeIcons(char character) {
         this.character = character;
     }
 

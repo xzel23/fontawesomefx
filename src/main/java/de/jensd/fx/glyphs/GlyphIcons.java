@@ -17,7 +17,7 @@ package de.jensd.fx.glyphs;
  *
  * @author Jens Deters (mail@jensd.de)
  */
-public interface GlyphIconName {
+public interface GlyphIcons {
 
     String characterToString();
 

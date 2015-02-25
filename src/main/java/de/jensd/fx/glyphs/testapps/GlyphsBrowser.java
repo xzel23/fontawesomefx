@@ -12,8 +12,8 @@
 package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphsDude;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
-import de.jensd.fx.glyphs.weathericons.WeatherIconName;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import de.jensd.fx.glyphs.weathericons.WeatherIcons;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -80,8 +80,8 @@ public class GlyphsBrowser extends VBox {
     void initialize() {
         AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
         WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
-        listAwesome = Stream.of(FontAwesomeIconName.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
-        listWeather = Stream.of(WeatherIconName.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        listAwesome = Stream.of(FontAwesomeIcons.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        listWeather = Stream.of(WeatherIcons.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
     }
 
@@ -102,7 +102,7 @@ public class GlyphsBrowser extends VBox {
         updateBrowser(listWeather);
     }
 
-    private static Button createIconButton(final FontAwesomeIconName icon, final String text) {
+    private static Button createIconButton(final FontAwesomeIcons icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
         Text iconText = GlyphsDude.createIcon(icon, "2em");
         Button b = new Button(text);
@@ -119,7 +119,7 @@ public class GlyphsBrowser extends VBox {
         return b;
     }
 
-    private static Button createIconButton(final WeatherIconName icon, final String text) {
+    private static Button createIconButton(final WeatherIcons icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
         Text iconText = GlyphsDude.createIcon(icon, "2em");
         Button b = new Button(text);

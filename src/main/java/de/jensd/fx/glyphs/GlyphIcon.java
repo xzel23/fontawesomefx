@@ -11,10 +11,7 @@
  */
 package de.jensd.fx.glyphs;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconName;
 import java.lang.reflect.ParameterizedType;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
@@ -24,7 +21,7 @@ import javafx.scene.text.Text;
  * A GlyphIcon represents an Icon Node.
  *
  * @author Jens Deters
- * @param <T> The type of GlyphIconName enum.
+ * @param <T> The type of GlyphIcons enum.
  */
 public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
@@ -35,8 +32,8 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     private StringProperty size;
     private StringProperty glyphStyle;
     private StringProperty iconName;
-    private final Class<T> typeOfT;
-    //private ObjectProperty<T> icon;
+    public final Class<T> typeOfT;
+  //  private ObjectProperty<T> icon;
 
     @FXML
     public void init() {
@@ -47,10 +44,10 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
-        setGlyphStyleClass("glyph-icon");
+        getStyleClass().add("glyph-icon");
 
     }
-
+    
     public final StringProperty glyphStyleClassProperty() {
         if (glyphStyleClass == null) {
             glyphStyleClass = new SimpleStringProperty();
@@ -93,8 +90,8 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         return this;
     }
 
-    private GlyphIconName getGlyphIconName() {
-        return ((GlyphIconName) Enum.valueOf(typeOfT, getIconName()));
+    private GlyphIcons getGlyphIconName() {
+        return ((GlyphIcons) Enum.valueOf(typeOfT, getIconName()));
     }
 
     private void updateStyle() {
@@ -151,10 +148,10 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 //    public T getIcon() {
 //        return iconProperty().getValue();
 //    }
-//
+
     public final void setIcon(T icon) {
-        //iconProperty().setValue(icon);
-        setIconName(icon.name());
+      //  iconProperty().setValue(icon);
+      setIconName(icon.name());
     }
 
 }

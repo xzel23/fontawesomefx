@@ -35,18 +35,18 @@ public class GlyphsDude {
         Font.loadFont(GlyphsDude.class.getResource(WeatherIcon.TTF_PATH).toExternalForm(), 10.0);
     }
 
-    public static Text createIcon(GlyphIconName icon) {
+    public static Text createIcon(GlyphIcons icon) {
         return GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static Text createIcon(GlyphIconName icon, String iconSize) {
+    public static Text createIcon(GlyphIcons icon, String iconSize) {
         Text text = new Text(icon.characterToString());
         text.getStyleClass().add("glyph-icon");
         text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.getFontFamily(), iconSize));
         return text;
     }
 
-    public static Label createIconLabel(GlyphIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+    public static Label createIconLabel(GlyphIcons icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
         Text iconLabel = GlyphsDude.createIcon(icon, iconSize);
         Label label = new Label(text);
         label.setStyle("-fx-font-size: " + fontSize);
@@ -55,18 +55,18 @@ public class GlyphsDude {
         return label;
     }
 
-    public static Button createIconButton(GlyphIconName icon) {
+    public static Button createIconButton(GlyphIcons icon) {
         return createIconButton(icon, "");
     }
 
-    public static Button createIconButton(GlyphIconName icon, String text) {
+    public static Button createIconButton(GlyphIcons icon, String text) {
         Text label = GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
         Button button = new Button(text);
         button.setGraphic(label);
         return button;
     }
 
-    public static Button createIconButton(GlyphIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+    public static Button createIconButton(GlyphIcons icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
         Text label = GlyphsDude.createIcon(icon, iconSize);
         Button button = new Button(text);
         button.setStyle("-fx-font-size: " + fontSize);
@@ -75,11 +75,11 @@ public class GlyphsDude {
         return button;
     }
 
-    public static ToggleButton createIconToggleButton(GlyphIconName icon, String text, String iconSize, ContentDisplay contentDisplay) {
+    public static ToggleButton createIconToggleButton(GlyphIcons icon, String text, String iconSize, ContentDisplay contentDisplay) {
         return createIconToggleButton(icon, text, iconSize, GlyphIcon.DEFAULT_FONT_SIZE, contentDisplay);
     }
 
-    public static ToggleButton createIconToggleButton(GlyphIconName icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
+    public static ToggleButton createIconToggleButton(GlyphIcons icon, String text, String iconSize, String fontSize, ContentDisplay contentDisplay) {
         Text label = GlyphsDude.createIcon(icon, iconSize);
         ToggleButton button = new ToggleButton(text);
         button.setStyle("-fx-font-size: " + fontSize);
@@ -94,27 +94,27 @@ public class GlyphsDude {
      * 
      * 
      */
-    public static void setIcon(Tab tab, GlyphIconName icon) {
+    public static void setIcon(Tab tab, GlyphIcons icon) {
         setIcon(tab, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(Tab tab, GlyphIconName icon, String iconSize) {
+    public static void setIcon(Tab tab, GlyphIcons icon, String iconSize) {
         tab.setGraphic(GlyphsDude.createIcon(icon, iconSize));
     }
 
-    public static void setIcon(Labeled labeled, GlyphIconName icon) {
+    public static void setIcon(Labeled labeled, GlyphIcons icon) {
         setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(Labeled labeled, GlyphIconName icon, ContentDisplay contentDisplay) {
+    public static void setIcon(Labeled labeled, GlyphIcons icon, ContentDisplay contentDisplay) {
         setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE, contentDisplay);
     }
 
-    public static void setIcon(Labeled labeled, GlyphIconName icon, String iconSize) {
+    public static void setIcon(Labeled labeled, GlyphIcons icon, String iconSize) {
         setIcon(labeled, icon, iconSize, ContentDisplay.LEFT);
     }
 
-    public static void setIcon(Labeled labeled, GlyphIconName icon, String iconSize, ContentDisplay contentDisplay) {
+    public static void setIcon(Labeled labeled, GlyphIcons icon, String iconSize, ContentDisplay contentDisplay) {
         if (labeled == null) {
             throw new IllegalArgumentException("The component must not be 'null'!");
         }
@@ -122,15 +122,15 @@ public class GlyphsDude {
         labeled.setContentDisplay(contentDisplay);
     }
 
-    public static void setIcon(MenuItem menuItem, GlyphIconName icon) {
+    public static void setIcon(MenuItem menuItem, GlyphIcons icon) {
         setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(MenuItem menuItem, GlyphIconName icon, String iconSize) {
+    public static void setIcon(MenuItem menuItem, GlyphIcons icon, String iconSize) {
         setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, iconSize);
     }
 
-    public static void setIcon(MenuItem menuItem, GlyphIconName icon, String fontSize, String iconSize) {
+    public static void setIcon(MenuItem menuItem, GlyphIcons icon, String fontSize, String iconSize) {
         if (menuItem == null) {
             throw new IllegalArgumentException("The menu item must not be 'null'!");
         }
@@ -139,11 +139,11 @@ public class GlyphsDude {
         menuItem.setGraphic(label);
     }
 
-    public static void setIcon(TreeItem treeItem, GlyphIconName icon) {
+    public static void setIcon(TreeItem treeItem, GlyphIcons icon) {
         setIcon(treeItem, icon, GlyphIcon.DEFAULT_ICON_SIZE);
     }
 
-    public static void setIcon(TreeItem treeItem, GlyphIconName icon, String iconSize) {
+    public static void setIcon(TreeItem treeItem, GlyphIcons icon, String iconSize) {
         if (treeItem == null) {
             throw new IllegalArgumentException("The tree item must not be 'null'!");
         }
