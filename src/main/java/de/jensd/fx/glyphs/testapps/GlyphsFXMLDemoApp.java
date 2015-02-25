@@ -27,7 +27,7 @@ public class GlyphsFXMLDemoApp extends Application {
     public void start(Stage primaryStage) {
         GlyphsFXMLDemo iconsFXMLDemo = new GlyphsFXMLDemo();
         Scene scene = new Scene(iconsFXMLDemo, 800, 600);
-        scene.getStylesheets().add("/styles/iconsbrowser.css");
+        scene.getStylesheets().add("/styles/glyphs.css");
         primaryStage.setTitle("FontAwesomeFX Icons-FXML-Demo");
         primaryStage.setScene(scene);
         primaryStage.show();

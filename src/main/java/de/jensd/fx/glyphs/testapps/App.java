@@ -50,7 +50,7 @@ public class App extends Application {
         root.setSpacing(10.0);
 
         Button testButton = new Button();
-        testButton.getStyleClass().add("exit-button");
+        testButton.getStyleClass().setAll("exit-button");
         GlyphsDude.setIcon(testButton, FontAwesomeIcons.POWER_OFF, "6em");
 
         Button testButton2 = new Button();

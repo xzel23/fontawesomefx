@@ -5,7 +5,6 @@
 }
 
 .glyph-icon{
-    -icons-color: red;
     -fx-fill: -icons-color;
 }
 
