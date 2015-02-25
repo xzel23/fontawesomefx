@@ -43,7 +43,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
-        getStyleClass().add("glyph-icon");
+        getStyleClass().addAll("glyph-icon");
     }
     
     public final StringProperty glyphStyleClassProperty() {
@@ -59,7 +59,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     public final void setGlyphStyleClass(String styleClass) {
         glyphStyleClassProperty().setValue(styleClass);
-        getStyleClass().add(styleClass);
+        getStyleClass().setAll("glyph-icon", styleClass);
     }
 
     public final GlyphIcon glyphStyleClass(String styleClass) {
@@ -95,7 +95,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     private void updateStyle() {
         setText(getGlyphIconName().characterToString());
         String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", getGlyphIconName().getFontFamily(), getSize(), getGlyphStyle());
-        setStyle(style);
+       setStyle(style);
     }
 
     public final StringProperty sizeProperty() {

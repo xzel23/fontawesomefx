@@ -21,6 +21,15 @@
     -fx-fill: -top-icons-color;
 }
 
+.blue-icon{
+    -icons-color: blue;
+    -fx-fill: linear-gradient(-icons-color 0%, derive(-icons-color, 100%) 30%, derive(red, 30%) 85%);
+}
+
+.green-icon{
+    -icons-color: green;
+    -fx-fill: linear-gradient(-icons-color 0%, derive(-icons-color, 100%) 30%, derive(red, 30%) 85%);
+}
 
 .exit-button{
     -icons-color: gray;

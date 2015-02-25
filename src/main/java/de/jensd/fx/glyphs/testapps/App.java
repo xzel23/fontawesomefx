@@ -21,6 +21,7 @@ import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import de.jensd.fx.glyphs.weathericons.WeatherIcons;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -30,6 +31,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -55,7 +57,14 @@ public class App extends Application {
         testButton2.getStyleClass().add("alien-button");
         GlyphsDude.setIcon(testButton2, WeatherIcons.ALIEN, "6em");
 
-        
+        FontAwesomeIcon fontAwesomeIcon = new FontAwesomeIcon();
+        fontAwesomeIcon.setGlyphStyleClass("blue-icon");
+        fontAwesomeIcon.setSize("4em");
+ 
+        WeatherIcon weatherIcon = new WeatherIcon();
+        weatherIcon.setGlyphStyleClass("green-icon");
+        weatherIcon.setSize("4em");
+
         Text githubLabel = GlyphsDude.createIcon(FontAwesomeIcons.GITHUB);
         Text ambulanceLabel = GlyphsDude.createIcon(FontAwesomeIcons.PLUS_SQUARE_ALT, "60.0");
         Button starButton = GlyphsDude.createIconButton(FontAwesomeIcons.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
@@ -188,7 +197,12 @@ public class App extends Application {
         stackIconBox2.setPadding(new Insets(10.0));
         stackIconBox2.getChildren().addAll(iconStack1, iconStack3);
 
-        root.getChildren().addAll(createMenubar(), testButton, testButton2, githubLabel, ambulanceLabel, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
+        HBox basicIconBox = new HBox();
+        basicIconBox.setAlignment(Pos.CENTER);
+        basicIconBox.setSpacing(20.0);
+        basicIconBox.getChildren().addAll(fontAwesomeIcon, weatherIcon, testButton, testButton2, githubLabel, ambulanceLabel);
+        
+        root.getChildren().addAll(createMenubar(), basicIconBox, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 
         Scene scene = new Scene(root, 500, 800);
         scene.getStylesheets().addAll(GlyphsStyle.DEFAULT.getStylePath());
