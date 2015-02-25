@@ -33,7 +33,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     private StringProperty glyphStyle;
     private StringProperty iconName;
     public final Class<T> typeOfT;
-  //  private ObjectProperty<T> icon;
 
     @FXML
     public void init() {
@@ -45,7 +44,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
         getStyleClass().add("glyph-icon");
-
     }
     
     public final StringProperty glyphStyleClassProperty() {
@@ -137,20 +135,8 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         iconNameProperty().setValue(iconName);
         updateStyle();
     }
-
-//    public ObjectProperty<T> iconProperty() {
-//        if (icon == null) {
-//            icon = new SimpleObjectProperty<>();
-//        }
-//        return icon;
-//    }
-//
-//    public T getIcon() {
-//        return iconProperty().getValue();
-//    }
-
+    
     public final void setIcon(T icon) {
-      //  iconProperty().setValue(icon);
       setIconName(icon.name());
     }
 

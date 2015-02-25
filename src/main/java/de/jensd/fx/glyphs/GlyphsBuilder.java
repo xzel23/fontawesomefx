@@ -30,7 +30,6 @@ public class GlyphsBuilder {
 
     public GlyphsBuilder icon(GlyphIcons glyphIconName) {
         glyphIcon.setIconName(glyphIconName.name());
-
         return this;
     }
 
