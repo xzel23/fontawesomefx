@@ -17,6 +17,8 @@
 package de.jensd.fx.glyphs.fontawesome;
 
 import de.jensd.fx.glyphs.GlyphIcon;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.text.Font;
 
 /**
@@ -26,11 +28,28 @@ import javafx.scene.text.Font;
 public class FontAwesomeIcon extends GlyphIcon<FontAwesomeIcons> {
 
     public final static String TTF_PATH = "/de/jensd/fx/glyphs/fontawesome/fontawesome-webfont.ttf";
+    private ObjectProperty<FontAwesomeIcons> glyph;
 
     static {
         Font.loadFont(FontAwesomeIcon.class.getResource(TTF_PATH).toExternalForm(), 10.0);
     }
 
+     public final ObjectProperty<FontAwesomeIcons> glyphProperty() {
+        if (glyph == null) {
+            glyph = new SimpleObjectProperty<>(getDefaultIcon());
+        }
+        return glyph;
+    }
+
+    public final FontAwesomeIcons getGlyph() {
+        return glyphProperty().getValue();
+    }
+
+    public final void setGlyph(FontAwesomeIcons icon) {
+        glyphProperty().setValue(icon);
+        setIconName(icon.name());
+    }
+    
     @Override
     public FontAwesomeIcons getDefaultIcon() {
         return FontAwesomeIcons.ANCHOR;

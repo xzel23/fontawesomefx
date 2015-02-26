@@ -38,7 +38,7 @@ public class WeatherIcon extends GlyphIcon<WeatherIcons> {
 
      public final ObjectProperty<WeatherIcons> glyphProperty() {
         if (glyph == null) {
-            glyph = new SimpleObjectProperty<>(WeatherIcons.ALIEN);
+            glyph = new SimpleObjectProperty<>(getDefaultIcon());
         }
         return glyph;
     }
@@ -54,7 +54,7 @@ public class WeatherIcon extends GlyphIcon<WeatherIcons> {
     
     @Override
     public WeatherIcons getDefaultIcon() {
-        return WeatherIcons.UMBRELLA;
+        return WeatherIcons.ALIEN;
     }
 
 }
