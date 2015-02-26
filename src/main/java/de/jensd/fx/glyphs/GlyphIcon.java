@@ -28,42 +28,24 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     public final static String DEFAULT_ICON_SIZE = "16.0";
     public final static String DEFAULT_FONT_SIZE = "1em";
 
-    private StringProperty glyphStyleClass;
     private StringProperty size;
-    private StringProperty glyphStyle;
+    private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
     private StringProperty iconName;
     public final Class<T> typeOfT;
 
     @FXML
     public void init() {
-
     }
 
     public GlyphIcon() {
         this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
-        getStyleClass().setAll("root", "glyph-icon");
+        getStyleClass().addAll("root", "glyph-icon");
     }
 
-    public final StringProperty glyphStyleClassProperty() {
-        if (glyphStyleClass == null) {
-            glyphStyleClass = new SimpleStringProperty();
-        }
-        return glyphStyleClass;
-    }
-
-    public final String getGlyphStyleClass() {
-        return glyphStyleClassProperty().getValue();
-    }
-
-    public final void setGlyphStyleClass(String styleClass) {
-        glyphStyleClassProperty().setValue(styleClass);
-        getStyleClass().setAll("root", "glyph-icon", styleClass);
-    }
-
-    public final GlyphIcon glyphStyleClass(String styleClass) {
-        setGlyphStyleClass(styleClass);
+    public final GlyphIcon setStyleClass(String styleClass) {
+        getStyleClass().add(styleClass);
         return this;
     }
 
@@ -83,19 +65,8 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         updateStyle();
     }
 
-    public final GlyphIcon style(String style) {
-        setGlyphStyle(style);
-        return this;
-    }
-
     private GlyphIcons getGlyphIconName() {
         return ((GlyphIcons) Enum.valueOf(typeOfT, getIconName()));
-    }
-
-    private void updateStyle() {
-        setText(getGlyphIconName().characterToString());
-        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", getGlyphIconName().getFontFamily(), getSize(), getGlyphStyle());
-        setStyle(style);
     }
 
     public final StringProperty sizeProperty() {
@@ -113,11 +84,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         size = (size == null || size.isEmpty()) ? DEFAULT_FONT_SIZE : size;
         sizeProperty().setValue(size);
         updateStyle();
-    }
-
-    public final GlyphIcon size(String iconSize) {
-        setSize(iconSize);
-        return this;
     }
 
     public final StringProperty iconNameProperty() {
@@ -138,6 +104,12 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     public final void setIcon(T icon) {
         setIconName(icon.name());
+    }
+
+    private void updateStyle() {
+        setText(getGlyphIconName().characterToString());
+        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", getGlyphIconName().getFontFamily(), getSize(), getGlyphStyle());
+        setStyle(style);
     }
 
 }

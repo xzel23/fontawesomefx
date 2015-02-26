@@ -44,7 +44,7 @@ public class GlyphsBuilder {
     }
 
     public GlyphsBuilder styleClass(String styleClass) {
-        glyphIcon.setGlyphStyleClass(styleClass);
+        glyphIcon.setStyleClass(styleClass);
         return this;
     }
 

@@ -31,7 +31,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -58,11 +57,11 @@ public class App extends Application {
         GlyphsDude.setIcon(testButton2, WeatherIcons.ALIEN, "6em");
 
         FontAwesomeIcon fontAwesomeIcon = new FontAwesomeIcon();
-        fontAwesomeIcon.setGlyphStyleClass("blue-icon");
+        fontAwesomeIcon.setStyleClass("blue-icon");
         fontAwesomeIcon.setSize("4em");
  
         WeatherIcon weatherIcon = new WeatherIcon();
-        weatherIcon.setGlyphStyleClass("green-icon");
+        weatherIcon.setStyleClass("green-icon");
         weatherIcon.setSize("4em");
 
         Text githubLabel = GlyphsDude.createIcon(FontAwesomeIcons.GITHUB);
