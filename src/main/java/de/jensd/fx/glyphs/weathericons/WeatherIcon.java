@@ -32,8 +32,9 @@ public class WeatherIcon extends GlyphIcon<WeatherIcons> {
         Font.loadFont(WeatherIcon.class.getResource(TTF_PATH).toExternalForm(), 10.0);
     }
 
-    public WeatherIcon() {
-        // set initial/default icon:
-        setIconName(WeatherIcons.UMBRELLA.name());
+    @Override
+    public WeatherIcons getDefaultIcon() {
+        return WeatherIcons.UMBRELLA;
     }
+
 }

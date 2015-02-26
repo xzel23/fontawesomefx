@@ -17,10 +17,9 @@
         <VBox alignment="CENTER" spacing="10.0">
             <children>
                 <Button mnemonicParsing="false" text="Button">
-                    <graphic>
-                        <WeatherIcon />
-                    </graphic>
-                </Button>
+               <graphic>
+                  <WeatherIcon iconName="sdfgsdgfsdgf" />
+               </graphic></Button>
                 <Button mnemonicParsing="false" text="Button">
                     <graphic>
                         <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" iconName="AMBULANCE" size="12em" />

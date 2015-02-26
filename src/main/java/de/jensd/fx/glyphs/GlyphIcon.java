@@ -1,17 +1,24 @@
 /**
  * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
  */
 package de.jensd.fx.glyphs;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
@@ -42,8 +49,10 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
         getStyleClass().addAll("root", "glyph-icon");
+        setIcon(getDefaultIcon());
     }
 
+    // convenience method
     public final GlyphIcon setStyleClass(String styleClass) {
         getStyleClass().add(styleClass);
         return this;
@@ -63,10 +72,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     public final void setGlyphStyle(String style) {
         glyphStyleProperty().setValue(style);
         updateStyle();
-    }
-
-    private GlyphIcons getGlyphIconName() {
-        return ((GlyphIcons) Enum.valueOf(typeOfT, getIconName()));
     }
 
     public final StringProperty sizeProperty() {
@@ -106,9 +111,18 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         setIconName(icon.name());
     }
 
+    abstract public T getDefaultIcon();
+
     private void updateStyle() {
-        setText(getGlyphIconName().characterToString());
-        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", getGlyphIconName().getFontFamily(), getSize(), getGlyphStyle());
+        GlyphIcons icon = (GlyphIcons) getDefaultIcon();
+        try {
+            icon = ((GlyphIcons) Enum.valueOf(typeOfT, getIconName()));
+        } catch (Exception e) {
+            String msg = String.format("Icon '%s' not found. Using '%s' (default) instead", getIconName(), getDefaultIcon());
+            Logger.getLogger(GlyphIcon.class.getName()).log(Level.SEVERE, msg);
+        }
+        setText(icon.characterToString());
+        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", icon.getFontFamily(), getSize(), getGlyphStyle());
         setStyle(style);
     }
 

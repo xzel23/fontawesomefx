@@ -31,8 +31,10 @@ public class FontAwesomeIcon extends GlyphIcon<FontAwesomeIcons> {
         Font.loadFont(FontAwesomeIcon.class.getResource(TTF_PATH).toExternalForm(), 10.0);
     }
 
-    public FontAwesomeIcon() {
-        // set initial/default icon:
-        setIconName(FontAwesomeIcons.ANCHOR.name());
+    @Override
+    public FontAwesomeIcons getDefaultIcon() {
+        return FontAwesomeIcons.ANCHOR;
     }
+    
+    
 }
