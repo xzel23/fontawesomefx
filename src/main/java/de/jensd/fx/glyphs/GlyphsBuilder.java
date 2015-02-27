@@ -28,8 +28,8 @@ public class GlyphsBuilder {
         return new GlyphsBuilder(clazz);
     }
 
-    public GlyphsBuilder icon(GlyphIcons glyphIconName) {
-        glyphIcon.setIconName(glyphIconName.name());
+    public GlyphsBuilder glyph(GlyphIcons glyph) {
+        glyphIcon.setGlyphName(glyph.name());
         return this;
     }
 

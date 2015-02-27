@@ -37,7 +37,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     private StringProperty size;
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
-    private StringProperty iconName;
+    private StringProperty glyphName;
     public final Class<T> typeOfT;
 
     @FXML
@@ -49,7 +49,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
         getStyleClass().addAll("root", "glyph-icon");
-        setIcon(getDefaultIcon());
+        setIcon(getDefaultGlyph());
     }
 
     // convenience method
@@ -91,34 +91,34 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         updateStyle();
     }
 
-    public final StringProperty iconNameProperty() {
-        if (iconName == null) {
-            iconName = new SimpleStringProperty("");
+    public final StringProperty glyphNameProperty() {
+        if (glyphName == null) {
+            glyphName = new SimpleStringProperty("");
         }
-        return iconName;
+        return glyphName;
     }
 
-    public final String getIconName() {
-        return iconNameProperty().getValue();
+    public final String getGlyphName() {
+        return glyphNameProperty().getValue();
     }
 
-    public final void setIconName(String iconName) {
-        iconNameProperty().setValue(iconName);
+    public final void setGlyphName(String glyphName) {
+        glyphNameProperty().setValue(glyphName);
         updateStyle();
     }
 
-    public final void setIcon(T icon) {
-        setIconName(icon.name());
+    public final void setIcon(T glyph) {
+        setGlyphName(glyph.name());
     }
 
-    abstract public T getDefaultIcon();
+    abstract public T getDefaultGlyph();
 
     private void updateStyle() {
-        GlyphIcons icon = (GlyphIcons) getDefaultIcon();
+        GlyphIcons icon = (GlyphIcons) getDefaultGlyph();
         try {
-            icon = ((GlyphIcons) Enum.valueOf(typeOfT, getIconName()));
+            icon = ((GlyphIcons) Enum.valueOf(typeOfT, getGlyphName()));
         } catch (Exception e) {
-            String msg = String.format("Icon '%s' not found. Using '%s' (default) instead", getIconName(), getDefaultIcon());
+            String msg = String.format("Icon '%s' not found. Using '%s' (default) instead", getGlyphName(), getDefaultGlyph());
             Logger.getLogger(GlyphIcon.class.getName()).log(Level.SEVERE, msg);
         }
         setText(icon.characterToString());

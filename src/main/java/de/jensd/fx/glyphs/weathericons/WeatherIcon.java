@@ -33,7 +33,7 @@ public class WeatherIcon extends GlyphIcon<WeatherIcons> {
     }
     
     @Override
-    public WeatherIcons getDefaultIcon() {
+    public WeatherIcons getDefaultGlyph() {
         return WeatherIcons.ALIEN;
     }
 

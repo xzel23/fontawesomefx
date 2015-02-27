@@ -32,7 +32,7 @@ public class FontAwesomeIcon extends GlyphIcon<FontAwesomeIcons> {
     }
     
     @Override
-    public FontAwesomeIcons getDefaultIcon() {
+    public FontAwesomeIcons getDefaultGlyph() {
         return FontAwesomeIcons.ANCHOR;
     }
     
