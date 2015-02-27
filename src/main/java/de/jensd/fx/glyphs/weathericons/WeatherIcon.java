@@ -17,8 +17,6 @@
 package de.jensd.fx.glyphs.weathericons;
 
 import de.jensd.fx.glyphs.GlyphIcon;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.text.Font;
 
 /**
@@ -30,26 +28,8 @@ public class WeatherIcon extends GlyphIcon<WeatherIcons> {
     public final static String TTF_PATH = "/de/jensd/fx/glyphs/weathericons/weathericons-regular-webfont.ttf";
     public final static String FONT_FAMILY = "\'weather icons\'";
 
-    private ObjectProperty<WeatherIcons> glyph;
-
     static {
         Font.loadFont(WeatherIcon.class.getResource(TTF_PATH).toExternalForm(), 10.0);
-    }
-
-     public final ObjectProperty<WeatherIcons> glyphProperty() {
-        if (glyph == null) {
-            glyph = new SimpleObjectProperty<>(getDefaultIcon());
-        }
-        return glyph;
-    }
-
-    public final WeatherIcons getGlyph() {
-        return glyphProperty().getValue();
-    }
-
-    public final void setGlyph(WeatherIcons icon) {
-        glyphProperty().setValue(icon);
-        setIconName(icon.name());
     }
     
     @Override
