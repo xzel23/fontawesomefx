@@ -21,6 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
@@ -49,6 +51,17 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
         getStyleClass().addAll("root", "glyph-icon");
+        
+        sizeProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
+            updateStyle();
+        });
+        glyphStyleProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
+            updateStyle();
+        });
+        glyphNameProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
+            updateStyle();
+        });
+        
         setIcon(getDefaultGlyph());
     }
 
@@ -71,7 +84,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     public final void setGlyphStyle(String style) {
         glyphStyleProperty().setValue(style);
-        updateStyle();
     }
 
     public final StringProperty sizeProperty() {
@@ -88,7 +100,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     public final void setSize(String size) {
         size = (size == null || size.isEmpty()) ? DEFAULT_FONT_SIZE : size;
         sizeProperty().setValue(size);
-        updateStyle();
     }
 
     public final StringProperty glyphNameProperty() {
@@ -104,7 +115,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     public final void setGlyphName(String glyphName) {
         glyphNameProperty().setValue(glyphName);
-        updateStyle();
     }
 
     public final void setIcon(T glyph) {

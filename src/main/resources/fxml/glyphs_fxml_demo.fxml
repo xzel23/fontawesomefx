@@ -22,13 +22,13 @@
                </graphic></Button>
                 <Button mnemonicParsing="false" text="Button">
                     <graphic>
-                        <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" glyphName="AMBULANCE" size="12em" />
+                        <FontAwesomeIcon glyphName="AMBULANCE" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" size="12em" />
                     </graphic>
                 </Button>
                 <Label text="Label" />
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <WeatherIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" glyphName="RAIN" size="12em" textAlignment="CENTER" />
+                        <WeatherIcon glyphName="RAIN" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" size="12em" textAlignment="CENTER" />
                         <WeatherIcon glyphName="LIGHTNING" size="5em" styleClass="alien-button" />
                         <Label alignment="CENTER" text="Label">
                             <font>
@@ -42,7 +42,7 @@
                 </HBox>
                 <StackPane>
                     <children>
-                        <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" glyphName="CIRCLE" size="24em" />
+                        <FontAwesomeIcon glyphName="CIRCLE" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);" size="24em" />
                         <FontAwesomeIcon glyphStyle="-fx-fill: linear-gradient(#ffffff, #d2d2d2); -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );" size="12em" />
                     </children>
                 </StackPane>
