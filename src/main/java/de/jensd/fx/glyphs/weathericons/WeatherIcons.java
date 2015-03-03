@@ -37,6 +37,7 @@ public enum WeatherIcons implements GlyphIcons {
     BEAFORT_7('\uf0be'),
     BEAFORT_8('\uf0bf'),
     BEAFORT_9('\uf0c0'),
+    BLANK('\u0020'),
     CELSIUS('\uf03c'),
     CLOUD('\uf041'),
     CLOUDY('\uf013'),

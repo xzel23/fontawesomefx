@@ -84,6 +84,7 @@ public enum FontAwesomeIcons implements GlyphIcons {
     BITBUCKET('\uf171'),
     BITBUCKET_SQUARE('\uf172'),
     BITCOIN('\uf15A'),
+    BLANK('\u0020'),
     BOLD('\uf032'),
     BOLT('\uf0E7'),
     BOMB('\uf1E2'),
