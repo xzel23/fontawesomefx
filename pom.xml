@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.jensd</groupId>
     <artifactId>fontawesomefx</artifactId>
-    <version>8.1.2-SNAPSHOT</version>
+    <version>8.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>FontAwesomeFX</name>
     <inceptionYear>2015</inceptionYear>
