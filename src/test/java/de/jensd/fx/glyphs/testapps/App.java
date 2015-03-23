@@ -59,6 +59,12 @@ public class App extends Application {
         FontAwesomeIcon fontAwesomeIcon = new FontAwesomeIcon();
         fontAwesomeIcon.setStyleClass("blue-icon");
         fontAwesomeIcon.setSize("4em");
+        fontAwesomeIcon.setStyle("-glyph-name: AMBULANCE;");
+        
+        FontAwesomeIcon.getClassCssMetaData().forEach(m -> {
+            System.out.println(m.toString());
+        });
+        
  
         WeatherIcon weatherIcon = new WeatherIcon();
         weatherIcon.setStyleClass("green-icon");
