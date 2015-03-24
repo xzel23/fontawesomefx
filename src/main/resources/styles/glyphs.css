@@ -36,4 +36,12 @@
     -icons-color: yellowgreen;
 }
 
+.styled-icon{
+    -fx-fill: linear-gradient(blueviolet 0%, derive(blueviolet,70%) 30%, derive(red, 30%) 85%);
+    -glyph-name: AMBULANCE;
+    -glyph-size: '300pt';
+}
+
+
+
 

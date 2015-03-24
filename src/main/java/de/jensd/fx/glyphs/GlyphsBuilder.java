@@ -34,6 +34,7 @@ public class GlyphsBuilder {
     }
 
     public GlyphsBuilder size(String size) {
+        
         glyphIcon.setSize(size);
         return this;
     }

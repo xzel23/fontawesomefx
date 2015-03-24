@@ -34,14 +34,14 @@ import javafx.scene.text.Text;
  * @author Jens Deters
  * @param <T> The type of GlyphIcons enum.
  */
-public abstract class GlyphIcon<T extends Enum<T>> extends Text{
+public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
-    public final static String DEFAULT_ICON_SIZE = "16.0";
+    public final static String DEFAULT_ICON_SIZE = "12.0";
     public final static String DEFAULT_FONT_SIZE = "1em";
 
-    private StringProperty size;
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
     private ObjectProperty<String> glyphName;
+    private ObjectProperty<String> glyphSize;
     public final Class<T> typeOfT;
 
     @FXML
@@ -53,7 +53,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text{
                 .getGenericSuperclass())
                 .getActualTypeArguments()[0];
         getStyleClass().addAll("root", "glyph-icon");
-        sizeProperty().addListener(observable -> {
+        glyphSizeProperty().addListener(observable -> {
             updateStyle();
         });
         glyphStyleProperty().addListener(observable -> {
@@ -86,25 +86,9 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text{
         glyphStyleProperty().setValue(style);
     }
 
-    public final StringProperty sizeProperty() {
-        if (size == null) {
-            size = new SimpleStringProperty(DEFAULT_FONT_SIZE);
-        }
-        return size;
-    }
-
-    public final String getSize() {
-        return sizeProperty().getValue();
-    }
-
-    public final void setSize(String size) {
-        size = (size == null || size.isEmpty()) ? DEFAULT_FONT_SIZE : size;
-        sizeProperty().setValue(size);
-    }
-
-     public ObjectProperty<String> glyphNameProperty() {
+    public final ObjectProperty<String> glyphNameProperty() {
         if (glyphName == null) {
-            glyphName = new SimpleStyleableObjectProperty<>(StyleableProperties.GLYPH, GlyphIcon.this, "glyphName");
+            glyphName = new SimpleStyleableObjectProperty<>(StyleableProperties.GLYPH_NAME, GlyphIcon.this, "glyphName");
         }
         return glyphName;
     }
@@ -115,6 +99,32 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text{
 
     public final void setGlyphName(String glyphName) {
         glyphNameProperty().setValue(glyphName);
+    }
+
+    public final ObjectProperty<String> glyphSizeProperty() {
+        if (glyphSize == null) {
+            glyphSize = new SimpleStyleableObjectProperty<>(StyleableProperties.GLYPH_SIZE, GlyphIcon.this, "glyphSize");
+        }
+        return glyphSize;
+    }
+
+    public final String getGlyphSize() {
+        return glyphSizeProperty().getValue();
+    }
+
+    public final void setGlyphSize(String size) {
+        size = (size == null) ? DEFAULT_ICON_SIZE : size;
+        glyphSizeProperty().setValue(size);
+    }
+
+    // kept for compability reasons
+    public final String getSize() {
+        return glyphSizeProperty().getValue();
+    }
+
+    // kept for compability reasons
+    public final void setSize(String size) {
+        setGlyphSize(size);
     }
 
     public final void setIcon(T glyph) {
@@ -132,32 +142,54 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text{
             Logger.getLogger(GlyphIcon.class.getName()).log(Level.SEVERE, msg);
         }
         setText(icon.characterToString());
-        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", icon.getFontFamily(), getSize(), getGlyphStyle());
+        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", icon.getFontFamily(), getGlyphSize(), getGlyphStyle());
         setStyle(style);
     }
 
     // CSS 
     private static class StyleableProperties {
 
-        private static final CssMetaData<GlyphIcon, String> GLYPH
+        private static final CssMetaData<GlyphIcon, String> GLYPH_NAME
                 = new CssMetaData<GlyphIcon, String>("-glyph-name", StyleConverter.getStringConverter(), "BLANK") {
+
                     @Override
                     public boolean isSettable(GlyphIcon styleable) {
                         return styleable.glyphName == null || !styleable.glyphName.isBound();
                     }
+
                     @Override
                     public StyleableProperty<String> getStyleableProperty(GlyphIcon styleable) {
                         return (StyleableProperty) styleable.glyphNameProperty();
                     }
+
                     @Override
                     public String getInitialValue(GlyphIcon styleable) {
                         return "BLANK";
                     }
                 };
+
+        private static final CssMetaData<GlyphIcon, String> GLYPH_SIZE
+                = new CssMetaData<GlyphIcon, String>("-glyph-size", StyleConverter.getStringConverter(), DEFAULT_ICON_SIZE) {
+                    @Override
+                    public boolean isSettable(GlyphIcon styleable) {
+                        return styleable.glyphSize == null || !styleable.glyphSize.isBound();
+                    }
+
+                    @Override
+                    public StyleableProperty<String> getStyleableProperty(GlyphIcon styleable) {
+                        return (StyleableProperty) styleable.glyphSizeProperty();
+                    }
+
+                    @Override
+                    public String getInitialValue(GlyphIcon styleable) {
+                        return DEFAULT_ICON_SIZE;
+                    }
+                };
         private static final List<CssMetaData<? extends Styleable, ?>> STYLEABLES;
+
         static {
             final List<CssMetaData<? extends Styleable, ?>> styleables = new ArrayList<>(Text.getClassCssMetaData());
-            Collections.addAll(styleables, GLYPH);
+            Collections.addAll(styleables, GLYPH_NAME, GLYPH_SIZE);
             STYLEABLES = Collections.unmodifiableList(styleables);
         }
     }

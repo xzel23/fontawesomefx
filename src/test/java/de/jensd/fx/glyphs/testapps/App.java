@@ -64,6 +64,10 @@ public class App extends Application {
         FontAwesomeIcon.getClassCssMetaData().forEach(m -> {
             System.out.println(m.toString());
         });
+
+         FontAwesomeIcon styledIcon = new FontAwesomeIcon();
+        styledIcon.setStyleClass("styled-icon");
+        styledIcon.setSize("4em");
         
  
         WeatherIcon weatherIcon = new WeatherIcon();
@@ -205,7 +209,7 @@ public class App extends Application {
         HBox basicIconBox = new HBox();
         basicIconBox.setAlignment(Pos.CENTER);
         basicIconBox.setSpacing(20.0);
-        basicIconBox.getChildren().addAll(fontAwesomeIcon, weatherIcon, testButton, testButton2, githubLabel, ambulanceLabel);
+        basicIconBox.getChildren().addAll(styledIcon, fontAwesomeIcon, weatherIcon, testButton, testButton2, githubLabel, ambulanceLabel);
         
         root.getChildren().addAll(createMenubar(), basicIconBox, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 

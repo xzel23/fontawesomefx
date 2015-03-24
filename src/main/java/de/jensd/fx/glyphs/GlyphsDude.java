@@ -36,7 +36,7 @@ public class GlyphsDude {
     }
 
     public static Text createIcon(GlyphIcons icon) {
-        return GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
+        return GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_FONT_SIZE);
     }
 
     public static Text createIcon(GlyphIcons icon, String iconSize) {
@@ -60,7 +60,7 @@ public class GlyphsDude {
     }
 
     public static Button createIconButton(GlyphIcons icon, String text) {
-        Text label = GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_ICON_SIZE);
+        Text label = GlyphsDude.createIcon(icon, GlyphIcon.DEFAULT_FONT_SIZE);
         Button button = new Button(text);
         button.setGraphic(label);
         return button;
@@ -95,7 +95,7 @@ public class GlyphsDude {
      * 
      */
     public static void setIcon(Tab tab, GlyphIcons icon) {
-        setIcon(tab, icon, GlyphIcon.DEFAULT_ICON_SIZE);
+        setIcon(tab, icon, GlyphIcon.DEFAULT_FONT_SIZE);
     }
 
     public static void setIcon(Tab tab, GlyphIcons icon, String iconSize) {
@@ -103,11 +103,11 @@ public class GlyphsDude {
     }
 
     public static void setIcon(Labeled labeled, GlyphIcons icon) {
-        setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE);
+        setIcon(labeled, icon, GlyphIcon.DEFAULT_FONT_SIZE);
     }
 
     public static void setIcon(Labeled labeled, GlyphIcons icon, ContentDisplay contentDisplay) {
-        setIcon(labeled, icon, GlyphIcon.DEFAULT_ICON_SIZE, contentDisplay);
+        setIcon(labeled, icon, GlyphIcon.DEFAULT_FONT_SIZE, contentDisplay);
     }
 
     public static void setIcon(Labeled labeled, GlyphIcons icon, String iconSize) {
@@ -123,7 +123,7 @@ public class GlyphsDude {
     }
 
     public static void setIcon(MenuItem menuItem, GlyphIcons icon) {
-        setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, GlyphIcon.DEFAULT_ICON_SIZE);
+        setIcon(menuItem, icon, GlyphIcon.DEFAULT_FONT_SIZE, GlyphIcon.DEFAULT_FONT_SIZE);
     }
 
     public static void setIcon(MenuItem menuItem, GlyphIcons icon, String iconSize) {
@@ -140,7 +140,7 @@ public class GlyphsDude {
     }
 
     public static void setIcon(TreeItem treeItem, GlyphIcons icon) {
-        setIcon(treeItem, icon, GlyphIcon.DEFAULT_ICON_SIZE);
+        setIcon(treeItem, icon, GlyphIcon.DEFAULT_FONT_SIZE);
     }
 
     public static void setIcon(TreeItem treeItem, GlyphIcons icon, String iconSize) {
