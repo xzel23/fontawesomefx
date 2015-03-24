@@ -5,8 +5,9 @@
  */
 package de.jensd.fx.glyphs.testapps;
 
-import com.sun.javafx.css.Size;
-import com.sun.javafx.css.SizeUnits;
+import de.jensd.fx.glyphs.GlyphIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,41 +24,30 @@ public class CssParserTest {
         sizes.add("11px");
         sizes.add("12pc");
         sizes.add("13");
+        sizes.add("0.5em");
+        sizes.add("0.6em");
+        sizes.add("0.7em");
+        sizes.add("0.8em");
+        sizes.add("0.9em");
+        sizes.add("1em");
+        sizes.add("1.1em");
+        sizes.add("1.2em");
+        sizes.add("1.3em");
+        sizes.add("1.4em");
+        sizes.add("1.5em");
+        sizes.add("1.6em");
+        sizes.add("1.7em");
+        sizes.add("1.8em");
+        sizes.add("1.9em");
+        sizes.add("2em");
 
+        FontAwesomeIcon icon = new FontAwesomeIcon();
+        
         sizes.forEach(s -> {
-            Size size = size(s);
+            Object size = icon.convert(s);
             System.out.println(size);
         });
-
-        
-        
     }
 
-    private static Size size(String sizeString) {
-        final String sval = sizeString.trim();
-        final int len = sval.length();
-        int trim = 2;
-        String suffix = sval.substring(len - trim);
-        SizeUnits unit = SizeUnits.PX;
-        switch (suffix) {
-            case "em":
-                unit = SizeUnits.EM;
-                break;
-            case "pt":
-                unit = SizeUnits.PT;
-                break;
-            case "px":
-                unit = SizeUnits.PX;
-                break;
-            case "pc":
-                unit = SizeUnits.PC;
-                break;
-            default:
-                trim = 0;
-        }
-        Double size = Double.parseDouble(sval.substring(0, len - trim));
-        return new Size(size, unit);
-
-    }
 
 }

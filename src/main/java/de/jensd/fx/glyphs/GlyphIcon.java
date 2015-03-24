@@ -5,12 +5,14 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
- * implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.glyphs;
 
+import com.sun.javafx.css.ParsedValueImpl;
+import com.sun.javafx.css.parser.CSSParser;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,6 +28,7 @@ import javafx.css.StyleConverter;
 import javafx.css.Styleable;
 import javafx.css.StyleableProperty;
 import javafx.fxml.FXML;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 /**
@@ -36,12 +39,12 @@ import javafx.scene.text.Text;
  */
 public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
-    public final static String DEFAULT_ICON_SIZE = "12.0";
+    public final static Double DEFAULT_ICON_SIZE = 12.0;
     public final static String DEFAULT_FONT_SIZE = "1em";
 
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
     private ObjectProperty<String> glyphName;
-    private ObjectProperty<String> glyphSize;
+    private ObjectProperty<Number> glyphSize;
     public final Class<T> typeOfT;
 
     @FXML
@@ -54,15 +57,16 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
                 .getActualTypeArguments()[0];
         getStyleClass().addAll("root", "glyph-icon");
         glyphSizeProperty().addListener(observable -> {
-            updateStyle();
+            updateSize();
         });
         glyphStyleProperty().addListener(observable -> {
             updateStyle();
         });
         glyphNameProperty().addListener(observable -> {
-            updateStyle();
+            updateIcon();
         });
         setIcon(getDefaultGlyph());
+
     }
 
     // convenience method
@@ -101,30 +105,26 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         glyphNameProperty().setValue(glyphName);
     }
 
-    public final ObjectProperty<String> glyphSizeProperty() {
+    public final ObjectProperty<Number> glyphSizeProperty() {
         if (glyphSize == null) {
             glyphSize = new SimpleStyleableObjectProperty<>(StyleableProperties.GLYPH_SIZE, GlyphIcon.this, "glyphSize");
         }
         return glyphSize;
     }
 
-    public final String getGlyphSize() {
+    public final Number getGlyphSize() {
         return glyphSizeProperty().getValue();
     }
 
-    public final void setGlyphSize(String size) {
+    public final void setGlyphSize(Number size) {
         size = (size == null) ? DEFAULT_ICON_SIZE : size;
         glyphSizeProperty().setValue(size);
     }
 
     // kept for compability reasons
-    public final String getSize() {
-        return glyphSizeProperty().getValue();
-    }
-
-    // kept for compability reasons
-    public final void setSize(String size) {
-        setGlyphSize(size);
+    public final void setSize(String sizeExpr) {
+        Number s = convert(sizeExpr);
+        setGlyphSize(s);
     }
 
     public final void setIcon(T glyph) {
@@ -133,7 +133,12 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     abstract public T getDefaultGlyph();
 
-    private void updateStyle() {
+    private void updateSize() {
+        Font f = new Font(getFont().getFamily(), getGlyphSize().doubleValue());
+        setFont(f);
+    }
+
+    private void updateIcon() {
         GlyphIcons icon = (GlyphIcons) getDefaultGlyph();
         try {
             icon = ((GlyphIcons) Enum.valueOf(typeOfT, getGlyphName()));
@@ -142,8 +147,10 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
             Logger.getLogger(GlyphIcon.class.getName()).log(Level.SEVERE, msg);
         }
         setText(icon.characterToString());
-        String style = String.format("-fx-font-family: %s; -fx-font-size: %s; %s", icon.getFontFamily(), getGlyphSize(), getGlyphStyle());
-        setStyle(style);
+    }
+
+    private void updateStyle() {
+        setStyle(getGlyphStyle());
     }
 
     // CSS 
@@ -168,20 +175,20 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
                     }
                 };
 
-        private static final CssMetaData<GlyphIcon, String> GLYPH_SIZE
-                = new CssMetaData<GlyphIcon, String>("-glyph-size", StyleConverter.getStringConverter(), DEFAULT_ICON_SIZE) {
+        private static final CssMetaData<GlyphIcon, Number> GLYPH_SIZE
+                = new CssMetaData<GlyphIcon, Number>("-glyph-size", StyleConverter.getSizeConverter(), DEFAULT_ICON_SIZE) {
                     @Override
                     public boolean isSettable(GlyphIcon styleable) {
                         return styleable.glyphSize == null || !styleable.glyphSize.isBound();
                     }
 
                     @Override
-                    public StyleableProperty<String> getStyleableProperty(GlyphIcon styleable) {
+                    public StyleableProperty<Number> getStyleableProperty(GlyphIcon styleable) {
                         return (StyleableProperty) styleable.glyphSizeProperty();
                     }
 
                     @Override
-                    public String getInitialValue(GlyphIcon styleable) {
+                    public Number getInitialValue(GlyphIcon styleable) {
                         return DEFAULT_ICON_SIZE;
                     }
                 };
@@ -201,5 +208,12 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     @Override
     public List<CssMetaData<? extends Styleable, ?>> getCssMetaData() {
         return getClassCssMetaData();
+    }
+
+    private static final CSSParser CSS_PARSER = new CSSParser();
+
+    public Number convert(String sizeString) {
+        ParsedValueImpl parsedValueImpl = CSS_PARSER.parseExpr("", sizeString);
+        return (Number) parsedValueImpl.convert(getFont());
     }
 }

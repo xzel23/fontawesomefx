@@ -52,9 +52,6 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java</directory>
-            </resource>
-            <resource>
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*.ttf</include>
@@ -66,7 +63,7 @@
             </resource>
         </resources>
         <plugins>
-            <plugin>
+            <!--plugin>
                 <groupId>net.orfjackal.retrolambda</groupId>
                 <artifactId>retrolambda-maven-plugin</artifactId>
                 <version>1.8.1</version>
@@ -78,7 +75,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>

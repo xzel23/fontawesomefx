@@ -61,13 +61,13 @@ public class App extends Application {
         fontAwesomeIcon.setSize("4em");
         fontAwesomeIcon.setStyle("-glyph-name: AMBULANCE;");
         
-        FontAwesomeIcon.getClassCssMetaData().forEach(m -> {
-            System.out.println(m.toString());
-        });
+//        FontAwesomeIcon.getClassCssMetaData().forEach(m -> {
+//            System.out.println(m.toString());
+//        });
 
          FontAwesomeIcon styledIcon = new FontAwesomeIcon();
         styledIcon.setStyleClass("styled-icon");
-        styledIcon.setSize("4em");
+        //styledIcon.setSize("4em");
         
  
         WeatherIcon weatherIcon = new WeatherIcon();
@@ -127,26 +127,26 @@ public class App extends Application {
                 )
                 .add(GlyphsBuilder.create(FontAwesomeIcon.class)
                         .glyph(FontAwesomeIcons.BAN)
-                        .style("-fx-font-size: 4em; -fx-fill: red; -fx-opacity: 0.5;")
+                        .style("-fx-font-size: 6em; -fx-fill: red; -fx-opacity: 0.5;")
                         .build()
                 );
 
         Region stackedIcon6 = GlyphsStack.create()
                 .add(GlyphsBuilder.create(FontAwesomeIcon.class)
                         .glyph(FontAwesomeIcons.CIRCLE)
-                        .style("-fx-font-size: 8em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
+                        .style("-fx-font-size: 10em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
                         .build()
                 )
                 .add(GlyphsBuilder.create(FontAwesomeIcon.class)
                         .glyph(FontAwesomeIcons.TWITTER)
-                        .style("-fx-font-size: 4em; -fx-fill: white;")
+                        .style("-fx-font-size: 6em; -fx-fill: white;")
                         .build()
                 );
 
         Region stackedIcon7 = GlyphsStack.create()
                 .add(GlyphsBuilder.create(FontAwesomeIcon.class)
                         .glyph(FontAwesomeIcons.CIRCLE)
-                        .style("-fx-font-size: 12em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
+                        .style("-fx-font-size: 10em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
                         .build()
                 )
                 .add(GlyphsBuilder.create(FontAwesomeIcon.class)
