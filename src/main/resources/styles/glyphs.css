@@ -36,9 +36,9 @@
     -icons-color: yellowgreen;
 }
 
-.styled-icon{
+.thumbs-up-icon{
     -fx-fill: linear-gradient(blueviolet 0%, derive(blueviolet,70%) 30%, derive(red, 30%) 85%);
-    -glyph-name: AMBULANCE;
+    -glyph-name: THUMBS_UP;
     -glyph-size: 4em;
 }
 

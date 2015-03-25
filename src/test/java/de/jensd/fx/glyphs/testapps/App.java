@@ -65,9 +65,8 @@ public class App extends Application {
 //            System.out.println(m.toString());
 //        });
 
-         FontAwesomeIcon styledIcon = new FontAwesomeIcon();
-        styledIcon.setStyleClass("styled-icon");
-        //styledIcon.setSize("4em");
+        FontAwesomeIcon styledIcon = new FontAwesomeIcon();
+        styledIcon.setStyleClass("thumbs-up-icon");
         
  
         WeatherIcon weatherIcon = new WeatherIcon();
