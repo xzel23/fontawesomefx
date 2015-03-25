@@ -5,8 +5,8 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ * implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.glyphs.testapps;
@@ -60,15 +60,23 @@ public class App extends Application {
         fontAwesomeIcon.setStyleClass("blue-icon");
         fontAwesomeIcon.setSize("4em");
         fontAwesomeIcon.setStyle("-glyph-name: AMBULANCE;");
-        
+
 //        FontAwesomeIcon.getClassCssMetaData().forEach(m -> {
 //            System.out.println(m.toString());
 //        });
 
+        /*
+         .thumbs-up-icon{
+           -glyph-name: THUMBS_UP;
+           -glyph-size: 6em;
+         }
+         */
         FontAwesomeIcon styledIcon = new FontAwesomeIcon();
         styledIcon.setStyleClass("thumbs-up-icon");
+
         
- 
+        
+        
         WeatherIcon weatherIcon = new WeatherIcon();
         weatherIcon.setStyleClass("green-icon");
         weatherIcon.setSize("4em");
@@ -209,7 +217,7 @@ public class App extends Application {
         basicIconBox.setAlignment(Pos.CENTER);
         basicIconBox.setSpacing(20.0);
         basicIconBox.getChildren().addAll(styledIcon, fontAwesomeIcon, weatherIcon, testButton, testButton2, githubLabel, ambulanceLabel);
-        
+
         root.getChildren().addAll(createMenubar(), basicIconBox, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 
         Scene scene = new Scene(root, 500, 800);
