@@ -120,8 +120,13 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         size = (size == null) ? DEFAULT_ICON_SIZE : size;
         glyphSizeProperty().setValue(size);
     }
+    
+    // kept for compability reasons and for SceneBuilder/FXML support
+    public final String getSize(){
+        return getGlyphSize().toString();
+    }
 
-    // kept for compability reasons
+    // kept for compability reasons and for SceneBuilder/FXML support
     public final void setSize(String sizeExpr) {
         Number s = convert(sizeExpr);
         setGlyphSize(s);
