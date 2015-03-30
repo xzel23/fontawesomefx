@@ -71,8 +71,11 @@ public class App extends Application {
            -glyph-size: 6em;
          }
          */
-        FontAwesomeIcon styledIcon = new FontAwesomeIcon();
-        styledIcon.setStyleClass("thumbs-up-icon");
+        FontAwesomeIcon thumbsUpIcon = new FontAwesomeIcon();
+        thumbsUpIcon.setStyleClass("thumbs-up-icon");
+
+        FontAwesomeIcon thumbsDownIcon = new FontAwesomeIcon();
+        thumbsDownIcon.setStyleClass("thumbs-down-icon");
 
         
         
@@ -216,7 +219,7 @@ public class App extends Application {
         HBox basicIconBox = new HBox();
         basicIconBox.setAlignment(Pos.CENTER);
         basicIconBox.setSpacing(20.0);
-        basicIconBox.getChildren().addAll(styledIcon, fontAwesomeIcon, weatherIcon, testButton, testButton2, githubLabel, ambulanceLabel);
+        basicIconBox.getChildren().addAll(thumbsUpIcon, thumbsDownIcon, fontAwesomeIcon, weatherIcon, testButton, testButton2, githubLabel, ambulanceLabel);
 
         root.getChildren().addAll(createMenubar(), basicIconBox, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 

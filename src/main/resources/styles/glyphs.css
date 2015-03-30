@@ -41,6 +41,11 @@
     -glyph-size: 6em;
 }
 
+.thumbs-down-icon{
+    -glyph-name: "THUMBS_DOWN";
+    -glyph-size: 6em;
+}
+
 
 
 
