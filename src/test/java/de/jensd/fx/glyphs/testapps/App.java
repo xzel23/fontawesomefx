@@ -5,8 +5,8 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
- * implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  *
  */
 package de.jensd.fx.glyphs.testapps;
@@ -61,13 +61,14 @@ public class App extends Application {
         fontAwesomeIcon.setSize("4em");
         fontAwesomeIcon.setStyle("-glyph-name: AMBULANCE;");
 
-//        FontAwesomeIcon.getClassCssMetaData().forEach(m -> {
-//            System.out.println(m.toString());
-//        });
-
         /*
          .thumbs-up-icon{
-           -glyph-name: THUMBS_UP;
+           -glyph-name: "THUMBS_UP";
+           -glyph-size: 6em;
+         }
+
+         .thumbs-down-icon{
+           -glyph-name: "THUMBS_DOWN";
            -glyph-size: 6em;
          }
          */
