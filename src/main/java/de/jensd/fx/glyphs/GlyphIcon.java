@@ -108,6 +108,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     public final ObjectProperty<Number> glyphSizeProperty() {
         if (glyphSize == null) {
             glyphSize = new SimpleStyleableObjectProperty<>(StyleableProperties.GLYPH_SIZE, GlyphIcon.this, "glyphSize");
+            glyphSize.setValue(DEFAULT_ICON_SIZE);
         }
         return glyphSize;
     }
