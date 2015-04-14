@@ -216,7 +216,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         return getClassCssMetaData();
     }
 
-    private static final CSSParser CSS_PARSER = new CSSParser();
+    private static final CSSParser CSS_PARSER = CSSParser.getInstance();
 
     public Number convert(String sizeString) {
         ParsedValueImpl parsedValueImpl = CSS_PARSER.parseExpr("", sizeString);
