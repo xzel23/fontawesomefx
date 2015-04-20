@@ -212,10 +212,24 @@ public class App extends Application {
                         .build()
                 );
 
+        Region iconStack4 = GlyphsStack.create()
+                .addAll(GlyphsBuilder.create(FontAwesomeIcon.class)
+                                .glyph(FontAwesomeIcons.CIRCLE)
+                                .size("12em")
+                                .style("-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
+                                .build(),
+                        GlyphsBuilder.create(WeatherIcon.class)
+                                .glyph(WeatherIcons.SUNRISE)
+                                .size("4em")
+                                .style("-fx-fill: linear-gradient(orange 0%, darkred); "
+                                        + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
+                                .build()
+                );
+
         HBox stackIconBox2 = new HBox();
         stackIconBox2.setSpacing(5.0);
         stackIconBox2.setPadding(new Insets(10.0));
-        stackIconBox2.getChildren().addAll(iconStack1, iconStack3);
+        stackIconBox2.getChildren().addAll(iconStack1, iconStack3, iconStack4);
 
         HBox basicIconBox = new HBox();
         basicIconBox.setAlignment(Pos.CENTER);
@@ -224,7 +238,7 @@ public class App extends Application {
 
         root.getChildren().addAll(createMenubar(), basicIconBox, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 
-        Scene scene = new Scene(root, 500, 800);
+        Scene scene = new Scene(root);
         scene.getStylesheets().addAll(GlyphsStyle.DEFAULT.getStylePath());
 
         primaryStage.setScene(scene);
