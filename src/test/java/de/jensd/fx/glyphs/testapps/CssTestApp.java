@@ -12,7 +12,7 @@
 package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphsStyle;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -32,11 +32,11 @@ public class CssTestApp extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        FontAwesomeIcon.getClassCssMetaData().forEach(m -> {
+        FontAwesomeIconView.getClassCssMetaData().forEach(m -> {
             System.out.println(m.toString());
         });
 
-         FontAwesomeIcon styledIcon = new FontAwesomeIcon();
+         FontAwesomeIconView styledIcon = new FontAwesomeIconView();
         styledIcon.setStyleClass("styled-icon");
         styledIcon.setSize("16em");
         

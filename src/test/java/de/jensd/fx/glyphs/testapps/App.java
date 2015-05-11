@@ -15,10 +15,10 @@ import de.jensd.fx.glyphs.GlyphsBuilder;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.GlyphsStack;
 import de.jensd.fx.glyphs.GlyphsStyle;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import de.jensd.fx.glyphs.weathericons.WeatherIconView;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
-import de.jensd.fx.glyphs.weathericons.WeatherIcons;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -50,17 +50,17 @@ public class App extends Application {
 
         Button testButton = new Button();
         testButton.getStyleClass().setAll("exit-button");
-        GlyphsDude.setIcon(testButton, FontAwesomeIcons.POWER_OFF, "6em");
+        GlyphsDude.setIcon(testButton, FontAwesomeIcon.POWER_OFF, "6em");
 
         Button testButton2 = new Button();
         testButton2.getStyleClass().add("alien-button");
-        GlyphsDude.setIcon(testButton2, WeatherIcons.ALIEN, "6em");
+        GlyphsDude.setIcon(testButton2, WeatherIcon.ALIEN, "6em");
 
-        FontAwesomeIcon fontAwesomeIcon = new FontAwesomeIcon(FontAwesomeIcons.AMBULANCE);
+        FontAwesomeIconView fontAwesomeIcon = new FontAwesomeIconView(FontAwesomeIcon.AMBULANCE);
         fontAwesomeIcon.setStyleClass("blue-icon");
         fontAwesomeIcon.setSize("4em");
 
-        WeatherIcon weatherIcon1 = new WeatherIcon(WeatherIcons.CLOUD);
+        WeatherIconView weatherIcon1 = new WeatherIconView(WeatherIcon.CLOUD);
         weatherIcon1.setStyleClass("blue-icon");
         weatherIcon1.setSize("4em");
 
@@ -75,93 +75,93 @@ public class App extends Application {
          -glyph-size: 6em;
          }
          */
-        FontAwesomeIcon thumbsUpIcon = new FontAwesomeIcon();
+        FontAwesomeIconView thumbsUpIcon = new FontAwesomeIconView();
         thumbsUpIcon.setStyleClass("thumbs-up-icon");
 
-        FontAwesomeIcon thumbsDownIcon = new FontAwesomeIcon();
+        FontAwesomeIconView thumbsDownIcon = new FontAwesomeIconView();
         thumbsDownIcon.setStyleClass("thumbs-down-icon");
 
-        WeatherIcon weatherIcon2 = new WeatherIcon();
+        WeatherIconView weatherIcon2 = new WeatherIconView();
         weatherIcon2.setStyleClass("green-icon");
         weatherIcon2.setSize("4em");
 
-        Text githubLabel = GlyphsDude.createIcon(FontAwesomeIcons.GITHUB);
-        Text ambulanceLabel = GlyphsDude.createIcon(FontAwesomeIcons.PLUS_SQUARE_ALT, "60.0");
-        Button starButton = GlyphsDude.createIconButton(FontAwesomeIcons.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
-        Button cloudButton = GlyphsDude.createIconButton(FontAwesomeIcons.CLOUD, "Download");
-        ToggleButton toggleButton = GlyphsDude.createIconToggleButton(FontAwesomeIcons.LOCK, "Lock", "60.0", ContentDisplay.TOP);
-        Region stackedIcon1 = GlyphsStack.create().add(GlyphsBuilder.create(FontAwesomeIcon.class).glyph(FontAwesomeIcons.AMBULANCE).build());
+        Text githubLabel = GlyphsDude.createIcon(FontAwesomeIcon.GITHUB);
+        Text ambulanceLabel = GlyphsDude.createIcon(FontAwesomeIcon.PLUS_SQUARE_ALT, "60.0");
+        Button starButton = GlyphsDude.createIconButton(FontAwesomeIcon.STAR, "Nice!", "48.0", "20.0", ContentDisplay.TOP);
+        Button cloudButton = GlyphsDude.createIconButton(FontAwesomeIcon.CLOUD, "Download");
+        ToggleButton toggleButton = GlyphsDude.createIconToggleButton(FontAwesomeIcon.LOCK, "Lock", "60.0", ContentDisplay.TOP);
+        Region stackedIcon1 = GlyphsStack.create().add(GlyphsBuilder.create(FontAwesomeIconView.class).glyph(FontAwesomeIcon.AMBULANCE).build());
 
         Region stackedIcon2 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.SQUARE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.SQUARE)
                         .size("3em")
                         .styleClass("stack-base")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.STAR)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.STAR)
                         .size("2em")
                         .styleClass("stack-top")
                         .build()
                 );
 
         Region stackedIcon3 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.SQUARE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.SQUARE)
                         .style("-fx-font-size: 4em; -fx-fill: yellowgreen;")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.APPLE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.APPLE)
                         .style("-fx-font-size: 3em; -fx-fill: white;")
                         .build()
                 );
 
         Region stackedIcon4 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.SQUARE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.SQUARE)
                         .style("-fx-font-size: 4em; -fx-fill: yellowgreen;")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.APPLE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.APPLE)
                         .style("-fx-font-size: 3em; -fx-fill: black;")
                         .build()
                 );
 
         Region stackedIcon5 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.BUG)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.BUG)
                         .style("-fx-font-size: 2em; -fx-fill: black;")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.BAN)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.BAN)
                         .style("-fx-font-size: 6em; -fx-fill: red; -fx-opacity: 0.5;")
                         .build()
                 );
 
         Region stackedIcon6 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.CIRCLE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.CIRCLE)
                         .style("-fx-font-size: 10em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.TWITTER)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.TWITTER)
                         .style("-fx-font-size: 6em; -fx-fill: white;")
                         .build()
                 );
 
         Region stackedIcon7 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.CIRCLE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.CIRCLE)
                         .style("-fx-font-size: 10em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.BITBUCKET)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.BITBUCKET)
                         .style("-fx-font-size: 6em; "
                                 + "-fx-fill: linear-gradient(#ffffff, #d2d2d2); "
                                 + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
@@ -173,53 +173,53 @@ public class App extends Application {
         stackIconBox1.getChildren().addAll(stackedIcon1, stackedIcon2, stackedIcon3, stackedIcon4, stackedIcon5, stackedIcon6, stackedIcon7);
 
         Region iconStack1 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.CIRCLE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.CIRCLE)
                         .style("-fx-font-size: 12em; -fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.BITBUCKET)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.BITBUCKET)
                         .style("-fx-font-size: 6em; "
                                 + "-fx-fill: linear-gradient(#ffffff 0%, #d2d2d2); "
                                 + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.BAN)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.BAN)
                         .style("-fx-font-size: 12em; -fx-fill: red; -fx-opacity: 0.5;")
                         .build()
                 );
 
         Region iconStack3 = GlyphsStack.create()
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.CIRCLE)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.CIRCLE)
                         .size("12em")
                         .style("-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
                         .build()
                 )
-                .add(GlyphsBuilder.create(WeatherIcon.class)
-                        .glyph(WeatherIcons.RAIN)
+                .add(GlyphsBuilder.create(WeatherIconView.class)
+                        .glyph(WeatherIcon.RAIN)
                         .size("4em")
                         .style("-fx-fill: linear-gradient(#ffffff 0%, #d2d2d2); "
                                 + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
                         .build()
                 )
-                .add(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.BAN)
+                .add(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.BAN)
                         .size("12em")
                         .style("-fx-fill: red; -fx-opacity: 0.5;")
                         .build()
                 );
 
         Region iconStack4 = GlyphsStack.create()
-                .addAll(GlyphsBuilder.create(FontAwesomeIcon.class)
-                        .glyph(FontAwesomeIcons.CIRCLE)
+                .addAll(GlyphsBuilder.create(FontAwesomeIconView.class)
+                        .glyph(FontAwesomeIcon.CIRCLE)
                         .size("12em")
                         .style("-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
                         .build(),
-                        GlyphsBuilder.create(WeatherIcon.class)
-                        .glyph(WeatherIcons.SUNRISE)
+                        GlyphsBuilder.create(WeatherIconView.class)
+                        .glyph(WeatherIcon.SUNRISE)
                         .size("4em")
                         .style("-fx-fill: linear-gradient(orange 0%, darkred); "
                                 + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
@@ -252,13 +252,13 @@ public class App extends Application {
         MenuBar menuBar = new MenuBar();
 
         MenuItem openItem = new MenuItem("Open");
-        GlyphsDude.setIcon(openItem, FontAwesomeIcons.FILE);
+        GlyphsDude.setIcon(openItem, FontAwesomeIcon.FILE);
         MenuItem saveItem = new MenuItem("Save");
-        GlyphsDude.setIcon(saveItem, FontAwesomeIcons.DOWNLOAD);
+        GlyphsDude.setIcon(saveItem, FontAwesomeIcon.DOWNLOAD);
         MenuItem saveAsItem = new MenuItem("Save As...");
-        GlyphsDude.setIcon(saveAsItem, FontAwesomeIcons.DOWNLOAD);
+        GlyphsDude.setIcon(saveAsItem, FontAwesomeIcon.DOWNLOAD);
         MenuItem exitItem = new MenuItem("Exit");
-        GlyphsDude.setIcon(exitItem, FontAwesomeIcons.SIGN_OUT);
+        GlyphsDude.setIcon(exitItem, FontAwesomeIcon.SIGN_OUT);
 
         Menu menuFile = new Menu("File");
         menuFile.getItems().add(openItem);

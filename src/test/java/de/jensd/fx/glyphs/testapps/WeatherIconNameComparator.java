@@ -13,17 +13,17 @@
  */
 package de.jensd.fx.glyphs.testapps;
 
-import de.jensd.fx.glyphs.weathericons.WeatherIcons;
+import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import java.util.Comparator;
 
 /**
  *
  * @author Jens Deters
  */
-public class WeatherIconNameComparator implements Comparator<WeatherIcons> {
+public class WeatherIconNameComparator implements Comparator<WeatherIcon> {
 
     @Override
-    public int compare(WeatherIcons o1, WeatherIcons o2) {
+    public int compare(WeatherIcon o1, WeatherIcon o2) {
         if(o1 != null && o2 != null){
             return o1.name().compareTo(o2.name());
         }

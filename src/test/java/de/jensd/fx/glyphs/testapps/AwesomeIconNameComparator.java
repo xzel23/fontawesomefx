@@ -11,17 +11,17 @@
  */
 package de.jensd.fx.glyphs.testapps;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.util.Comparator;
 
 /**
  *
  * @author Jens Deters
  */
-public class AwesomeIconNameComparator implements Comparator<FontAwesomeIcons> {
+public class AwesomeIconNameComparator implements Comparator<FontAwesomeIcon> {
 
     @Override
-    public int compare(FontAwesomeIcons o1, FontAwesomeIcons o2) {
+    public int compare(FontAwesomeIcon o1, FontAwesomeIcon o2) {
         if(o1 != null && o2 != null){
             return o1.name().compareTo(o2.name());
         }

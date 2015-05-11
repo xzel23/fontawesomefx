@@ -6,8 +6,8 @@
 package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class CssParserTest {
         sizes.add("1.9em");
         sizes.add("2em");
 
-        FontAwesomeIcon icon = new FontAwesomeIcon();
+        FontAwesomeIconView icon = new FontAwesomeIconView();
         
         sizes.forEach(s -> {
             Object size = icon.convert(s);
