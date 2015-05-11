@@ -9,6 +9,7 @@ This font fits perfectly into JavaFX as
 #Currently FontAwesome 4.3.0 and WeatherIcons 1.3 are build-in.
 
 #Usage
+* [8.4 announcement][11]
 * [8.3 announcement][10]
 * [8.2 announcement][9]
 * [8.1 announcement][8]
@@ -39,3 +40,4 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [8]: http://www.jensd.de/wordpress/?p=1182
 [9]: http://www.jensd.de/wordpress/?p=1971
 [10]: http://www.jensd.de/wordpress/?p=2002
+[11]: http://www.jensd.de/wordpress/?p=2026
