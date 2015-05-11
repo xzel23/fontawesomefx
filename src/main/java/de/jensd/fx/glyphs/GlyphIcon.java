@@ -47,6 +47,10 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     private ObjectProperty<Number> glyphSize;
     public final Class<T> typeOfT;
 
+    @FXML
+    public void init() {
+    }
+
     public GlyphIcon() {
         this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
                 .getGenericSuperclass())
