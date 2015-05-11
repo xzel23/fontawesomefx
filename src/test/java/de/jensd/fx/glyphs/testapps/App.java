@@ -56,20 +56,23 @@ public class App extends Application {
         testButton2.getStyleClass().add("alien-button");
         GlyphsDude.setIcon(testButton2, WeatherIcons.ALIEN, "6em");
 
-        FontAwesomeIcon fontAwesomeIcon = new FontAwesomeIcon();
+        FontAwesomeIcon fontAwesomeIcon = new FontAwesomeIcon(FontAwesomeIcons.AMBULANCE);
         fontAwesomeIcon.setStyleClass("blue-icon");
         fontAwesomeIcon.setSize("4em");
-        fontAwesomeIcon.setStyle("-glyph-name: AMBULANCE;");
+
+        WeatherIcon weatherIcon1 = new WeatherIcon(WeatherIcons.CLOUD);
+        weatherIcon1.setStyleClass("blue-icon");
+        weatherIcon1.setSize("4em");
 
         /*
          .thumbs-up-icon{
-           -glyph-name: "THUMBS_UP";
-           -glyph-size: 6em;
+         -glyph-name: "THUMBS_UP";
+         -glyph-size: 6em;
          }
 
          .thumbs-down-icon{
-           -glyph-name: "THUMBS_DOWN";
-           -glyph-size: 6em;
+         -glyph-name: "THUMBS_DOWN";
+         -glyph-size: 6em;
          }
          */
         FontAwesomeIcon thumbsUpIcon = new FontAwesomeIcon();
@@ -78,12 +81,9 @@ public class App extends Application {
         FontAwesomeIcon thumbsDownIcon = new FontAwesomeIcon();
         thumbsDownIcon.setStyleClass("thumbs-down-icon");
 
-        
-        
-        
-        WeatherIcon weatherIcon = new WeatherIcon();
-        weatherIcon.setStyleClass("green-icon");
-        weatherIcon.setSize("4em");
+        WeatherIcon weatherIcon2 = new WeatherIcon();
+        weatherIcon2.setStyleClass("green-icon");
+        weatherIcon2.setSize("4em");
 
         Text githubLabel = GlyphsDude.createIcon(FontAwesomeIcons.GITHUB);
         Text ambulanceLabel = GlyphsDude.createIcon(FontAwesomeIcons.PLUS_SQUARE_ALT, "60.0");
@@ -214,16 +214,16 @@ public class App extends Application {
 
         Region iconStack4 = GlyphsStack.create()
                 .addAll(GlyphsBuilder.create(FontAwesomeIcon.class)
-                                .glyph(FontAwesomeIcons.CIRCLE)
-                                .size("12em")
-                                .style("-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
-                                .build(),
+                        .glyph(FontAwesomeIcons.CIRCLE)
+                        .size("12em")
+                        .style("-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);")
+                        .build(),
                         GlyphsBuilder.create(WeatherIcon.class)
-                                .glyph(WeatherIcons.SUNRISE)
-                                .size("4em")
-                                .style("-fx-fill: linear-gradient(orange 0%, darkred); "
-                                        + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
-                                .build()
+                        .glyph(WeatherIcons.SUNRISE)
+                        .size("4em")
+                        .style("-fx-fill: linear-gradient(orange 0%, darkred); "
+                                + "-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4 , 0.0 , 1 , 1 );")
+                        .build()
                 );
 
         HBox stackIconBox2 = new HBox();
@@ -234,7 +234,7 @@ public class App extends Application {
         HBox basicIconBox = new HBox();
         basicIconBox.setAlignment(Pos.CENTER);
         basicIconBox.setSpacing(20.0);
-        basicIconBox.getChildren().addAll(thumbsUpIcon, thumbsDownIcon, fontAwesomeIcon, weatherIcon, testButton, testButton2, githubLabel, ambulanceLabel);
+        basicIconBox.getChildren().addAll(thumbsUpIcon, thumbsDownIcon, fontAwesomeIcon, weatherIcon1, weatherIcon2, testButton, testButton2, githubLabel, ambulanceLabel);
 
         root.getChildren().addAll(createMenubar(), basicIconBox, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 

@@ -47,10 +47,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     private ObjectProperty<Number> glyphSize;
     public final Class<T> typeOfT;
 
-    @FXML
-    public void init() {
-    }
-
     public GlyphIcon() {
         this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
                 .getGenericSuperclass())
@@ -121,9 +117,9 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
         size = (size == null) ? DEFAULT_ICON_SIZE : size;
         glyphSizeProperty().setValue(size);
     }
-    
+
     // kept for compability reasons and for SceneBuilder/FXML support
-    public final String getSize(){
+    public final String getSize() {
         return getGlyphSize().toString();
     }
 
