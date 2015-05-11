@@ -22,7 +22,7 @@ This font fits perfectly into JavaFX as
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.3</version>
+        <version>8.4</version>
     </dependency>
 
 #License
