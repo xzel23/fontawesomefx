@@ -4,15 +4,15 @@ This font fits perfectly into JavaFX as
 
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
-* incredible lightweight (one font 479 icons)
+* incredible lightweight (one font 519 icons)
 
-This project provides a helper class (AwesomeDude) for easy usage of these icons in JavaFX apps.
-
-
-#Currently FontAwesome 4.2.0 is supported.
-
+#Currently FontAwesome 4.3.0 and WeatherIcons 1.3 are build-in.
 
 #Usage
+* [8.4 announcement][11]
+* [8.3 announcement][10]
+* [8.2 announcement][9]
+* [8.1 announcement][8]
 * [8.0.10 announcement][5]
 * [8.0.9 announcement][6]
 * [8.0.7/8.0.8 announcement][7]
@@ -23,7 +23,7 @@ This project provides a helper class (AwesomeDude) for easy usage of these icons
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.0.10</version>
+        <version>8.4</version>
     </dependency>
 
 #License
@@ -37,3 +37,7 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [5]: http://www.jensd.de/wordpress/?p=1556
 [6]: http://www.jensd.de/wordpress/?p=1457
 [7]: http://www.jensd.de/wordpress/?p=1182
+[8]: http://www.jensd.de/wordpress/?p=1182
+[9]: http://www.jensd.de/wordpress/?p=1971
+[10]: http://www.jensd.de/wordpress/?p=2002
+[11]: http://www.jensd.de/wordpress/?p=2026
