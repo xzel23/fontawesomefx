@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.jensd</groupId>
     <artifactId>fontawesomefx</artifactId>
-    <version>8.5</version>
+    <version>8.6-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>FontAwesomeFX</name>
     <inceptionYear>2015</inceptionYear>
@@ -18,7 +18,7 @@
         <connection>scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git</connection>
         <developerConnection>scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git</developerConnection>
         <url>https://bitbucket.org/Jerady/fontawesomefx</url>
-        <tag>fontawesomefx-8.5</tag>
+        <tag>HEAD</tag>
     </scm>
     <developers>
         <developer>
