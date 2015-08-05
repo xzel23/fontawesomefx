@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.jensd</groupId>
     <artifactId>fontawesomefx</artifactId>
-    <version>8.6-SNAPSHOT</version>
+    <version>8.5-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>FontAwesomeFX</name>
     <inceptionYear>2015</inceptionYear>
@@ -105,7 +105,7 @@
                         <id>sign-artifacts</id>
                         <phase>verify</phase>
                         <goals>
-                            <!--goal>sign</goal-->
+                            <goal>sign</goal>
                         </goals>
                     </execution>
                 </executions>
