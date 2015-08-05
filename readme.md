@@ -4,9 +4,9 @@ This font fits perfectly into JavaFX as
 
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
-* incredible lightweight (one font 519 icons)
+* incredible lightweight (one font 674 icons)
 
-#Currently FontAwesome 4.3.0 and WeatherIcons 1.3 are build-in.
+#Currently FontAwesome 4.4 and WeatherIcons 1.3 are build-in.
 
 #Usage
 * [8.4 announcement][11]
@@ -23,7 +23,7 @@ This font fits perfectly into JavaFX as
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.4</version>
+        <version>8.5</version>
     </dependency>
 
 #License
