@@ -12,6 +12,9 @@
 package de.jensd.fx.glyphs.fontawesome;
 
 import de.jensd.fx.glyphs.GlyphIcon;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.text.Font;
 
 /**
@@ -23,7 +26,11 @@ public class FontAwesomeIconView extends GlyphIcon<FontAwesomeIcon> {
     public final static String TTF_PATH = "/de/jensd/fx/glyphs/fontawesome/fontawesome-webfont.ttf";
 
     static {
-        Font.loadFont(FontAwesomeIconView.class.getResource(TTF_PATH).toExternalForm(), 10.0);
+        try {
+            Font.loadFont(FontAwesomeIconView.class.getResource(TTF_PATH).openStream(),10.0D);
+        } catch (IOException ex) {
+            Logger.getLogger(FontAwesomeIconView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public FontAwesomeIconView(FontAwesomeIcon icon) {
