@@ -6,9 +6,13 @@ This font fits perfectly into JavaFX as
 * each icon (unicode character) can be styled with css
 * incredible lightweight (one font 674 icons)
 
-#Currently FontAwesome 4.4 and WeatherIcons 1.3 are build-in.
+#Currently supported (and build-in):
+ * [FontAwesome 4.4][1]
+ * [WeatherIcons 2.0][12] 
+ * [Material Design Iconic Font 2.1.2][11]
 
 #Usage
+* [8.5 announcement][14]
 * [8.4 announcement][11]
 * [8.3 announcement][10]
 * [8.2 announcement][9]
@@ -41,3 +45,6 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [9]: http://www.jensd.de/wordpress/?p=1971
 [10]: http://www.jensd.de/wordpress/?p=2002
 [11]: http://www.jensd.de/wordpress/?p=2026
+[12]: http://zavoloklom.github.io/material-design-iconic-font/
+[13]: http://erikflowers.github.io/weather-icons/
+[14]: http://www.jensd.de/wordpress/?p=2085

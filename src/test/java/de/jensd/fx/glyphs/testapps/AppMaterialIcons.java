@@ -40,11 +40,13 @@ public class AppMaterialIcons extends Application {
         root.setSpacing(10.0);
 
         Text star = GlyphsDude.createIcon(MaterialIcon.STAR, "4em");
-        Text alarm = GlyphsDude.createIcon(MaterialIcon.ALARM, "4em");
+        Text label1 = GlyphsDude.createIcon(MaterialIcon.LABEL, "4em");
+        Text label2 = GlyphsDude.createIcon(MaterialIcon.LABEL_ALT, "4em");
+        Text label3 = GlyphsDude.createIcon(MaterialIcon.LABEL_ALT_OUTLINE, "4em");
 
         MaterialIconView defaultIcon = new MaterialIconView();
         
-        root.getChildren().addAll(star, alarm, defaultIcon);
+        root.getChildren().addAll(star, label1, label2,label3,defaultIcon);
 
         Scene scene = new Scene(root, 500, 800);
         primaryStage.setScene(scene);
