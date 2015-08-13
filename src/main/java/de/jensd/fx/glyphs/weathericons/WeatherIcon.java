@@ -24,6 +24,8 @@ import de.jensd.fx.glyphs.GlyphIcons;
  *
  * @author Jens Deters (mail@jensd.de)
  */
+
+
 public enum WeatherIcon implements GlyphIcons {
 
     ALIEN('\uf075'),
@@ -541,28 +543,27 @@ public enum WeatherIcon implements GlyphIcons {
 
     private final char character;
 
-
-private WeatherIcon(char character) {
+    private WeatherIcon(char character) {
         this.character = character;
     }
 
     @Override
-        public char getChar() {
+    public char getChar() {
         return character;
     }
 
     @Override
-        public String unicodeToString() {
+    public String unicodeToString() {
         return String.format("\\u%04x", (int) character);
     }
 
     @Override
-        public String characterToString() {
+    public String characterToString() {
         return Character.toString(character);
     }
 
     @Override
-        public String getFontFamily() {
+    public String getFontFamily() {
         return "\'weather icons\'";
     }
 

@@ -17,6 +17,8 @@ import de.jensd.fx.glyphs.GlyphsStack;
 import de.jensd.fx.glyphs.GlyphsStyle;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.materialicons.MaterialIcon;
+import de.jensd.fx.glyphs.materialicons.MaterialIconView;
 import de.jensd.fx.glyphs.weathericons.WeatherIconView;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import javafx.application.Application;
@@ -64,6 +66,11 @@ public class App extends Application {
         weatherIcon1.setStyleClass("blue-icon");
         weatherIcon1.setSize("4em");
 
+        MaterialIconView materialIconView = new MaterialIconView(MaterialIcon.ANDROID);
+        materialIconView.setStyleClass("blue-icon");
+        materialIconView.setSize("4em");
+        
+        
         /*
          .thumbs-up-icon{
          -glyph-name: "THUMBS_UP";
@@ -234,7 +241,7 @@ public class App extends Application {
         HBox basicIconBox = new HBox();
         basicIconBox.setAlignment(Pos.CENTER);
         basicIconBox.setSpacing(20.0);
-        basicIconBox.getChildren().addAll(thumbsUpIcon, thumbsDownIcon, fontAwesomeIcon, weatherIcon1, weatherIcon2, testButton, testButton2, githubLabel, ambulanceLabel);
+        basicIconBox.getChildren().addAll(materialIconView, thumbsUpIcon, thumbsDownIcon, fontAwesomeIcon, weatherIcon1, weatherIcon2, testButton, testButton2, githubLabel, ambulanceLabel);
 
         root.getChildren().addAll(createMenubar(), basicIconBox, starButton, cloudButton, toggleButton, stackIconBox1, stackIconBox2);
 

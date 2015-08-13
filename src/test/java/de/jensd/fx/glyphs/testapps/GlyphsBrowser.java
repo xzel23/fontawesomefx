@@ -1,18 +1,24 @@
 /**
  * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
  */
 package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.materialicons.MaterialIcon;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import java.io.IOException;
 import java.net.URL;
@@ -58,6 +64,7 @@ public class GlyphsBrowser extends VBox {
 
     private List<Button> listAwesome;
     private List<Button> listWeather;
+    private List<Button> listMaterial;
 
     public GlyphsBrowser() {
         init();
@@ -80,8 +87,10 @@ public class GlyphsBrowser extends VBox {
     void initialize() {
         AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
         WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
+        MaterialIconNameComparator materialIconNameComparator = new MaterialIconNameComparator();
         listAwesome = Stream.of(FontAwesomeIcon.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         listWeather = Stream.of(WeatherIcon.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        listMaterial = Stream.of(MaterialIcon.values()).sorted(materialIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
     }
 
@@ -89,7 +98,7 @@ public class GlyphsBrowser extends VBox {
         iconsBox.getChildren().clear();
         iconsBox.getChildren().addAll(iconsList);
         numberOfIconsLabel.setText(iconsList.size() + "");
-        iconsScrollPane.setVvalue(0.0); 
+        iconsScrollPane.setVvalue(0.0);
     }
 
     @FXML
@@ -100,6 +109,11 @@ public class GlyphsBrowser extends VBox {
     @FXML
     public void onShowWeatherIcons() {
         updateBrowser(listWeather);
+    }
+
+    @FXML
+    public void onShowMaterialIcons() {
+        updateBrowser(listMaterial);
     }
 
     private static Button createIconButton(final FontAwesomeIcon icon, final String text) {
@@ -120,6 +134,23 @@ public class GlyphsBrowser extends VBox {
     }
 
     private static Button createIconButton(final WeatherIcon icon, final String text) {
+        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+        Text iconText = GlyphsDude.createIcon(icon, "2em");
+        Button b = new Button(text);
+        b.setContentDisplay(ContentDisplay.TOP);
+        b.setGraphic(iconText);
+        b.setTooltip(tooltip);
+        b.setPrefWidth(180.0);
+        b.setOnAction((ActionEvent t) -> {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            final ClipboardContent content = new ClipboardContent();
+            content.putString(icon.name());
+            clipboard.setContent(content);
+        });
+        return b;
+    }
+    
+    private static Button createIconButton(final MaterialIcon icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
         Text iconText = GlyphsDude.createIcon(icon, "2em");
         Button b = new Button(text);

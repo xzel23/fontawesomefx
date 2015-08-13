@@ -12,6 +12,8 @@
 package de.jensd.fx.glyphs;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import de.jensd.fx.glyphs.materialicons.MaterialIcon;
+import de.jensd.fx.glyphs.materialicons.MaterialIconView;
 import de.jensd.fx.glyphs.weathericons.WeatherIconView;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -33,6 +35,7 @@ public class GlyphsDude {
     static {
         Font.loadFont(GlyphsDude.class.getResource(FontAwesomeIconView.TTF_PATH).toExternalForm(), 10.0);
         Font.loadFont(GlyphsDude.class.getResource(WeatherIconView.TTF_PATH).toExternalForm(), 10.0);
+        Font.loadFont(GlyphsDude.class.getResource(MaterialIconView.TTF_PATH).toExternalForm(), 10.0);
     }
 
     public static Text createIcon(GlyphIcons icon) {

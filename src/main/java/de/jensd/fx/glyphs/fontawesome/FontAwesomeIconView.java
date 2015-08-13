@@ -27,7 +27,7 @@ public class FontAwesomeIconView extends GlyphIcon<FontAwesomeIcon> {
 
     static {
         try {
-            Font.loadFont(FontAwesomeIconView.class.getResource(TTF_PATH).openStream(),10.0D);
+            Font.loadFont(FontAwesomeIconView.class.getResource(TTF_PATH).openStream(),10.0d);
         } catch (IOException ex) {
             Logger.getLogger(FontAwesomeIconView.class.getName()).log(Level.SEVERE, null, ex);
         }

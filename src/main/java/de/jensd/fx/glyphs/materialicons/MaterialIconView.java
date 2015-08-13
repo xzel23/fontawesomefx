@@ -14,8 +14,9 @@
  * the License.
  *
  */
-package de.jensd.fx.glyphs.weathericons;
+package de.jensd.fx.glyphs.materialicons;
 
+import de.jensd.fx.glyphs.weathericons.*;
 import de.jensd.fx.glyphs.GlyphIcon;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -26,31 +27,31 @@ import javafx.scene.text.Font;
  *
  * @author Jens Deters (mail@jensd.de)
  */
-public class WeatherIconView extends GlyphIcon<WeatherIcon> {
+public class MaterialIconView extends GlyphIcon<MaterialIcon> {
 
-    public final static String TTF_PATH = "/de/jensd/fx/glyphs/weathericons/weathericons-regular-webfont.ttf";
+    public final static String TTF_PATH = "/de/jensd/fx/glyphs/materialicons/Material-Design-Iconic-Font.ttf";
 
     static {
         try {
-            Font.loadFont(WeatherIconView.class.getResource(TTF_PATH).openStream(), 10.0d);
+            Font.loadFont(MaterialIconView.class.getResource(TTF_PATH).openStream(), 10.0d);
         } catch (IOException ex) {
-            Logger.getLogger(WeatherIconView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MaterialIconView.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    public WeatherIconView(WeatherIcon icon) {
-        setFont(new Font("weather icons", DEFAULT_ICON_SIZE));
+    public MaterialIconView(MaterialIcon icon) {
+        setFont(new Font("Material-Design-Iconic-Font", DEFAULT_ICON_SIZE));
         setIcon(icon);
     }
 
-    public WeatherIconView() {
-        this(WeatherIcon.CLOUD);
+    public MaterialIconView() {
+        this(MaterialIcon.ANDROID);
     }
 
     @Override
-    public WeatherIcon getDefaultGlyph() {
-        return WeatherIcon.CLOUD;
+    public MaterialIcon getDefaultGlyph() {
+        return MaterialIcon.ANDROID;
     }
 
 }
