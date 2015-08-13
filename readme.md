@@ -8,8 +8,8 @@ This font fits perfectly into JavaFX as
 
 #Currently supported (and build-in):
  * [FontAwesome 4.4][1]
- * [WeatherIcons 2.0][12] 
- * [Material Design Iconic Font 2.1.2][11]
+ * [WeatherIcons 2.0][13] 
+ * [Material Design Iconic Font 2.1.2][12]
 
 #Usage
 * [8.5 announcement][14]
