@@ -14,11 +14,10 @@
  * the License.
  *
  */
-package de.jensd.fx.glyphs.materialicons;
+package de.jensd.fx.glyphs.materialdesignicons;
 
+import de.jensd.fx.glyphs.weathericons.*;
 import de.jensd.fx.glyphs.GlyphIcon;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
-import static de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView.TTF_PATH;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,9 +27,9 @@ import javafx.scene.text.Font;
  *
  * @author Jens Deters (mail@jensd.de)
  */
-public class MaterialIconView extends GlyphIcon<MaterialIcon> {
+public class MaterialDesignIconView extends GlyphIcon<MaterialDesignIcon> {
 
-    public final static String TTF_PATH = "/de/jensd/fx/glyphs/materialicons/MaterialIcons-Regular.ttf";
+    public final static String TTF_PATH = "/de/jensd/fx/glyphs/materialdesignicons/Material-Design-Iconic-Font.ttf";
 
     static {
         try {
@@ -41,18 +40,18 @@ public class MaterialIconView extends GlyphIcon<MaterialIcon> {
 
     }
 
-    public MaterialIconView(MaterialIcon icon) {
-        setFont(new Font("Material Icons", DEFAULT_ICON_SIZE));
+    public MaterialDesignIconView(MaterialDesignIcon icon) {
+        setFont(new Font("Material-Design-Iconic-Font", DEFAULT_ICON_SIZE));
         setIcon(icon);
     }
 
-    public MaterialIconView() {
-        this(MaterialIcon.ANDROID);
+    public MaterialDesignIconView() {
+        this(MaterialDesignIcon.ANDROID);
     }
 
     @Override
-    public MaterialIcon getDefaultGlyph() {
-        return MaterialIcon.ANDROID;
+    public MaterialDesignIcon getDefaultGlyph() {
+        return MaterialDesignIcon.ANDROID;
     }
 
 }

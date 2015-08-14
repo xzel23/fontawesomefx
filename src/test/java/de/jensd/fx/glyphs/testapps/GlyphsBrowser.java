@@ -18,6 +18,7 @@ package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialicons.MaterialIcon;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import java.io.IOException;
@@ -39,7 +40,6 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -50,13 +50,8 @@ import javafx.scene.text.Text;
 public class GlyphsBrowser extends VBox {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
     private FlowPane iconsBox;
 
-    @FXML
-    private HBox headerBox;
     @FXML
     private Label numberOfIconsLabel;
     @FXML
@@ -65,6 +60,7 @@ public class GlyphsBrowser extends VBox {
     private List<Button> listAwesome;
     private List<Button> listWeather;
     private List<Button> listMaterial;
+    private List<Button> listMaterialDesign;
 
     public GlyphsBrowser() {
         init();
@@ -87,9 +83,11 @@ public class GlyphsBrowser extends VBox {
     void initialize() {
         AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
         WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
+        MaterialDesignIconNameComparator materialDesignIconNameComparator = new MaterialDesignIconNameComparator();
         MaterialIconNameComparator materialIconNameComparator = new MaterialIconNameComparator();
         listAwesome = Stream.of(FontAwesomeIcon.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         listWeather = Stream.of(WeatherIcon.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        listMaterialDesign = Stream.of(MaterialDesignIcon.values()).sorted(materialDesignIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         listMaterial = Stream.of(MaterialIcon.values()).sorted(materialIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
     }
@@ -116,6 +114,12 @@ public class GlyphsBrowser extends VBox {
         updateBrowser(listMaterial);
     }
 
+        @FXML
+    public void onShowMaterialDesignIcons() {
+        updateBrowser(listMaterialDesign);
+    }
+
+    
     private static Button createIconButton(final FontAwesomeIcon icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
         Text iconText = GlyphsDude.createIcon(icon, "2em");
@@ -134,6 +138,23 @@ public class GlyphsBrowser extends VBox {
     }
 
     private static Button createIconButton(final WeatherIcon icon, final String text) {
+        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+        Text iconText = GlyphsDude.createIcon(icon, "2em");
+        Button b = new Button(text);
+        b.setContentDisplay(ContentDisplay.TOP);
+        b.setGraphic(iconText);
+        b.setTooltip(tooltip);
+        b.setPrefWidth(180.0);
+        b.setOnAction((ActionEvent t) -> {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            final ClipboardContent content = new ClipboardContent();
+            content.putString(icon.name());
+            clipboard.setContent(content);
+        });
+        return b;
+    }
+
+    private static Button createIconButton(final MaterialDesignIcon icon, final String text) {
         Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
         Text iconText = GlyphsDude.createIcon(icon, "2em");
         Button b = new Button(text);

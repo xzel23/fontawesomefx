@@ -12,8 +12,8 @@
 package de.jensd.fx.glyphs.testapps;
 
 import de.jensd.fx.glyphs.GlyphsDude;
-import de.jensd.fx.glyphs.materialicons.MaterialIcon;
-import de.jensd.fx.glyphs.materialicons.MaterialIconView;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  *
  * @author Jens Deters
  */
-public class AppMaterialIcons extends Application {
+public class AppMaterialDesignIcons extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -32,12 +32,12 @@ public class AppMaterialIcons extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text star = GlyphsDude.createIcon(MaterialIcon.ACCESS_ALARM, "4em");
-        Text label1 = GlyphsDude.createIcon(MaterialIcon.LABEL, "4em");
-        Text label2 = GlyphsDude.createIcon(MaterialIcon.ACCESS_TIME, "4em");
-        Text label3 = GlyphsDude.createIcon(MaterialIcon.ADD_ALARM, "4em");
+        Text star = GlyphsDude.createIcon(MaterialDesignIcon.STAR, "4em");
+        Text label1 = GlyphsDude.createIcon(MaterialDesignIcon.LABEL, "4em");
+        Text label2 = GlyphsDude.createIcon(MaterialDesignIcon.LABEL_ALT, "4em");
+        Text label3 = GlyphsDude.createIcon(MaterialDesignIcon.LABEL_ALT_OUTLINE, "4em");
 
-        MaterialIconView defaultIcon = new MaterialIconView();
+        MaterialDesignIconView defaultIcon = new MaterialDesignIconView();
         
         root.getChildren().addAll(star, label1, label2,label3,defaultIcon);
 

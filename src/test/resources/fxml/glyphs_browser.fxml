@@ -33,6 +33,7 @@
                   <Button mnemonicParsing="false" onAction="#onShowAwesomeIcons" text="%button.showFontAwesome" />
                   <Button mnemonicParsing="false" onAction="#onShowWeatherIcons" text="%button.showWeatherIcons" />
                   <Button mnemonicParsing="false" onAction="#onShowMaterialIcons" text="%button.showMaterialIcons" />
+                  <Button mnemonicParsing="false" onAction="#onShowMaterialDesignIcons" text="%button.showMaterialDesignIcons" />
                </children>
             </HBox>
             </children>
