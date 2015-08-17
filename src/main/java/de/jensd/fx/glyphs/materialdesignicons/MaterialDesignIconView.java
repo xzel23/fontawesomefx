@@ -29,7 +29,7 @@ import javafx.scene.text.Font;
  */
 public class MaterialDesignIconView extends GlyphIcon<MaterialDesignIcon> {
 
-    public final static String TTF_PATH = "/de/jensd/fx/glyphs/materialdesignicons/Material-Design-Iconic-Font.ttf";
+    public final static String TTF_PATH = "/de/jensd/fx/glyphs/materialdesignicons/materialdesignicons-webfont.ttf";
 
     static {
         try {
@@ -41,7 +41,7 @@ public class MaterialDesignIconView extends GlyphIcon<MaterialDesignIcon> {
     }
 
     public MaterialDesignIconView(MaterialDesignIcon icon) {
-        setFont(new Font("Material-Design-Iconic-Font", DEFAULT_ICON_SIZE));
+        setFont(new Font("MaterialDesignIcons", DEFAULT_ICON_SIZE));
         setIcon(icon);
     }
 

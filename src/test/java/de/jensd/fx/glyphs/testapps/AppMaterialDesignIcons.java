@@ -34,8 +34,8 @@ public class AppMaterialDesignIcons extends Application {
 
         Text star = GlyphsDude.createIcon(MaterialDesignIcon.STAR, "4em");
         Text label1 = GlyphsDude.createIcon(MaterialDesignIcon.LABEL, "4em");
-        Text label2 = GlyphsDude.createIcon(MaterialDesignIcon.LABEL_ALT, "4em");
-        Text label3 = GlyphsDude.createIcon(MaterialDesignIcon.LABEL_ALT_OUTLINE, "4em");
+        Text label2 = GlyphsDude.createIcon(MaterialDesignIcon.ACCOUNT, "4em");
+        Text label3 = GlyphsDude.createIcon(MaterialDesignIcon.BATTERY_ALERT, "4em");
 
         MaterialDesignIconView defaultIcon = new MaterialDesignIconView();
         
