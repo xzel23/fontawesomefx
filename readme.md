@@ -9,6 +9,7 @@ This font fits perfectly into JavaFX as
 #Currently supported (and build-in):
  * [FontAwesome 4.4][1]
  * [WeatherIcons 2.0][13] 
+ * [Material Icons][15]
  * [Material Design Font 1.1.70][12]
 
 #Usage
@@ -48,3 +49,4 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [12]: https://materialdesignicons.com
 [13]: http://erikflowers.github.io/weather-icons/
 [14]: http://www.jensd.de/wordpress/?p=2085
+[15]:https://www.google.com/design/icons/
