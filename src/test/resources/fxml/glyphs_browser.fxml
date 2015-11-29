@@ -34,6 +34,7 @@
                   <Button mnemonicParsing="false" onAction="#onShowWeatherIcons" text="%button.showWeatherIcons" />
                   <Button mnemonicParsing="false" onAction="#onShowMaterialIcons" text="%button.showMaterialIcons" />
                   <Button mnemonicParsing="false" onAction="#onShowMaterialDesignIcons" text="%button.showMaterialDesignIcons" />
+                  <Button mnemonicParsing="false" onAction="#onShowOctIcons" text="%button.onShowOctIcons" />
                </children>
             </HBox>
             </children>

@@ -16,10 +16,12 @@
  */
 package de.jensd.fx.glyphs.testapps;
 
+import de.jensd.fx.glyphs.GlyphIcons;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialicons.MaterialIcon;
+import de.jensd.fx.glyphs.octicons.OctIcon;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import java.io.IOException;
 import java.net.URL;
@@ -46,6 +48,7 @@ import javafx.scene.text.Text;
 /**
  *
  * @author Jens Deters
+ * @author Naoghuman (https://github.com/Naoghuman)
  */
 public class GlyphsBrowser extends VBox {
 
@@ -61,6 +64,7 @@ public class GlyphsBrowser extends VBox {
     private List<Button> listWeather;
     private List<Button> listMaterial;
     private List<Button> listMaterialDesign;
+    private List<Button> listOcticons;
 
     public GlyphsBrowser() {
         init();
@@ -81,14 +85,21 @@ public class GlyphsBrowser extends VBox {
 
     @FXML
     void initialize() {
-        AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
-        WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
-        MaterialDesignIconNameComparator materialDesignIconNameComparator = new MaterialDesignIconNameComparator();
-        MaterialIconNameComparator materialIconNameComparator = new MaterialIconNameComparator();
+        final AwesomeIconNameComparator awesomeIconNameComparator = new AwesomeIconNameComparator();
         listAwesome = Stream.of(FontAwesomeIcon.values()).sorted(awesomeIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        
+        final WeatherIconNameComparator weatherIconNameComparator = new WeatherIconNameComparator();
         listWeather = Stream.of(WeatherIcon.values()).sorted(weatherIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        
+        final MaterialDesignIconNameComparator materialDesignIconNameComparator = new MaterialDesignIconNameComparator();
         listMaterialDesign = Stream.of(MaterialDesignIcon.values()).sorted(materialDesignIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        
+        final MaterialIconNameComparator materialIconNameComparator = new MaterialIconNameComparator();
         listMaterial = Stream.of(MaterialIcon.values()).sorted(materialIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        
+        final OctIconNameComparator octIconNameComparator = new OctIconNameComparator();
+        listOcticons = Stream.of(OctIcon.values()).sorted(octIconNameComparator).map(i -> createIconButton(i, i.name())).collect(Collectors.toList());
+        
         iconsBox.prefWidthProperty().bind(iconsScrollPane.widthProperty().subtract(20.0));
     }
 
@@ -114,73 +125,112 @@ public class GlyphsBrowser extends VBox {
         updateBrowser(listMaterial);
     }
 
-        @FXML
+    @FXML
     public void onShowMaterialDesignIcons() {
         updateBrowser(listMaterialDesign);
     }
 
-    
-    private static Button createIconButton(final FontAwesomeIcon icon, final String text) {
-        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-        Text iconText = GlyphsDude.createIcon(icon, "2em");
-        Button b = new Button(text);
-        b.setContentDisplay(ContentDisplay.TOP);
-        b.setGraphic(iconText);
-        b.setTooltip(tooltip);
-        b.setPrefWidth(180.0);
-        b.setOnAction((ActionEvent t) -> {
-            Clipboard clipboard = Clipboard.getSystemClipboard();
-            final ClipboardContent content = new ClipboardContent();
-            content.putString(icon.name());
-            clipboard.setContent(content);
-        });
-        return b;
+    @FXML
+    public void onShowOctIcons() {
+        updateBrowser(listOcticons);
     }
 
-    private static Button createIconButton(final WeatherIcon icon, final String text) {
-        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-        Text iconText = GlyphsDude.createIcon(icon, "2em");
-        Button b = new Button(text);
-        b.setContentDisplay(ContentDisplay.TOP);
-        b.setGraphic(iconText);
-        b.setTooltip(tooltip);
-        b.setPrefWidth(180.0);
-        b.setOnAction((ActionEvent t) -> {
-            Clipboard clipboard = Clipboard.getSystemClipboard();
-            final ClipboardContent content = new ClipboardContent();
-            content.putString(icon.name());
-            clipboard.setContent(content);
-        });
-        return b;
-    }
-
-    private static Button createIconButton(final MaterialDesignIcon icon, final String text) {
-        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-        Text iconText = GlyphsDude.createIcon(icon, "2em");
-        Button b = new Button(text);
-        b.setContentDisplay(ContentDisplay.TOP);
-        b.setGraphic(iconText);
-        b.setTooltip(tooltip);
-        b.setPrefWidth(180.0);
-        b.setOnAction((ActionEvent t) -> {
-            Clipboard clipboard = Clipboard.getSystemClipboard();
-            final ClipboardContent content = new ClipboardContent();
-            content.putString(icon.name());
-            clipboard.setContent(content);
-        });
-        return b;
-    }
     
-    private static Button createIconButton(final MaterialIcon icon, final String text) {
-        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-        Text iconText = GlyphsDude.createIcon(icon, "2em");
-        Button b = new Button(text);
+//    private static Button createIconButton(final FontAwesomeIcon icon, final String text) {
+//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+//        Text iconText = GlyphsDude.createIcon(icon, "2em");
+//        Button b = new Button(text);
+//        b.setContentDisplay(ContentDisplay.TOP);
+//        b.setGraphic(iconText);
+//        b.setTooltip(tooltip);
+//        b.setPrefWidth(180.0);
+//        b.setOnAction((ActionEvent t) -> {
+//            Clipboard clipboard = Clipboard.getSystemClipboard();
+//            final ClipboardContent content = new ClipboardContent();
+//            content.putString(icon.name());
+//            clipboard.setContent(content);
+//        });
+//        return b;
+//    }
+//
+//    private static Button createIconButton(final WeatherIcon icon, final String text) {
+//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+//        Text iconText = GlyphsDude.createIcon(icon, "2em");
+//        Button b = new Button(text);
+//        b.setContentDisplay(ContentDisplay.TOP);
+//        b.setGraphic(iconText);
+//        b.setTooltip(tooltip);
+//        b.setPrefWidth(180.0);
+//        b.setOnAction((ActionEvent t) -> {
+//            Clipboard clipboard = Clipboard.getSystemClipboard();
+//            final ClipboardContent content = new ClipboardContent();
+//            content.putString(icon.name());
+//            clipboard.setContent(content);
+//        });
+//        return b;
+//    }
+//
+//    private static Button createIconButton(final MaterialDesignIcon icon, final String text) {
+//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+//        Text iconText = GlyphsDude.createIcon(icon, "2em");
+//        Button b = new Button(text);
+//        b.setContentDisplay(ContentDisplay.TOP);
+//        b.setGraphic(iconText);
+//        b.setTooltip(tooltip);
+//        b.setPrefWidth(180.0);
+//        b.setOnAction((ActionEvent t) -> {
+//            Clipboard clipboard = Clipboard.getSystemClipboard();
+//            final ClipboardContent content = new ClipboardContent();
+//            content.putString(icon.name());
+//            clipboard.setContent(content);
+//        });
+//        return b;
+//    }
+//    
+//    private static Button createIconButton(final MaterialIcon icon, final String text) {
+//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+//        Text iconText = GlyphsDude.createIcon(icon, "2em");
+//        Button b = new Button(text);
+//        b.setContentDisplay(ContentDisplay.TOP);
+//        b.setGraphic(iconText);
+//        b.setTooltip(tooltip);
+//        b.setPrefWidth(180.0);
+//        b.setOnAction((ActionEvent t) -> {
+//            Clipboard clipboard = Clipboard.getSystemClipboard();
+//            final ClipboardContent content = new ClipboardContent();
+//            content.putString(icon.name());
+//            clipboard.setContent(content);
+//        });
+//        return b;
+//    }
+//    
+//    private static Button createIconButton(final OctIcon icon, final String text) {
+//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+//        Text iconText = GlyphsDude.createIcon(icon, "2em");
+//        Button b = new Button(text);
+//        b.setContentDisplay(ContentDisplay.TOP);
+//        b.setGraphic(iconText);
+//        b.setTooltip(tooltip);
+//        b.setPrefWidth(180.0);
+//        b.setOnAction((ActionEvent t) -> {
+//            Clipboard clipboard = Clipboard.getSystemClipboard();
+//            final ClipboardContent content = new ClipboardContent();
+//            content.putString(icon.name());
+//            clipboard.setContent(content);
+//        });
+//        return b;
+//    }
+    
+    private static Button createIconButton(GlyphIcons icon, final String text) {
+        final Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
+        final Text iconText = GlyphsDude.createIcon(icon, "2em");
+        final Button b = new Button(text);
         b.setContentDisplay(ContentDisplay.TOP);
         b.setGraphic(iconText);
         b.setTooltip(tooltip);
         b.setPrefWidth(180.0);
         b.setOnAction((ActionEvent t) -> {
-            Clipboard clipboard = Clipboard.getSystemClipboard();
+            final Clipboard clipboard = Clipboard.getSystemClipboard();
             final ClipboardContent content = new ClipboardContent();
             content.putString(icon.name());
             clipboard.setContent(content);
