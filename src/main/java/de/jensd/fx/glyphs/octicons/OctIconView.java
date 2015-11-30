@@ -40,17 +40,17 @@ public class OctIconView extends GlyphIcon<OctIcon> {
     }
 
     public OctIconView(OctIcon icon) {
-        setFont(new Font("GitHub Octicons", DEFAULT_ICON_SIZE));
+        setFont(new Font("Octicons", DEFAULT_ICON_SIZE));
         setIcon(icon);
     }
 
     public OctIconView() {
-        this(OctIcon.OCT_MARK_GITHUB);
+        this(OctIcon.MARK_GITHUB);
     }
 
     @Override
     public OctIcon getDefaultGlyph() {
-        return OctIcon.OCT_MARK_GITHUB;
+        return OctIcon.MARK_GITHUB;
     }
 
 }

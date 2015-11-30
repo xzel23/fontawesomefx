@@ -19,6 +19,7 @@ package de.jensd.fx.glyphs;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.jensd.fx.glyphs.materialicons.MaterialIconView;
+import de.jensd.fx.glyphs.octicons.OctIconView;
 import de.jensd.fx.glyphs.weathericons.WeatherIconView;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -46,10 +47,10 @@ public class GlyphsDude {
             Font.loadFont(GlyphsDude.class.getResource(WeatherIconView.TTF_PATH).openStream(), 10.0);
             Font.loadFont(GlyphsDude.class.getResource(MaterialDesignIconView.TTF_PATH).openStream(), 10.0);
             Font.loadFont(GlyphsDude.class.getResource(MaterialIconView.TTF_PATH).openStream(), 10.0);
+            Font.loadFont(GlyphsDude.class.getResource(OctIconView.TTF_PATH).openStream(), 10.0);
         } catch (IOException ex) {
             Logger.getLogger(MaterialDesignIconView.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static Text createIcon(GlyphIcons icon) {
@@ -105,12 +106,6 @@ public class GlyphsDude {
         return button;
     }
 
-
-    /*
-     * 
-     * 
-     * 
-     */
     public static void setIcon(Tab tab, GlyphIcons icon) {
         setIcon(tab, icon, GlyphIcon.DEFAULT_FONT_SIZE);
     }

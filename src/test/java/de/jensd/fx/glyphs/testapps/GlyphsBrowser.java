@@ -48,7 +48,6 @@ import javafx.scene.text.Text;
 /**
  *
  * @author Jens Deters
- * @author Naoghuman (https://github.com/Naoghuman)
  */
 public class GlyphsBrowser extends VBox {
 
@@ -134,92 +133,6 @@ public class GlyphsBrowser extends VBox {
     public void onShowOctIcons() {
         updateBrowser(listOcticons);
     }
-
-    
-//    private static Button createIconButton(final FontAwesomeIcon icon, final String text) {
-//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-//        Text iconText = GlyphsDude.createIcon(icon, "2em");
-//        Button b = new Button(text);
-//        b.setContentDisplay(ContentDisplay.TOP);
-//        b.setGraphic(iconText);
-//        b.setTooltip(tooltip);
-//        b.setPrefWidth(180.0);
-//        b.setOnAction((ActionEvent t) -> {
-//            Clipboard clipboard = Clipboard.getSystemClipboard();
-//            final ClipboardContent content = new ClipboardContent();
-//            content.putString(icon.name());
-//            clipboard.setContent(content);
-//        });
-//        return b;
-//    }
-//
-//    private static Button createIconButton(final WeatherIcon icon, final String text) {
-//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-//        Text iconText = GlyphsDude.createIcon(icon, "2em");
-//        Button b = new Button(text);
-//        b.setContentDisplay(ContentDisplay.TOP);
-//        b.setGraphic(iconText);
-//        b.setTooltip(tooltip);
-//        b.setPrefWidth(180.0);
-//        b.setOnAction((ActionEvent t) -> {
-//            Clipboard clipboard = Clipboard.getSystemClipboard();
-//            final ClipboardContent content = new ClipboardContent();
-//            content.putString(icon.name());
-//            clipboard.setContent(content);
-//        });
-//        return b;
-//    }
-//
-//    private static Button createIconButton(final MaterialDesignIcon icon, final String text) {
-//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-//        Text iconText = GlyphsDude.createIcon(icon, "2em");
-//        Button b = new Button(text);
-//        b.setContentDisplay(ContentDisplay.TOP);
-//        b.setGraphic(iconText);
-//        b.setTooltip(tooltip);
-//        b.setPrefWidth(180.0);
-//        b.setOnAction((ActionEvent t) -> {
-//            Clipboard clipboard = Clipboard.getSystemClipboard();
-//            final ClipboardContent content = new ClipboardContent();
-//            content.putString(icon.name());
-//            clipboard.setContent(content);
-//        });
-//        return b;
-//    }
-//    
-//    private static Button createIconButton(final MaterialIcon icon, final String text) {
-//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-//        Text iconText = GlyphsDude.createIcon(icon, "2em");
-//        Button b = new Button(text);
-//        b.setContentDisplay(ContentDisplay.TOP);
-//        b.setGraphic(iconText);
-//        b.setTooltip(tooltip);
-//        b.setPrefWidth(180.0);
-//        b.setOnAction((ActionEvent t) -> {
-//            Clipboard clipboard = Clipboard.getSystemClipboard();
-//            final ClipboardContent content = new ClipboardContent();
-//            content.putString(icon.name());
-//            clipboard.setContent(content);
-//        });
-//        return b;
-//    }
-//    
-//    private static Button createIconButton(final OctIcon icon, final String text) {
-//        Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
-//        Text iconText = GlyphsDude.createIcon(icon, "2em");
-//        Button b = new Button(text);
-//        b.setContentDisplay(ContentDisplay.TOP);
-//        b.setGraphic(iconText);
-//        b.setTooltip(tooltip);
-//        b.setPrefWidth(180.0);
-//        b.setOnAction((ActionEvent t) -> {
-//            Clipboard clipboard = Clipboard.getSystemClipboard();
-//            final ClipboardContent content = new ClipboardContent();
-//            content.putString(icon.name());
-//            clipboard.setContent(content);
-//        });
-//        return b;
-//    }
     
     private static Button createIconButton(GlyphIcons icon, final String text) {
         final Tooltip tooltip = new Tooltip(String.format("%s: %s", icon.name(), icon.unicodeToString()));
@@ -237,4 +150,5 @@ public class GlyphsBrowser extends VBox {
         });
         return b;
     }
+    
 }
