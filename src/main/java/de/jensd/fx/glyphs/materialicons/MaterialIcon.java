@@ -20,7 +20,7 @@ import de.jensd.fx.glyphs.GlyphIcons;
 
 /**
  *
- * Icon Enum based on Weather Icons v2.0
+ * Icon Enum based on Maetiral Icons v2.0
  *
  * @author Jens Deters (mail@jensd.de)
  */

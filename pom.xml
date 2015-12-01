@@ -18,7 +18,7 @@
         <connection>scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git</connection>
         <developerConnection>scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git</developerConnection>
         <url>https://bitbucket.org/Jerady/fontawesomefx</url>
-        <tag>fontawesomefx-8.5</tag>
+        <tag>fontawesomefx-8.6</tag>
     </scm>
     <developers>
         <developer>
@@ -96,7 +96,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.4</version>
@@ -109,7 +109,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>

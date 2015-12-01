@@ -46,7 +46,9 @@
     -glyph-size: 6em;
 }
 
-
+.my-style {
+    -glyph-size: 1.1em;
+}
 
 
 
