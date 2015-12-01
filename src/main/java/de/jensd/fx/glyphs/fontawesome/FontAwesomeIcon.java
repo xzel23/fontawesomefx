@@ -1,12 +1,17 @@
 /**
  * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
  */
 package de.jensd.fx.glyphs.fontawesome;
@@ -17,7 +22,8 @@ import de.jensd.fx.glyphs.GlyphIcons;
  *
  * Icon Enum based on Font-Awesome v4.4.0
  *
- * Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent icons
+ * Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers
+ * do not read off random characters that represent icons
  *
  * @author Jens Deters
  */
@@ -98,6 +104,8 @@ public enum FontAwesomeIcon implements GlyphIcons {
     BITBUCKET_SQUARE('\uf172'),
     BITCOIN('\uf15A'),
     BLACK_TIE('\uf27E'),
+    BLUETOOTH('\uf293'),
+    BLUETOOTH_B('\uf294'),
     BOLD('\uf032'),
     BOLT('\uf0E7'),
     BOMB('\uf1E2'),
@@ -176,6 +184,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     CODE('\uf121'),
     CODE_FORK('\uf126'),
     CODEPEN('\uf1CB'),
+    CODIEPIE('\uf284'),
     COFFEE('\uf0F4'),
     COG('\uf013'),
     COGS('\uf085'),
@@ -194,6 +203,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     COPYRIGHT('\uf1F9'),
     CREATIVE_COMMONS('\uf25E'),
     CREDIT_CARD('\uf09D'),
+    CREDIT_CARD_ALT('\uf283'),
     CROP('\uf125'),
     CROSSHAIRS('\uf05B'),
     CSS3('\uf13C'),
@@ -216,6 +226,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     DRIBBBLE('\uf17D'),
     DROPBOX('\uf16B'),
     DRUPAL('\uf1A9'),
+    EDGE('\uf282'),
     EDIT('\uf044'),
     EJECT('\uf052'),
     ELLIPSIS_H('\uf141'),
@@ -281,10 +292,11 @@ public enum FontAwesomeIcon implements GlyphIcons {
     FLOPPY_ALT('\uf0C7'),
     FOLDER('\uf07B'),
     FOLDER_ALT('\uf114'),
-    FOLDER_OPEN('\uf07C'),
-    FOLDER_OPEN_ALT('\uf115'),
+    FOLDER_ALTPEN('\uf07C'),
+    FOLDER_ALTPEN_ALT('\uf115'),
     FONT('\uf031'),
     FONTICONS('\uf280'),
+    FORT_AWESOME('\uf286'),
     FORUMBEE('\uf211'),
     FORWARD('\uf04E'),
     FOURSQUARE('\uf180'),
@@ -331,6 +343,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     HAND_SCISSORS_ALT('\uf257'),
     HAND_SPOCK_ALT('\uf259'),
     HAND_STOP_ALT('\uf256'),
+    HASHTAG('\uf292'),
     HDD_ALT('\uf0A0'),
     HEADER('\uf1DC'),
     HEADPHONES('\uf025'),
@@ -342,7 +355,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     HOSPITAL_ALT('\uf0F8'),
     HOTEL('\uf236'),
     HOURGLASS('\uf254'),
-    HOURGLASS_1('\uf251'),
+    HOURGLASS_1('\uf250'),
     HOURGLASS_2('\uf252'),
     HOURGLASS_3('\uf253'),
     HOURGLASS_END('\uf253'),
@@ -394,7 +407,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     LINUX('\uf17C'),
     LIST('\uf03A'),
     LIST_ALT('\uf022'),
-    LIST_OL('\uf0CB'),
+    LIST_ALTL('\uf0CB'),
     LIST_UL('\uf0CA'),
     LOCATION_ARROW('\uf124'),
     LOCK('\uf023'),
@@ -430,8 +443,10 @@ public enum FontAwesomeIcon implements GlyphIcons {
     MINUS_CIRCLE('\uf056'),
     MINUS_SQUARE('\uf146'),
     MINUS_SQUARE_ALT('\uf147'),
+    MIXCLOUD('\uf289'),
     MOBILE('\uf10B'),
     MOBILE_PHONE('\uf10B'),
+    MODX('\uf285'),
     MONEY('\uf0D6'),
     MOON_ALT('\uf186'),
     MORTAR_BOARD('\uf19D'),
@@ -458,11 +473,14 @@ public enum FontAwesomeIcon implements GlyphIcons {
     PARAGRAPH('\uf1DD'),
     PASTE('\uf0EA'),
     PAUSE('\uf04C'),
+    PAUSE_CIRCLE('\uf28B'),
+    PAUSE_CIRCLE_ALT('\uf28C'),
     PAW('\uf1B0'),
     PAYPAL('\uf1ED'),
     PENCIL('\uf040'),
     PENCIL_SQUARE('\uf14B'),
     PENCIL_SQUARE_ALT('\uf044'),
+    PERCENT('\uf295'),
     PHONE('\uf095'),
     PHONE_SQUARE('\uf098'),
     PHOTO('\uf03E'),
@@ -484,6 +502,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     PLUS_SQUARE_ALT('\uf196'),
     POWER_OFF('\uf011'),
     PRINT('\uf02F'),
+    PRODUCT_HUNT('\uf288'),
     PUZZLE_PIECE('\uf12E'),
     QQ('\uf1D6'),
     QRCODE('\uf029'),
@@ -496,6 +515,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     REBEL('\uf1D0'),
     RECYCLE('\uf1B8'),
     REDDIT('\uf1A1'),
+    REDDIT_ALIEN('\uf281'),
     REDDIT_SQUARE('\uf1A2'),
     REFRESH('\uf021'),
     REGISTERED('\uf25D'),
@@ -520,6 +540,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     SAFARI('\uf267'),
     SAVE('\uf0C7'),
     SCISSORS('\uf0C4'),
+    SCRIBD('\uf28A'),
     SEARCH('\uf002'),
     SEARCH_MINUS('\uf010'),
     SEARCH_PLUS('\uf00E'),
@@ -537,6 +558,8 @@ public enum FontAwesomeIcon implements GlyphIcons {
     SHIELD('\uf132'),
     SHIP('\uf21A'),
     SHIRTSINBULK('\uf214'),
+    SHOPPING_BAG('\uf290'),
+    SHOPPING_BASKET('\uf291'),
     SHOPPING_CART('\uf07A'),
     SIGN_IN('\uf090'),
     SIGN_OUT('\uf08B'),
@@ -569,7 +592,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     SQUARE('\uf0C8'),
     SQUARE_ALT('\uf096'),
     STACK_EXCHANGE('\uf18D'),
-    STACK_OVERFLOW('\uf16C'),
+    STACK_ALTVERFLOW('\uf16C'),
     STAR('\uf005'),
     STAR_HALF('\uf089'),
     STAR_HALF_EMPTY('\uf123'),
@@ -584,6 +607,8 @@ public enum FontAwesomeIcon implements GlyphIcons {
     STICKY_NOTE('\uf249'),
     STICKY_NOTE_ALT('\uf24A'),
     STOP('\uf04D'),
+    STOP_CIRCLE('\uf28D'),
+    STOP_CIRCLE_ALT('\uf28E'),
     STREET_VIEW('\uf21D'),
     STRIKETHROUGH('\uf0CC'),
     STUMBLEUPON('\uf1A4'),
@@ -654,6 +679,7 @@ public enum FontAwesomeIcon implements GlyphIcons {
     UNLOCK_ALT('\uf13E'),
     UNSORTED('\uf0DC'),
     UPLOAD('\uf093'),
+    USB('\uf287'),
     USD('\uf155'),
     USER('\uf007'),
     USER_MD('\uf0F0'),
@@ -723,5 +749,5 @@ public enum FontAwesomeIcon implements GlyphIcons {
     public String getFontFamily() {
         return "FontAwesome";
     }
-    
+
 }
