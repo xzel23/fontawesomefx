@@ -14,6 +14,7 @@ This font fits perfectly into JavaFX as
  * [Octicons 3.3.0][16]
 
 #Usage
+* [8.7 announcement][18]
 * [8.6 announcement][17]
 * [8.5 announcement][14]
 * [8.4 announcement][11]
@@ -54,3 +55,4 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [15]:https://www.google.com/design/icons/
 [16]:https://octicons.github.com/
 [17]:http://www.jensd.de/wordpress/?cat=94
+[18]:http://www.jensd.de/wordpress/?p=2215
