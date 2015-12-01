@@ -7,7 +7,7 @@ This font fits perfectly into JavaFX as
 * incredible lightweight (one font 674 icons)
 
 #Currently supported (and build-in):
- * [FontAwesome 4.4][1]
+ * [FontAwesome 4.5.0][1]
  * [WeatherIcons 2.0][13] 
  * [Material Icons][15]
  * [Material Design Font 1.1.70][12]
