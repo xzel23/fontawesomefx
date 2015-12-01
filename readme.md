@@ -4,7 +4,7 @@ This font fits perfectly into JavaFX as
 
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
-* incredible lightweight (one font 674 icons)
+* incredible lightweight (one font 694 icons)
 
 #Currently supported (and build-in):
  * [FontAwesome 4.5.0][1]
