@@ -11,6 +11,7 @@ This font fits perfectly into JavaFX as
  * [WeatherIcons 2.0][13] 
  * [Material Icons][15]
  * [Material Design Font 1.1.70][12]
+ * [Octicons 3.3.0][16]
 
 #Usage
 * [8.5 announcement][14]
@@ -44,9 +45,10 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [7]: http://www.jensd.de/wordpress/?p=1182
 [8]: http://www.jensd.de/wordpress/?p=1182
 [9]: http://www.jensd.de/wordpress/?p=1971
-[10]: http://www.jensd.de/wordpress/?p=2002
-[11]: http://www.jensd.de/wordpress/?p=2026
-[12]: https://materialdesignicons.com
-[13]: http://erikflowers.github.io/weather-icons/
-[14]: http://www.jensd.de/wordpress/?p=2085
+[10]:http://www.jensd.de/wordpress/?p=2002
+[11]:http://www.jensd.de/wordpress/?p=2026
+[12]:https://materialdesignicons.com
+[13]:http://erikflowers.github.io/weather-icons/
+[14]:http://www.jensd.de/wordpress/?p=2085
 [15]:https://www.google.com/design/icons/
+[16]:https://octicons.github.com/
