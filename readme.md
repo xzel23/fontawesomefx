@@ -4,16 +4,18 @@ This font fits perfectly into JavaFX as
 
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
-* incredible lightweight (one font 674 icons)
+* incredible lightweight (one font 694 icons)
 
 #Currently supported (and build-in):
- * [FontAwesome 4.4][1]
+ * [FontAwesome 4.5.0][1]
  * [WeatherIcons 2.0][13] 
  * [Material Icons][15]
  * [Material Design Font 1.1.70][12]
  * [Octicons 3.3.0][16]
 
 #Usage
+* [8.7 announcement][18]
+* [8.6 announcement][17]
 * [8.5 announcement][14]
 * [8.4 announcement][11]
 * [8.3 announcement][10]
@@ -29,7 +31,7 @@ This font fits perfectly into JavaFX as
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.5</version>
+        <version>8.7</version>
     </dependency>
 
 #License
@@ -52,3 +54,5 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [14]:http://www.jensd.de/wordpress/?p=2085
 [15]:https://www.google.com/design/icons/
 [16]:https://octicons.github.com/
+[17]:http://www.jensd.de/wordpress/?cat=94
+[18]:http://www.jensd.de/wordpress/?p=2215

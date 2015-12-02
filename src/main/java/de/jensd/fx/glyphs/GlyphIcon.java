@@ -1,12 +1,17 @@
 /**
  * Copyright (c) 2015 Jens Deters http://www.jensd.de
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  *
  */
 package de.jensd.fx.glyphs;
@@ -41,6 +46,7 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
 
     public final static Double DEFAULT_ICON_SIZE = 12.0;
     public final static String DEFAULT_FONT_SIZE = "1em";
+    private final static CSSParser CSS_PARSER = new CSSParser();
 
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
     private ObjectProperty<String> glyphName;
@@ -215,8 +221,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     public List<CssMetaData<? extends Styleable, ?>> getCssMetaData() {
         return getClassCssMetaData();
     }
-
-    private static final CSSParser CSS_PARSER = CSSParser.getInstance();
 
     public Number convert(String sizeString) {
         ParsedValueImpl parsedValueImpl = CSS_PARSER.parseExpr("", sizeString);

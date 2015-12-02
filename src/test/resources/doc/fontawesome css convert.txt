@@ -1,0 +1,34 @@
+replace					with 
+.fa-					 „“
+
+
+:before {
+  content: "\			
+  						‘
+						
+";
+}						
+						'),
+-
+						_
+
+manually replace <name>:before
+order lines
+
+_o_						_alt_
+_o                      _alt
+
+watch for
+SIGN_ALTUT
+POWER_ALTFF
+FACEBOOK__ALTFFICIAL
+TOGGLE_ALTFF
+TOGGLE_ALTN
+VOLUME_ALTFF
+
+select All
+Convert Case -> Upper case
+
+
+\UF						\uf
+
