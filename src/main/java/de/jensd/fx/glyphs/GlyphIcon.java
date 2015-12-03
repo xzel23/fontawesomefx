@@ -57,14 +57,6 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     public void init() {
     }
 
-    @Deprecated
-    public GlyphIcon() {
-        this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
-                .getGenericSuperclass())
-                .getActualTypeArguments()[0];
-        initProperties();
-    }
-
     public GlyphIcon(Class<T> iconType) {
         this.typeOfT = iconType;
         initProperties();
