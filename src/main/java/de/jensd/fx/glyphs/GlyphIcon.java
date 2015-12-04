@@ -42,7 +42,7 @@ import javafx.scene.text.Text;
  * @author Jens Deters
  * @param <T> The type of GlyphIcons enum.
  */
-public abstract class GlyphIcon<T extends Enum<T>> extends Text {
+public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     public final static Double DEFAULT_ICON_SIZE = 12.0;
     public final static String DEFAULT_FONT_SIZE = "1em";
@@ -57,10 +57,12 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     public void init() {
     }
 
-    public GlyphIcon() {
-        this.typeOfT = (Class<T>) ((ParameterizedType) getClass()
-                .getGenericSuperclass())
-                .getActualTypeArguments()[0];
+    public GlyphIcon(Class<T> iconType) {
+        this.typeOfT = iconType;
+        initProperties();
+    }
+
+    private void initProperties() {
         getStyleClass().addAll("root", "glyph-icon");
         glyphSizeProperty().addListener(observable -> {
             updateSize();
@@ -72,7 +74,6 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
             updateIcon();
         });
         setIcon(getDefaultGlyph());
-
     }
 
     // convenience method
@@ -151,9 +152,9 @@ public abstract class GlyphIcon<T extends Enum<T>> extends Text {
     }
 
     private void updateIcon() {
-        GlyphIcons icon = (GlyphIcons) getDefaultGlyph();
+        GlyphIcons icon = getDefaultGlyph();
         try {
-            icon = ((GlyphIcons) Enum.valueOf(typeOfT, getGlyphName()));
+            icon = Enum.valueOf(typeOfT, getGlyphName());
         } catch (Exception e) {
             String msg = String.format("Icon '%s' not found. Using '%s' (default) instead", getGlyphName(), getDefaultGlyph());
             Logger.getLogger(GlyphIcon.class.getName()).log(Level.SEVERE, msg);

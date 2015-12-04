@@ -40,6 +40,7 @@ public class WeatherIconView extends GlyphIcon<WeatherIcon> {
     }
 
     public WeatherIconView(WeatherIcon icon) {
+        super(WeatherIcon.class);
         setFont(new Font("weather icons", DEFAULT_ICON_SIZE));
         setIcon(icon);
     }
