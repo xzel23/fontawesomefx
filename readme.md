@@ -13,7 +13,8 @@ This font fits perfectly into JavaFX as
  * [Material Design Font 1.1.70][12]
  * [Octicons 3.3.0][16]
 
-#Usage
+#Usage/Details
+* [8.8 announcement][19]
 * [8.7 announcement][18]
 * [8.6 announcement][17]
 * [8.5 announcement][14]
@@ -56,3 +57,4 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [16]:https://octicons.github.com/
 [17]:http://www.jensd.de/wordpress/?cat=94
 [18]:http://www.jensd.de/wordpress/?p=2215
+[19]:http://www.jensd.de/wordpress/?p=2251
