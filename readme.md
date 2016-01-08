@@ -31,7 +31,7 @@ This font fits perfectly into JavaFX as
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
-        <version>8.7</version>
+        <version>8.8</version>
     </dependency>
 
 #License
