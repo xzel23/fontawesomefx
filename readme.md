@@ -1,3 +1,6 @@
+[![Build Status](https://drone.io/bitbucket.org/Jerady/fontawesomefx/status.png)]
+
+
 Kudos to Dave Gandy who has created an incredible cool icon font called [Font Awesome][1].
 
 This font fits perfectly into JavaFX as
