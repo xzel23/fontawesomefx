@@ -12,7 +12,7 @@ This font fits perfectly into JavaFX as
 #Currently supported (and build-in):
  * [FontAwesome 4.5.0][1]
  * [WeatherIcons 2.0][13] 
- * [Material Icons][15]
+ * [Material Icons] 2.1[15]
  * [Material Design Font 1.1.70][12]
  * [Octicons 3.3.0][16]
 

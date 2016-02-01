@@ -50,4 +50,5 @@ public class FontAwesomeIconView extends GlyphIcon<FontAwesomeIcon> {
         return FontAwesomeIcon.ANCHOR;
     }
 
+    
 }

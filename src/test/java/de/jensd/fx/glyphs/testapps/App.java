@@ -27,6 +27,8 @@ import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.jensd.fx.glyphs.weathericons.WeatherIconView;
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -64,6 +66,7 @@ public class App extends Application {
         GlyphsDude.setIcon(testButton2, WeatherIcon.ALIEN, "6em");
 
         FontAwesomeIconView fontAwesomeIcon = new FontAwesomeIconView(FontAwesomeIcon.AMBULANCE);
+        
 //        fontAwesomeIcon.setStyleClass("blue-icon");
         fontAwesomeIcon.setStyleClass("my-style");
 //        fontAwesomeIcon.setSize("4em");

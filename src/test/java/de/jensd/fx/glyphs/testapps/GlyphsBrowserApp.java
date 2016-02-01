@@ -23,6 +23,7 @@ import javafx.stage.Stage;
  */
 public class GlyphsBrowserApp extends Application {
 
+    
     @Override
     public void start(Stage primaryStage) {
         GlyphsBrowser iconsBrowser = new GlyphsBrowser();
