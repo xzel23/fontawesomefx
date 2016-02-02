@@ -59,4 +59,4 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [17]:http://www.jensd.de/wordpress/?cat=94
 [18]:http://www.jensd.de/wordpress/?p=2215
 [19]:http://www.jensd.de/wordpress/?p=2251
-[20]:http://www.jensd.de/wordpress/?p=2251
+[20]:http://www.jensd.de/wordpress/?p=2264
