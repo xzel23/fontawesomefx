@@ -39,7 +39,7 @@ public class MaterialDesignIconView extends GlyphIcon<MaterialDesignIcon> {
 
     public MaterialDesignIconView(MaterialDesignIcon icon) {
         super(MaterialDesignIcon.class);
-        setFont(new Font("MaterialDesignIcons", DEFAULT_ICON_SIZE));
+        setFont(new Font("Material Design Icons", DEFAULT_ICON_SIZE));
         setIcon(icon);
     }
 

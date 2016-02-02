@@ -1508,7 +1508,7 @@ public enum MaterialDesignIcon implements GlyphIcons {
 
     @Override
     public String getFontFamily() {
-        return "MaterialDesignIcons";
+        return "\'Material Design Icons\'";
     }
 
 }

@@ -32,14 +32,11 @@ public class AppMaterialDesignIcons extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text star = GlyphsDude.createIcon(MaterialDesignIcon.STAR, "4em");
-        Text label1 = GlyphsDude.createIcon(MaterialDesignIcon.LABEL, "4em");
+        Text star = GlyphsDude.createIcon(MaterialDesignIcon.ACCESS_POINT, "4em");
+        Text label1 = GlyphsDude.createIcon(MaterialDesignIcon.ACCESS_POINT_NETWORK, "4em");
         Text label2 = GlyphsDude.createIcon(MaterialDesignIcon.ACCOUNT, "4em");
-        Text label3 = GlyphsDude.createIcon(MaterialDesignIcon.BATTERY_ALERT, "4em");
-
-        MaterialDesignIconView defaultIcon = new MaterialDesignIconView();
-        
-        root.getChildren().addAll(star, label1, label2,label3,defaultIcon);
+        Text label3 = GlyphsDude.createIcon(MaterialDesignIcon.ACCOUNT_ALERT, "4em");
+        root.getChildren().addAll(star, label1, label2,label3);
 
         Scene scene = new Scene(root, 500, 800);
         primaryStage.setScene(scene);
