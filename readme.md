@@ -1,6 +1,3 @@
-
-
-
 Kudos to Dave Gandy who has created an incredible cool icon font called [Font Awesome][1].
 
 This font fits perfectly into JavaFX as
@@ -12,11 +9,12 @@ This font fits perfectly into JavaFX as
 #Currently supported (and build-in):
  * [FontAwesome 4.5.0][1]
  * [WeatherIcons 2.0][13] 
- * [Material Icons 2.0[15]
- * [Material Design Font 1.1.70][12]
+ * [Material Icons 2.1][15]
+ * [Material Design Font 1.4.57][12]
  * [Octicons 3.3.0][16]
 
 #Usage/Details
+* [8.9 announcement][20]
 * [8.8 announcement][19]
 * [8.7 announcement][18]
 * [8.6 announcement][17]
@@ -61,3 +59,4 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [17]:http://www.jensd.de/wordpress/?cat=94
 [18]:http://www.jensd.de/wordpress/?p=2215
 [19]:http://www.jensd.de/wordpress/?p=2251
+[20]:http://www.jensd.de/wordpress/?p=2251
