@@ -13,7 +13,6 @@
  */
 package de.jensd.fx.glyphs.materialdesignicons;
 
-import de.jensd.fx.glyphs.weathericons.*;
 import de.jensd.fx.glyphs.GlyphIcon;
 import java.io.IOException;
 import java.util.logging.Level;

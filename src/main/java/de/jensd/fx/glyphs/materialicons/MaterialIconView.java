@@ -18,7 +18,6 @@ package de.jensd.fx.glyphs.materialicons;
 
 import de.jensd.fx.glyphs.GlyphIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
-import static de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView.TTF_PATH;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

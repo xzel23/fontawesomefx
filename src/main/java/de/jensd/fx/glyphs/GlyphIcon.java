@@ -18,7 +18,6 @@ package de.jensd.fx.glyphs;
 
 import com.sun.javafx.css.ParsedValueImpl;
 import com.sun.javafx.css.parser.CSSParser;
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
