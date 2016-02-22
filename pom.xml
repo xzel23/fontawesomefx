@@ -83,6 +83,20 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+			<!-- backport Java 8 features -->
+			<plugin>
+				<groupId>net.orfjackal.retrolambda</groupId>
+				<artifactId>retrolambda-maven-plugin</artifactId>
+				<version>2.1.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process-main</goal>
+							<goal>process-test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
             <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
