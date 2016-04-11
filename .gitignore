@@ -1,1 +1,5 @@
-/target/
+target/
+.nb-gradle/
+build/
+.gradle/
+.DS_STORE

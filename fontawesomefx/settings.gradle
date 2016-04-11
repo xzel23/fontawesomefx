@@ -1,0 +1,8 @@
+rootProject.name = 'fontawesomefx'
+include 'fontawesomefx-common'
+include 'fontawesomefx-controls'
+include 'fontawesomefx-fontawesome'
+include 'fontawesomefx-materialdesignfont'
+include 'fontawesomefx-materialicons'
+include 'fontawesomefx-octicons'
+include 'fontawesomefx-weathericons'

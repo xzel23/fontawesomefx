@@ -1,0 +1,9 @@
+apply plugin: 'application'
+
+mainClassName = 'de.jensd.fx.glyphs.octicons.demo.OctIconsDemoApp'
+
+version '3.3.0'
+
+dependencies {
+    compile project(':fontawesomefx-common')
+}

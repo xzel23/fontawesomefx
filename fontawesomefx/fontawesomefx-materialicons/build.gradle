@@ -1,0 +1,9 @@
+apply plugin: 'application'
+
+mainClassName = 'de.jensd.fx.glyphs.materialicons.demo.MaterialIconsDemoApp'
+
+version '2.1'
+
+dependencies {
+    compile project(':fontawesomefx-common')
+}

@@ -1,0 +1,5 @@
+version '8.10'
+
+dependencies {
+    compile project(':fontawesomefx-common')
+}
