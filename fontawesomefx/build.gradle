@@ -15,7 +15,7 @@ subprojects {
     apply plugin: 'com.jfrog.bintray'
 
     group = 'de.jensd'
-    sourceCompatibility = '1.8'
+    sourceCompatibility = '1.9'
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
     bintray {
