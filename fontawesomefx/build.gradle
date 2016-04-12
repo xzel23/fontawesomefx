@@ -1,28 +1,56 @@
 apply plugin: 'base'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+    }
+}
+
 subprojects {
     apply plugin: "java"
     apply plugin: 'maven-publish'
+    apply plugin: 'com.jfrog.bintray'
 
     group = 'de.jensd'
     sourceCompatibility = '1.8'
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
+    bintray {
+        user = System.getenv('BINTRAY_USER')
+        key = System.getenv('BINTRAY_KEY')
+        pkg {
+            repo = 'FontAwesomeFX'
+            name = 'fontawesomefx'
+            userOrg = 'jerady'
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
+            publications = ['mavenJava']
+            version {
+                name = '8.10'
+                desc = 'FontAwesomeFX 8.10'
+                vcsTag = 'fontawesomefx-8.10'
+            }
+        }
+    }
+
     repositories {
         mavenCentral()
         mavenLocal()
     }
-    
+
     task javadocJar(type: Jar) {
         classifier = 'javadoc'
         from javadoc
     }
-    
+
     task sourceJar(type: Jar) {
         from sourceSets.main.allJava
         classifier "sources"
     }
-    
+
     publishing {
         publications {
             mavenJava(MavenPublication) {
@@ -30,16 +58,20 @@ subprojects {
                 artifact sourceJar {
                     classifier "sources"
                 }
-                
+
                 artifact javadocJar {
                     classifier "javadoc"
                 }
             }
         }
     }
-    
+
     dependencies {
         testCompile 'junit:junit:4.10'
     }
-  
+
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.3'
 }
