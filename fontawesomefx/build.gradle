@@ -22,8 +22,8 @@ subprojects {
         user = System.getenv('BINTRAY_USER')
         key = System.getenv('BINTRAY_KEY')
         pkg {
-            repo = 'FontAwesomeFX'
-            name = 'fontawesomefx'
+            repo = 'maven'
+            name = 'FontAwesomeFX'
             userOrg = 'jerady'
             licenses = ['Apache-2.0']
             vcsUrl = 'https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
