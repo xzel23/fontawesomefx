@@ -5,5 +5,11 @@ mainClassName = 'de.jensd.fx.glyphs.materialicons.demo.MaterialIconsDemoApp'
 version '2.1'
 
 dependencies {
-    compile project(':fontawesomefx-common')
+    compile project(':fontawesomefx-commons')
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': mainClassName)
+    }
 }

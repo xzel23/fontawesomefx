@@ -5,13 +5,11 @@ mainClassName = 'de.jensd.fx.glyphs.fontawesome.demo.FontAwesomeIconsDemoApp'
 version '4.6.1'
 
 dependencies {
-    compile project(':fontawesomefx-common')
+    compile project(':fontawesomefx-commons')
 }
 
 jar {
     manifest {
-        attributes(
-      'Main-Class': mainClassName
-        )
+        attributes('Main-Class': mainClassName)
     }
 }

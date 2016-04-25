@@ -5,5 +5,11 @@ mainClassName = 'de.jensd.fx.glyphs.weathericons.demo.WeatherIconsDemoApp'
 version '2.0'
 
 dependencies {
-    compile project(':fontawesomefx-common')
+    compile project(':fontawesomefx-commons')
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': mainClassName)
+    }
 }

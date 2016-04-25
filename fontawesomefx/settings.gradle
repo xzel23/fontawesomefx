@@ -1,5 +1,5 @@
 rootProject.name = 'fontawesomefx'
-include 'fontawesomefx-common'
+include 'fontawesomefx-commons'
 include 'fontawesomefx-controls'
 include 'fontawesomefx-fontawesome'
 include 'fontawesomefx-materialdesignfont'
