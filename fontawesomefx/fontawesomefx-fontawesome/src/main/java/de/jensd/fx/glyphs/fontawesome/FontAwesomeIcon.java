@@ -17,7 +17,7 @@ import de.jensd.fx.glyphs.GlyphIcons;
 
 /**
  *
- * Icon Enum based on Font-Awesome v4.4.0
+ * Icon Enum based on Font-Awesome v4.6.1
  *
  * Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers
  * do not read off random characters that represent icons
