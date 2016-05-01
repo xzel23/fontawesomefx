@@ -12,9 +12,11 @@ This font fits perfectly into JavaFX as
  * [Material Icons 2.1][15]
  * [Material Design Font 1.4.57][12]
  * [Octicons 3.3.0][16]
- * [525Icons 2.0]
+ * [525Icons 2.0][21]
 
 #Usage/Details
+* [8.11 announcement][23]
+* [8.10 announcement][22]
 * [8.9 announcement][20]
 * [8.8 announcement][19]
 * [8.7 announcement][18]
@@ -61,3 +63,6 @@ If this license is not suitable, please contact me to discuss an alternative lic
 [18]:http://www.jensd.de/wordpress/?p=2215
 [19]:http://www.jensd.de/wordpress/?p=2251
 [20]:http://www.jensd.de/wordpress/?p=2264
+[21]:http://525icons.com/
+[22]:http://www.jensd.de/wordpress/?p=2360
+[23]:http://www.jensd.de/wordpress/?p=2397
