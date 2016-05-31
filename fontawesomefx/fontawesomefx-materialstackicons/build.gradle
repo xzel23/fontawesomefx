@@ -1,0 +1,16 @@
+apply plugin: 'application'
+
+mainClassName = 'de.jensd.fx.glyphs.materialicons.demo.StackDemo'
+
+version '2.1-2'
+
+dependencies {
+    compile project(':fontawesomefx-commons')
+    compile project(':fontawesomefx-materialicons')
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': mainClassName)
+    }
+}
