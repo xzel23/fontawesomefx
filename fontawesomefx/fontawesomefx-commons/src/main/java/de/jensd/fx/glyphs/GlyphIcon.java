@@ -150,7 +150,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
         setFont(f);
     }
 
-    private void updateIcon() {
+    void updateIcon() {
         GlyphIcons icon = getDefaultGlyph();
         try {
             icon = Enum.valueOf(typeOfT, getGlyphName());
