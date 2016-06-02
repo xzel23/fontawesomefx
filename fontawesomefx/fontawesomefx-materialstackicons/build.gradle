@@ -1,6 +1,6 @@
 apply plugin: 'application'
 
-mainClassName = 'de.jensd.fx.glyphs.materialicons.demo.StackDemo'
+mainClassName = 'de.jensd.fx.glyphs.materialstackicons.demo.StackDemo'
 
 version '2.1-2'
 
