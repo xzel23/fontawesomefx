@@ -1,3 +1,6 @@
+
+FontAwesomeFX
+
 Kudos to Dave Gandy who has created an incredible cool icon font called [Font Awesome][1].
 
 This font fits perfectly into JavaFX as
@@ -5,6 +8,7 @@ This font fits perfectly into JavaFX as
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
 * incredible lightweight (one font 694 icons)
+
 
 #Currently supported (and build-in):
  * [FontAwesome 4.6.1][1]
@@ -33,11 +37,15 @@ This font fits perfectly into JavaFX as
 * [blog post1][2]
 
 #Maven
+
+**Since FontAwesomeFX 8.10 I moved to [Bintray](https://bintray.com/jerady/maven/FontAwesomeFX/view), so you have to add the bintray repo to you build file as it is not yet available at Maven Central!**
+```
     <dependency>
         <groupId>de.jensd</groupId>
         <artifactId>fontawesomefx</artifactId>
         <version>8.9</version>
     </dependency>
+```
 
 #License
 FontAwesomeFX is licensed under the [Apache 2.0 license][4].
