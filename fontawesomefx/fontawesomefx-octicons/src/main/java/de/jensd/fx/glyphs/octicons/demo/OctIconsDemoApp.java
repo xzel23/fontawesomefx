@@ -33,7 +33,7 @@ public class OctIconsDemoApp extends Application {
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("OctIcons Demo");
+        primaryStage.setTitle("OctIcons Demo: " + OctIcon.values().length + " Icons");
         primaryStage.show();
 
     }
