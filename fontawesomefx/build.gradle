@@ -33,9 +33,9 @@ subprojects {
             issueTrackerUrl = 'https://bitbucket.org/Jerady/fontawesomefx/issues'
             publicDownloadNumbers = true
             version {
-                name = '8.11'
-                desc = 'FontAwesomeFX 8.11'
-                vcsTag = 'fontawesomefx-8.11'
+                name = '8.12'
+                desc = 'FontAwesomeFX 8.12'
+                vcsTag = 'fontawesomefx-8.12'
             }
         }
     }
@@ -109,5 +109,5 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = '2.14'
 }
