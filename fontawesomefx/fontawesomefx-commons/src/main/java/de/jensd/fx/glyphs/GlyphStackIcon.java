@@ -97,6 +97,7 @@ public abstract class GlyphStackIcon<T extends Enum<T> & GlyphStackIcons<W>, V e
 
     /**
      * Background Name property
+     * @return Background Name property
      */
     public final ObjectProperty<String> glyphNameProperty() {
         if (glyphName == null) {
@@ -119,6 +120,7 @@ public abstract class GlyphStackIcon<T extends Enum<T> & GlyphStackIcons<W>, V e
 
     /**
      * Size property
+     * @return The size property
      */
     public final DoubleProperty glyphSizeProperty() {
         if (glyphSize == null) {
@@ -139,6 +141,7 @@ public abstract class GlyphStackIcon<T extends Enum<T> & GlyphStackIcons<W>, V e
 
     /**
      * StyleClass property
+     * @return StyleClass property
      */
 
     public StringProperty glyphStyleProperty() {
