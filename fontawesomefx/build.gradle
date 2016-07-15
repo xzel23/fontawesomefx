@@ -1,5 +1,6 @@
 apply plugin: 'base'
 
+
 buildscript {
     repositories {
         jcenter()
@@ -10,14 +11,14 @@ buildscript {
 }
 
 subprojects {
-    apply plugin: "java"
     apply plugin: 'maven-publish'
     apply plugin: 'com.jfrog.bintray'
+    apply plugin: "java"
 
     group = 'de.jensd'
     sourceCompatibility = '1.8'
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-
+    
     bintray {
         user = System.getenv('BINTRAY_USER')
         key = System.getenv('BINTRAY_KEY')
@@ -39,37 +40,37 @@ subprojects {
         }
     }
     
-//    install {
-//        repositories.mavenInstaller {
-//            pom {
-//                project {
-//                    packaging 'jar'
-//                    name 'FontAwesomeFX'
-//                    description 'Use WebFonts as icon source for JavaFX applications.'
-//                    url 'http://www.jensd.de'
-//                    licenses {
-//                        license {
-//                            name 'The Apache Software License, Version 2.0'
-//                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//                        }
-//                    }
-//                    developers {
-//                        developer {
-//                            id 'jens.deters'
-//                            name 'Jens Deters'
-//                            email 'mail@jensd.de'
-//                            url 'http://www.jensd.de'
-//                        }
-//                    }
-//                    scm {
-//                        connection 'scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
-//                        developerConnection 'scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
-//                        url 'https://bitbucket.org/Jerady/fontawesomefx'
-//                    }
-//                }
-//            }
-//        }
-//    }
+    //    install {
+    //        repositories.mavenInstaller {
+    //            pom {
+    //                project {
+    //                    packaging 'jar'
+    //                    name 'FontAwesomeFX'
+    //                    description 'Use WebFonts as icon source for JavaFX applications.'
+    //                    url 'http://www.jensd.de'
+    //                    licenses {
+    //                        license {
+    //                            name 'The Apache Software License, Version 2.0'
+    //                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    //                        }
+    //                    }
+    //                    developers {
+    //                        developer {
+    //                            id 'jens.deters'
+    //                            name 'Jens Deters'
+    //                            email 'mail@jensd.de'
+    //                            url 'http://www.jensd.de'
+    //                        }
+    //                    }
+    //                    scm {
+    //                        connection 'scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
+    //                        developerConnection 'scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
+    //                        url 'https://bitbucket.org/Jerady/fontawesomefx'
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
 
     repositories {
         mavenCentral()

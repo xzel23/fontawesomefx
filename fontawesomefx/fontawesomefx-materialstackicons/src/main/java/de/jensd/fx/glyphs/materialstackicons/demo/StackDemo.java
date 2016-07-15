@@ -21,8 +21,8 @@ public class StackDemo extends Application {
                 new MaterialStackIconView(MaterialStackIcons.WC));
         scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);
+        primaryStage.setTitle("MaterialStackIcons Demo");
         primaryStage.show();
-        primaryStage.setFullScreen(true);
         scene.getStylesheets().add(StackDemo.class.getResource("materialIcons.css").toExternalForm());
     }
 }
