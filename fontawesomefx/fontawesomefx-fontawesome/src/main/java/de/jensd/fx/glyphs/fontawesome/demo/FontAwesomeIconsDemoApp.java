@@ -27,13 +27,16 @@ public class FontAwesomeIconsDemoApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        
+        System.out.println(System.getProperty("java.version"));
+        
         FlowPane iconsPane = new FlowPane(3, 3);
         for (FontAwesomeIcon icon : FontAwesomeIcon.values()) {
             iconsPane.getChildren().add(FontAwesomeIconFactory.get().createIcon(icon, "3em"));
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("FontAwesomeFX: FontAwesomeIcons Demo");
+        primaryStage.setTitle("FontAwesomeFX: FontAwesomeIcons Demo: " + FontAwesomeIcon.values().length + " Icons");
         primaryStage.show();
 
     }
