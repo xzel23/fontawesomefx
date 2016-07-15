@@ -17,7 +17,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
@@ -34,7 +33,7 @@ public class Icons525DemoApp extends Application {
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("FontAwesomeFX: 525 Icons Demo");
+        primaryStage.setTitle("FontAwesomeFX: 525 Icons Demo: " + Icons525.values().length + " Icons");
         primaryStage.show();
 
     }
