@@ -33,7 +33,7 @@ public class MaterialIconsDemoApp extends Application {
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("FontAwesomeFX: MaterialIcons Demo");
+        primaryStage.setTitle("FontAwesomeFX: MaterialIcons Demo: " + MaterialIcon.values().length + " Icons");
         primaryStage.show();
 
     }
