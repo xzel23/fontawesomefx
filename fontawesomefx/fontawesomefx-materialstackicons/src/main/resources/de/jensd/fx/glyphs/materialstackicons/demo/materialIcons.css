@@ -1,0 +1,44 @@
+.root{
+    -fx-font: 100px "Material Icons";
+}
+
+.glyph-icon-stack {
+    -fx-background-color: antiquewhite;
+}
+
+.glyph-icon-stack .glyph-icon-stack-0{
+    -fx-fill:linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);
+    -fx-font-size: 3em;
+}
+
+.glyph-icon-stack .glyph-icon-stack-1{
+    -fx-fill:linear-gradient(#ffffff 0%, #d2d2d2);
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.8), 4, 0.0, 1, 1);
+    -fx-font-size: 1.5em;
+}
+
+.glyph-icon-stack .glyph-icon-stack-2{
+    -fx-fill:red;
+    -fx-opacity: 0.5;
+    -fx-font-size: 3em;
+}
+
+.flash_not_allowed {
+    -fx-background-color: #d2d2d2;
+}
+
+.flash_not_allowed .glyph-icon-stack-1{
+    -fx-font-size: 2em;
+}
+
+.light .glyph-icon-stack-0{
+    -fx-fill: indianred;
+}
+
+.light .glyph-icon-stack-1{
+    -fx-fill:linear-gradient(#ffff00 0%, #ffcc00 70%, #ffff00 85%);
+}
+
+.light .glyph-icon-stack-1:hover{
+    -fx-fill:linear-gradient(#cccccc 0%, #a6a6a6 70%, #cccccc 85%);
+}

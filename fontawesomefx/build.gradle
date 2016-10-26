@@ -1,0 +1,113 @@
+apply plugin: 'base'
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+    }
+}
+
+subprojects {
+    apply plugin: 'maven-publish'
+    apply plugin: 'com.jfrog.bintray'
+    apply plugin: "java"
+
+    group = 'de.jensd'
+    sourceCompatibility = '1.8'
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+    
+    bintray {
+        user = System.getenv('BINTRAY_USER')
+        key = System.getenv('BINTRAY_KEY')
+        pkg {
+            repo = 'maven'
+            name = 'FontAwesomeFX'
+            userOrg = 'jerady'
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
+            publications = ['mavenJava']
+            websiteUrl = 'https://bitbucket.org/Jerady/fontawesomefx/overview'
+            issueTrackerUrl = 'https://bitbucket.org/Jerady/fontawesomefx/issues'
+            publicDownloadNumbers = true
+            version {
+                name = '8.12'
+                desc = 'FontAwesomeFX 8.12'
+                vcsTag = 'fontawesomefx-8.12'
+            }
+        }
+    }
+    
+    //    install {
+    //        repositories.mavenInstaller {
+    //            pom {
+    //                project {
+    //                    packaging 'jar'
+    //                    name 'FontAwesomeFX'
+    //                    description 'Use WebFonts as icon source for JavaFX applications.'
+    //                    url 'http://www.jensd.de'
+    //                    licenses {
+    //                        license {
+    //                            name 'The Apache Software License, Version 2.0'
+    //                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    //                        }
+    //                    }
+    //                    developers {
+    //                        developer {
+    //                            id 'jens.deters'
+    //                            name 'Jens Deters'
+    //                            email 'mail@jensd.de'
+    //                            url 'http://www.jensd.de'
+    //                        }
+    //                    }
+    //                    scm {
+    //                        connection 'scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
+    //                        developerConnection 'scm:git:https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
+    //                        url 'https://bitbucket.org/Jerady/fontawesomefx'
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    task javadocJar(type: Jar) {
+        classifier = 'javadoc'
+        from javadoc
+    }
+
+    task sourceJar(type: Jar) {
+        from sourceSets.main.allJava
+        classifier "sources"
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                artifact sourceJar {
+                    classifier "sources"
+                }
+
+                artifact javadocJar {
+                    classifier "javadoc"
+                }
+            }
+        }
+    }
+
+    dependencies {
+        testCompile 'junit:junit:4.10'
+    }
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+}
