@@ -1,9 +1,14 @@
-
 FontAwesomeFX
 
 Kudos to Dave Gandy who has created an incredible cool icon font called [Font Awesome][1].
 
-This font fits perfectly into JavaFX as
+FontAwesomeFX
+
+ [ ![Download](https://api.bintray.com/packages/jerady/maven/FontAwesomeFX/images/download.svg) ](https://bintray.com/jerady/maven/FontAwesomeFX/_latestVersion)
+
+Kudos to Dave Gandy who has created an incredible cool icon font called [Font Awesome][1].
+
+Web icon fonts fit perfectly into JavaFX as
 
 * all these beautiful icons are scalable vector graphics
 * each icon (unicode character) can be styled with css
@@ -11,12 +16,12 @@ This font fits perfectly into JavaFX as
 
 
 #Currently supported (and build-in):
- * [FontAwesome 4.6.1][1]
+ * [FontAwesome 4.7.0][1]
  * [WeatherIcons 2.0][13] 
- * [Material Icons 2.1][15]
- * [Material Design Font 1.4.57][12]
- * [Octicons 3.3.0][16]
- * [525Icons 2.0][21]
+ * [Material Icons 2.2][15]
+ * [Material Design Font 1.7.22][12]
+ * [Octicons 4.3.0][16]
+ * [525Icons 3.0][21]
 
 #Usage/Details
 * [8.11 announcement][23]
