@@ -6,7 +6,6 @@ FontAwesomeFX
 
  [ ![Download](https://api.bintray.com/packages/jerady/maven/FontAwesomeFX/images/download.svg) ](https://bintray.com/jerady/maven/FontAwesomeFX/_latestVersion)
 
- [ ![Download](https://api.bintray.com/packages/jerady/maven/FontAwesomeFX/images/download.svg) ](https://bintray.com/jerady/maven/FontAwesomeFX/_latestVersion)
 
 Kudos to Dave Gandy who has created an incredible cool icon font called [Font Awesome][1].
 
