@@ -40,6 +40,8 @@ public class MaterialDesignIconView extends GlyphIcon<MaterialDesignIcon> {
         super(MaterialDesignIcon.class);
         setFont(new Font("Material Design Icons", DEFAULT_ICON_SIZE));
         setIcon(icon);
+        getStyleClass().add("glyph-icon");
+        setStyle(String.format("-fx-font-family: %s;", icon.getFontFamily()));
     }
 
     public MaterialDesignIconView() {

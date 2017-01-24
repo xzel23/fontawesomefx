@@ -2,7 +2,7 @@ apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.weathericons.demo.WeatherIconsDemoApp'
 
-version '2.0.10-1'
+version '2.0.10-2'
 
 dependencies {
     compile project(':fontawesomefx-commons')

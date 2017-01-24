@@ -39,6 +39,8 @@ public class FontAwesomeIconView extends GlyphIcon<FontAwesomeIcon> {
         super(FontAwesomeIcon.class);
         setFont(new Font("FontAwesome", DEFAULT_ICON_SIZE));
         setIcon(icon);
+        getStyleClass().add("glyph-icon");
+        setStyle(String.format("-fx-font-family: %s;", icon.getFontFamily()));
     }
 
     public FontAwesomeIconView() {
@@ -50,5 +52,4 @@ public class FontAwesomeIconView extends GlyphIcon<FontAwesomeIcon> {
         return FontAwesomeIcon.ANCHOR;
     }
 
-    
 }
