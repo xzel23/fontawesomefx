@@ -29,11 +29,10 @@ import javafx.scene.text.Text;
  *
  * @author Jens Deters
  */
-public class GlyphsFactory{
+public class GlyphsFactory {
 
     /**
-     * @param clazz The IconView class containing the TTF_PATH field pointing to
-     * the TTF file
+     * @param clazz The IconView class containing the TTF_PATH field pointing to the TTF file
      */
     public GlyphsFactory(Class clazz) {
         loadFont(getPathToFontFromClass(clazz));
@@ -103,6 +102,21 @@ public class GlyphsFactory{
         button.setStyle("-fx-font-size: " + fontSize);
         button.setGraphic(label);
         button.setContentDisplay(contentDisplay);
+        return button;
+    }
+
+    public ToggleButton createIconToggleButton(GlyphIcons icon) {
+        return createIconToggleButton(icon, "");
+    }
+
+    public ToggleButton createIconToggleButton(GlyphIcons icon, String text) {
+        return createIconToggleButton(icon, text, GlyphIcon.DEFAULT_FONT_SIZE);
+    }
+
+    public ToggleButton createIconToggleButton(GlyphIcons icon, String text, String iconSize) {
+        Text label = createIcon(icon, iconSize);
+        ToggleButton button = new ToggleButton(text);
+        button.setGraphic(label);
         return button;
     }
 

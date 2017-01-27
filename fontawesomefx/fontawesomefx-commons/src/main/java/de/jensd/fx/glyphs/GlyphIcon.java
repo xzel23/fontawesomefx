@@ -32,7 +32,6 @@ import javafx.css.StyleConverter;
 import javafx.css.Styleable;
 import javafx.css.StyleableProperty;
 import javafx.fxml.FXML;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 /**
@@ -146,8 +145,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     abstract public T getDefaultGlyph();
 
     private void updateSize() {
-        Font f = new Font(getFont().getFamily(), getGlyphSize().doubleValue());
-        setFont(f);
+        setGlyphStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", getFont().getFamily(), getGlyphSize().doubleValue()));
     }
 
     void updateIcon() {
@@ -171,39 +169,39 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
         private static final CssMetaData<GlyphIcon, String> GLYPH_NAME
                 = new CssMetaData<GlyphIcon, String>("-glyph-name", StyleConverter.getStringConverter(), "BLANK") {
 
-                    @Override
-                    public boolean isSettable(GlyphIcon styleable) {
-                        return styleable.glyphName == null || !styleable.glyphName.isBound();
-                    }
+            @Override
+            public boolean isSettable(GlyphIcon styleable) {
+                return styleable.glyphName == null || !styleable.glyphName.isBound();
+            }
 
-                    @Override
-                    public StyleableProperty<String> getStyleableProperty(GlyphIcon styleable) {
-                        return (StyleableProperty) styleable.glyphNameProperty();
-                    }
+            @Override
+            public StyleableProperty<String> getStyleableProperty(GlyphIcon styleable) {
+                return (StyleableProperty) styleable.glyphNameProperty();
+            }
 
-                    @Override
-                    public String getInitialValue(GlyphIcon styleable) {
-                        return "BLANK";
-                    }
-                };
+            @Override
+            public String getInitialValue(GlyphIcon styleable) {
+                return "BLANK";
+            }
+        };
 
         private static final CssMetaData<GlyphIcon, Number> GLYPH_SIZE
                 = new CssMetaData<GlyphIcon, Number>("-glyph-size", StyleConverter.getSizeConverter(), DEFAULT_ICON_SIZE) {
-                    @Override
-                    public boolean isSettable(GlyphIcon styleable) {
-                        return styleable.glyphSize == null || !styleable.glyphSize.isBound();
-                    }
+            @Override
+            public boolean isSettable(GlyphIcon styleable) {
+                return styleable.glyphSize == null || !styleable.glyphSize.isBound();
+            }
 
-                    @Override
-                    public StyleableProperty<Number> getStyleableProperty(GlyphIcon styleable) {
-                        return (StyleableProperty) styleable.glyphSizeProperty();
-                    }
+            @Override
+            public StyleableProperty<Number> getStyleableProperty(GlyphIcon styleable) {
+                return (StyleableProperty) styleable.glyphSizeProperty();
+            }
 
-                    @Override
-                    public Number getInitialValue(GlyphIcon styleable) {
-                        return DEFAULT_ICON_SIZE;
-                    }
-                };
+            @Override
+            public Number getInitialValue(GlyphIcon styleable) {
+                return DEFAULT_ICON_SIZE;
+            }
+        };
         private static final List<CssMetaData<? extends Styleable, ?>> STYLEABLES;
 
         static {
