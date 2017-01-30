@@ -33,9 +33,9 @@ subprojects {
             issueTrackerUrl = 'https://bitbucket.org/Jerady/fontawesomefx/issues'
             publicDownloadNumbers = true
             version {
-                name = '8.13'
-                desc = 'FontAwesomeFX 8.13'
-                vcsTag = 'fontawesomefx-8.13'
+                name = '8.14'
+                desc = 'FontAwesomeFX 8.14'
+                vcsTag = 'fontawesomefx-8.14'
             }
         }
     }
