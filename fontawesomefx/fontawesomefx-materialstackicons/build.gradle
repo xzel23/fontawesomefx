@@ -2,7 +2,7 @@ apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.materialstackicons.demo.StackDemo'
 
-version '2.1-3'
+version '2.1-4'
 
 dependencies {
     compile project(':fontawesomefx-commons')
