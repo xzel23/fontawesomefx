@@ -43,8 +43,7 @@ public class WeatherIconView extends GlyphIcon<WeatherIcon> {
         super(WeatherIcon.class);
         setFont(new Font("weather icons", DEFAULT_ICON_SIZE));
         setIcon(icon);
-        getStyleClass().add("glyph-icon");
-        setStyle(String.format("-fx-font-family: %s;", icon.getFontFamily()));
+        setStyle(String.format("-fx-font-family: '%s';", icon.getFontFamily()));
     }
 
     public WeatherIconView() {
