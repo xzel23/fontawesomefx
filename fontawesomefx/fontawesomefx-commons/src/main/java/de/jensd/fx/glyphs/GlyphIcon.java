@@ -152,9 +152,6 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
         Font f = new Font(getFont().getFamily(), getGlyphSize().doubleValue());
         setFont(f);
         setGlyphStyle(String.format("-fx-font-size: %s;", getGlyphSize().doubleValue()));
-        System.out.println("updateSize: getStyle()      " + getStyle());
-        System.out.println("updateSize: getGlyphStyle() " + getGlyphStyle());
-        System.out.println("updateSize: getGlyphSize()  " + getGlyphSize());
     }
 
     void updateIcon() {
