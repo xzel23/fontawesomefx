@@ -18,7 +18,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;

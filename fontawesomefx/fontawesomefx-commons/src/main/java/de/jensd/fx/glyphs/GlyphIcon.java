@@ -32,6 +32,7 @@ import javafx.css.StyleConverter;
 import javafx.css.Styleable;
 import javafx.css.StyleableProperty;
 import javafx.fxml.FXML;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 /**
@@ -92,7 +93,10 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     }
 
     public final void setGlyphStyle(String style) {
-        glyphStyleProperty().setValue(style);
+        if (!getGlyphStyle().isEmpty() && !getGlyphStyle().endsWith(";")) {
+            style = ";".concat(style);
+        }
+        glyphStyleProperty().setValue(getGlyphStyle().concat(style));
     }
 
     public final ObjectProperty<String> glyphNameProperty() {
@@ -145,7 +149,12 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     abstract public T getDefaultGlyph();
 
     private void updateSize() {
-        setGlyphStyle(String.format("-fx-font-family: '%s'; -fx-font-size: %s;", getFont().getFamily(), getGlyphSize().doubleValue()));
+        Font f = new Font(getFont().getFamily(), getGlyphSize().doubleValue());
+        setFont(f);
+        setGlyphStyle(String.format("-fx-font-size: %s;", getGlyphSize().doubleValue()));
+        System.out.println("updateSize: getStyle()      " + getStyle());
+        System.out.println("updateSize: getGlyphStyle() " + getGlyphStyle());
+        System.out.println("updateSize: getGlyphSize()  " + getGlyphSize());
     }
 
     void updateIcon() {
@@ -161,6 +170,8 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     private void updateStyle() {
         setStyle(getGlyphStyle());
+        System.out.println("updateSize: getStyle() " + getStyle());
+
     }
 
     // CSS 
