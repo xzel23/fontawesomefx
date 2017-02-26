@@ -70,9 +70,9 @@ public class GlyphsFactory {
     }
 
     public Text createIcon(GlyphIcons icon, String iconSize) {
-        Text text = new Text(icon.characterToString());
+        Text text = new Text(icon.unicode());
         text.getStyleClass().add("glyph-icon");
-        text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.getFontFamily(), iconSize));
+        text.setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.fontFamily(), iconSize));
         return text;
     }
 

@@ -29,8 +29,9 @@ public class Icons525DemoApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         FlowPane iconsPane = new FlowPane(3, 3);
         for (Icons525 icon : Icons525.values()) {
-            iconsPane.getChildren().add(Icon525Factory.get().createIcon(icon, "3em"));
-        }
+//            iconsPane.getChildren().add(Icon525Factory.get().createIcon(icon, "3em"));
+             iconsPane.getChildren().add(Icon525Factory.get().createIcon(icon, "3em"));
+         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
         primaryStage.setTitle("FontAwesomeFX: 525 Icons Demo: " + Icons525.values().length + " Icons");

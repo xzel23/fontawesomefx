@@ -41,9 +41,8 @@ public class OctIconView extends GlyphIcon<OctIcon> {
 
     public OctIconView(OctIcon icon) {
         super(OctIcon.class);
-        setFont(new Font("Octicons", DEFAULT_ICON_SIZE));
         setIcon(icon);
-        setStyle(String.format("-fx-font-family: '%s';", icon.getFontFamily()));
+        setStyle(String.format("-fx-font-family: %s;", icon.fontFamily()));
     }
 
     public OctIconView() {

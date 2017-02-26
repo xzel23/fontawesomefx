@@ -48,6 +48,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     private final static CSSParser CSS_PARSER = new CSSParser();
 
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
+    private String glyphFontFamily;
     private ObjectProperty<String> glyphName;
     private ObjectProperty<Number> glyphSize;
     public final Class<T> typeOfT;
@@ -62,7 +63,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     }
 
     private void initProperties() {
-        getStyleClass().addAll("root", "glyph-icon");
+        getStyleClass().addAll("glyph-icon");
         glyphSizeProperty().addListener(observable -> {
             updateSize();
         });
@@ -114,6 +115,10 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
         glyphNameProperty().setValue(glyphName);
     }
 
+    public final String getGlyphFontFamily() {
+        return glyphFontFamily;
+    }
+
     public final ObjectProperty<Number> glyphSizeProperty() {
         if (glyphSize == null) {
             glyphSize = new SimpleStyleableObjectProperty<>(StyleableProperties.GLYPH_SIZE, GlyphIcon.this, "glyphSize");
@@ -144,6 +149,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     public final void setIcon(T glyph) {
         setGlyphName(glyph.name());
+        glyphFontFamily = glyph.fontFamily();
     }
 
     abstract public T getDefaultGlyph();
@@ -151,7 +157,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     private void updateSize() {
         Font f = new Font(getFont().getFamily(), getGlyphSize().doubleValue());
         setFont(f);
-        setGlyphStyle(String.format("-fx-font-size: %s;", getGlyphSize().doubleValue()));
+        setGlyphStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", getGlyphFontFamily(), getGlyphSize().doubleValue()));
     }
 
     void updateIcon() {
@@ -162,13 +168,11 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
             String msg = String.format("Icon '%s' not found. Using '%s' (default) instead", getGlyphName(), getDefaultGlyph());
             Logger.getLogger(GlyphIcon.class.getName()).log(Level.SEVERE, msg);
         }
-        setText(icon.characterToString());
+        setText(icon.unicode());
     }
 
     private void updateStyle() {
         setStyle(getGlyphStyle());
-        System.out.println("updateSize: getStyle() " + getStyle());
-
     }
 
     // CSS 
