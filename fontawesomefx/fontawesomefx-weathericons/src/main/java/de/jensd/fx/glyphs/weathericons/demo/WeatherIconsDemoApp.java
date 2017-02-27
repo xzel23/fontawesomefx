@@ -30,7 +30,7 @@ public class WeatherIconsDemoApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         FlowPane iconsPane = new FlowPane(3, 3);
         for (WeatherIcon icon : WeatherIcon.values()) {
-            iconsPane.getChildren().add(new WeatherIconView(icon));
+            iconsPane.getChildren().add(new WeatherIconView(icon, "3em"));
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
