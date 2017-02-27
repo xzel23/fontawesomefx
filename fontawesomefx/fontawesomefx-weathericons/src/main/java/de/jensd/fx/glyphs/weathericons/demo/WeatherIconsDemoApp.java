@@ -12,6 +12,7 @@
 package de.jensd.fx.glyphs.weathericons.demo;
 
 import de.jensd.fx.glyphs.weathericons.WeatherIcon;
+import de.jensd.fx.glyphs.weathericons.WeatherIconView;
 import de.jensd.fx.glyphs.weathericons.utils.WeatherIconFactory;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -29,7 +30,7 @@ public class WeatherIconsDemoApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         FlowPane iconsPane = new FlowPane(3, 3);
         for (WeatherIcon icon : WeatherIcon.values()) {
-            iconsPane.getChildren().add(WeatherIconFactory.get().createIcon(icon, "3em"));
+            iconsPane.getChildren().add(new WeatherIconView(icon, "3em"));
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);

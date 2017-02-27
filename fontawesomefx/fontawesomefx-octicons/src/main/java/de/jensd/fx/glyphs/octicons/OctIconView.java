@@ -39,12 +39,14 @@ public class OctIconView extends GlyphIcon<OctIcon> {
         }
     }
 
-    public OctIconView(OctIcon icon) {
+    public OctIconView(OctIcon icon, String iconSize) {
         super(OctIcon.class);
-        setFont(new Font("Octicons", DEFAULT_ICON_SIZE));
         setIcon(icon);
-        getStyleClass().add("glyph-icon");
-        setStyle(String.format("-fx-font-family: %s;", icon.getFontFamily()));
+        setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.fontFamily(), iconSize));
+    }
+
+    public OctIconView(OctIcon icon) {
+        this(icon, "1em");
     }
 
     public OctIconView() {

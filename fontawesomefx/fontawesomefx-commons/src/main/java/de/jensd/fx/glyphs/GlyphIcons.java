@@ -19,14 +19,10 @@ package de.jensd.fx.glyphs;
  */
 public interface GlyphIcons {
 
-    String characterToString();
-
-    String unicodeToString();
-
     String name();
 
-    char getChar();
+    String unicode();
 
-    String getFontFamily();
+    String fontFamily();
 
 }

@@ -18,7 +18,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -37,7 +36,7 @@ public class FontAwesomeIconsDemoApp extends Application {
         for (int i = 0; i < 10; i++) {
             ToggleButton toggle1 = new ToggleButton();
             FontAwesomeIconView iconView = new FontAwesomeIconView(FontAwesomeIcon.ANGELLIST);
-            iconView.setGlyphSize(42.0);
+            //iconView.setGlyphSize(42.0);
             toggle1.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             toggle1.setGraphic(iconView);
             buttonBox1.getChildren().add(toggle1);

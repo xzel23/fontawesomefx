@@ -32,6 +32,7 @@ import javafx.css.StyleConverter;
 import javafx.css.Styleable;
 import javafx.css.StyleableProperty;
 import javafx.fxml.FXML;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 /**
@@ -47,6 +48,8 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     private final static CSSParser CSS_PARSER = new CSSParser();
 
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
+    private String glyphFontFamily;
+    private String unicode;
     private ObjectProperty<String> glyphName;
     private ObjectProperty<Number> glyphSize;
     public final Class<T> typeOfT;
@@ -61,7 +64,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     }
 
     private void initProperties() {
-        getStyleClass().addAll("root", "glyph-icon");
+        getStyleClass().addAll("glyph-icon");
         glyphSizeProperty().addListener(observable -> {
             updateSize();
         });
@@ -92,7 +95,10 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     }
 
     public final void setGlyphStyle(String style) {
-        glyphStyleProperty().setValue(style);
+        if (!getGlyphStyle().isEmpty() && !getGlyphStyle().endsWith(";")) {
+            style = ";".concat(style);
+        }
+        glyphStyleProperty().setValue(getGlyphStyle().concat(style));
     }
 
     public final ObjectProperty<String> glyphNameProperty() {
@@ -108,6 +114,10 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     public final void setGlyphName(String glyphName) {
         glyphNameProperty().setValue(glyphName);
+    }
+
+    public final String getGlyphFontFamily() {
+        return glyphFontFamily;
     }
 
     public final ObjectProperty<Number> glyphSizeProperty() {
@@ -140,12 +150,20 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     public final void setIcon(T glyph) {
         setGlyphName(glyph.name());
+        glyphFontFamily = glyph.fontFamily();
+        unicode = glyph.unicode();
+    }
+    
+    public String unicode(){
+        return unicode;
     }
 
     abstract public T getDefaultGlyph();
 
     private void updateSize() {
-        setGlyphStyle(String.format("-fx-font-family: '%s'; -fx-font-size: %s;", getFont().getFamily(), getGlyphSize().doubleValue()));
+        Font f = new Font(getFont().getFamily(), getGlyphSize().doubleValue());
+        setFont(f);
+        setGlyphStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", getGlyphFontFamily(), getGlyphSize().doubleValue()));
     }
 
     void updateIcon() {
@@ -156,7 +174,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
             String msg = String.format("Icon '%s' not found. Using '%s' (default) instead", getGlyphName(), getDefaultGlyph());
             Logger.getLogger(GlyphIcon.class.getName()).log(Level.SEVERE, msg);
         }
-        setText(icon.characterToString());
+        setText(icon.unicode());
     }
 
     private void updateStyle() {

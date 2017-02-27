@@ -12,6 +12,7 @@
 package de.jensd.fx.glyphs.octicons.demo;
 
 import de.jensd.fx.glyphs.octicons.OctIcon;
+import de.jensd.fx.glyphs.octicons.OctIconView;
 import de.jensd.fx.glyphs.octicons.utils.OctIconFactory;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -29,7 +30,7 @@ public class OctIconsDemoApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         FlowPane iconsPane = new FlowPane(3, 3);
         for (OctIcon octicon : OctIcon.values()) {
-            iconsPane.getChildren().add(OctIconFactory.get().createIcon(octicon, "3em"));
+            iconsPane.getChildren().add(new OctIconView(octicon, "3em"));
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);

@@ -12,6 +12,7 @@
 package de.jensd.fx.glyphs.materialdesignicons.demo;
 
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
+import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.jensd.fx.glyphs.materialdesignicons.utils.MaterialDesignIconFactory;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -29,7 +30,7 @@ public class MaterialDesignIconsDemoApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         FlowPane iconsPane = new FlowPane(3,3);
         for (MaterialDesignIcon icon : MaterialDesignIcon.values()) {
-            iconsPane.getChildren().add(MaterialDesignIconFactory.get().createIcon(icon, "3em"));
+            iconsPane.getChildren().add(new MaterialDesignIconView(icon, "3em"));
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
