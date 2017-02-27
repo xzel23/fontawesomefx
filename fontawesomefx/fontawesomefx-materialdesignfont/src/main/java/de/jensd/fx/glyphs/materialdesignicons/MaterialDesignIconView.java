@@ -36,11 +36,16 @@ public class MaterialDesignIconView extends GlyphIcon<MaterialDesignIcon> {
 
     }
 
-    public MaterialDesignIconView(MaterialDesignIcon icon) {
+    public MaterialDesignIconView(MaterialDesignIcon icon, String iconSize) {
         super(MaterialDesignIcon.class);
         setIcon(icon);
+        setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.fontFamily(), iconSize));
     }
 
+    public MaterialDesignIconView(MaterialDesignIcon icon) {
+        this(icon, "1em");
+    }
+    
     public MaterialDesignIconView() {
         this(MaterialDesignIcon.ANDROID);
     }
