@@ -49,6 +49,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
     private String glyphFontFamily;
+    private String unicode;
     private ObjectProperty<String> glyphName;
     private ObjectProperty<Number> glyphSize;
     public final Class<T> typeOfT;
@@ -150,6 +151,11 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
     public final void setIcon(T glyph) {
         setGlyphName(glyph.name());
         glyphFontFamily = glyph.fontFamily();
+        unicode = glyph.unicode();
+    }
+    
+    public String unicode(){
+        return unicode;
     }
 
     abstract public T getDefaultGlyph();
