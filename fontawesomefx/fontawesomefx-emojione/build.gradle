@@ -1,0 +1,15 @@
+apply plugin: 'application'
+
+mainClassName = 'de.jensd.fx.glyphs.emijione.demo.EmojiOneDemoApp'
+
+version '2.2.7'
+
+dependencies {
+    compile project(':fontawesomefx-commons')
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': mainClassName)
+    }
+}
