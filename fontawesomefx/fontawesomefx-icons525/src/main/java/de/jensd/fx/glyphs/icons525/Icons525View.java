@@ -39,10 +39,14 @@ public class Icons525View extends GlyphIcon<Icons525> {
 
     }
 
-    public Icons525View(Icons525 icon) {
+    public Icons525View(Icons525 icon, String iconSize) {
         super(Icons525.class);
         setIcon(icon);
-        setGlyphStyle(String.format("-fx-font-family: %s;", icon.fontFamily()));
+        setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.fontFamily(), iconSize));
+    }
+
+    public Icons525View(Icons525 icon) {
+        this(icon, "1em");
     }
 
     public Icons525View() {

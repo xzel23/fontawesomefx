@@ -12,6 +12,7 @@
 package de.jensd.fx.glyphs.icons525.demo;
 
 import de.jensd.fx.glyphs.icons525.Icons525;
+import de.jensd.fx.glyphs.icons525.Icons525View;
 import de.jensd.fx.glyphs.icons525.utils.Icon525Factory;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -29,8 +30,7 @@ public class Icons525DemoApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         FlowPane iconsPane = new FlowPane(3, 3);
         for (Icons525 icon : Icons525.values()) {
-//            iconsPane.getChildren().add(Icon525Factory.get().createIcon(icon, "3em"));
-             iconsPane.getChildren().add(Icon525Factory.get().createIcon(icon, "3em"));
+             iconsPane.getChildren().add(new Icons525View(icon, "3em"));
          }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
