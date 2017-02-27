@@ -35,10 +35,14 @@ public class FontAwesomeIconView extends GlyphIcon<FontAwesomeIcon> {
         }
     }
 
-    public FontAwesomeIconView(FontAwesomeIcon icon) {
+    public FontAwesomeIconView(FontAwesomeIcon icon, String iconSize) {
         super(FontAwesomeIcon.class);
         setIcon(icon);
-        setGlyphStyle(String.format("-fx-font-family: %s;", icon.fontFamily()));
+        setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.fontFamily(), iconSize));
+    }
+
+    public FontAwesomeIconView(FontAwesomeIcon icon) {
+        this(icon, "1em");
     }
 
     public FontAwesomeIconView() {
