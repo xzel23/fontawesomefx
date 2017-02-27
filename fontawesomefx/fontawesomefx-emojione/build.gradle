@@ -2,7 +2,7 @@ apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.emijione.demo.EmojiOneDemoApp'
 
-version '2.2.7-1'
+version '2.2.7-2'
 
 dependencies {
     compile project(':fontawesomefx-commons')

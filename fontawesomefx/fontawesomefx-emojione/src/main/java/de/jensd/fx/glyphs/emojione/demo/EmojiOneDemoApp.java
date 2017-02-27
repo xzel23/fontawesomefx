@@ -12,6 +12,7 @@
 package de.jensd.fx.glyphs.emojione.demo;
 
 import de.jensd.fx.glyphs.emojione.EmojiOne;
+import de.jensd.fx.glyphs.emojione.EmojiOneView;
 import de.jensd.fx.glyphs.emojione.utils.EmojiOneFactory;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -30,7 +31,7 @@ public class EmojiOneDemoApp extends Application {
         
         FlowPane iconsPane = new FlowPane(3, 3);
         for (EmojiOne icon : EmojiOne.values()) {
-            iconsPane.getChildren().add(EmojiOneFactory.get().createIcon(icon, "3em"));
+            iconsPane.getChildren().add(new EmojiOneView(icon, "3em"));
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);

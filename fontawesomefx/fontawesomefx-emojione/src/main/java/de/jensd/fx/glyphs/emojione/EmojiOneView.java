@@ -39,11 +39,14 @@ public class EmojiOneView extends GlyphIcon<EmojiOne> {
 
     }
 
-    public EmojiOneView(EmojiOne icon) {
+    public EmojiOneView(EmojiOne icon, String iconSize) {
         super(EmojiOne.class);
-        setFont(new Font("emojione", DEFAULT_ICON_SIZE));
         setIcon(icon);
-        setStyle(String.format("-fx-font-family: '%s';", icon.fontFamily()));
+        setStyle(String.format("-fx-font-family: %s; -fx-font-size: %s;", icon.fontFamily(), iconSize));
+    }
+
+    public EmojiOneView(EmojiOne icon) {
+        this(icon, "1em");
     }
 
     public EmojiOneView() {
