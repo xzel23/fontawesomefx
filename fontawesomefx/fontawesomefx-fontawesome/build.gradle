@@ -1,7 +1,7 @@
 apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.fontawesome.demo.FontAwesomeIconsDemoApp'
-
+ext.moduleName = 'de.jensd.fx.glyphs.fontawesome'
 version '4.5.0'
 
 dependencies {

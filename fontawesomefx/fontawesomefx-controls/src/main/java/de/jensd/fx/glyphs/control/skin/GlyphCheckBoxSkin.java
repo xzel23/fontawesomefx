@@ -1,8 +1,8 @@
 package de.jensd.fx.glyphs.control.skin;
 
-import com.sun.javafx.scene.control.skin.CheckBoxSkin;
 import de.jensd.fx.glyphs.control.GlyphCheckBox;
 import javafx.beans.value.ObservableValue;
+import javafx.scene.control.skin.CheckBoxSkin;
 import javafx.scene.layout.StackPane;
 
 /**

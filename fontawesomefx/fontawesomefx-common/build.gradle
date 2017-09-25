@@ -1,1 +1,3 @@
-version = '8.10'
+version = '9.0'
+
+ext.moduleName = 'de.jensd.fx.glyphs'
