@@ -1,15 +1,17 @@
 apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.materialicons.demo.MaterialIconsDemoApp'
-
-version '2.2.0-5'
+ext.moduleName = 'de.jensd.fx.glyphs.materialicons'
+version '2.2.0-9'
 
 dependencies {
     compile project(':fontawesomefx-commons')
 }
 
 jar {
+    inputs.property("moduleName", moduleName)
     manifest {
         attributes('Main-Class': mainClassName)
+        attributes('Automatic-Module-Name': moduleName)
     }
 }

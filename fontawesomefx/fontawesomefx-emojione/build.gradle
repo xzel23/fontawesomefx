@@ -1,15 +1,17 @@
 apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.emijione.demo.EmojiOneDemoApp'
-
-version '2.2.7-2'
+ext.moduleName = 'de.jensd.fx.glyphs.emijione'
+version '2.2.7-9'
 
 dependencies {
     compile project(':fontawesomefx-commons')
 }
 
 jar {
+    inputs.property("moduleName", moduleName)
     manifest {
         attributes('Main-Class': mainClassName)
+        attributes('Automatic-Module-Name': moduleName)
     }
 }

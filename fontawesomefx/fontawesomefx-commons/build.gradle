@@ -1,1 +1,9 @@
-version = '8.15'
+ext.moduleName = 'de.jensd.fx.glyphs.commons'
+version = '9.0'
+
+jar {
+    inputs.property("moduleName", moduleName)
+    manifest {
+        attributes('Automatic-Module-Name': moduleName)
+    }
+}

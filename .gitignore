@@ -6,3 +6,5 @@ build/
 .gradle/
 .DS_STORE
 bintray.properties
+*.iml 
+private/

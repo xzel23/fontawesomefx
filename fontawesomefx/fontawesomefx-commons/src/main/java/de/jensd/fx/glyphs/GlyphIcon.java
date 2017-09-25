@@ -16,8 +16,6 @@
  */
 package de.jensd.fx.glyphs;
 
-import com.sun.javafx.css.ParsedValueImpl;
-import com.sun.javafx.css.parser.CSSParser;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -45,7 +43,6 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     public final static Double DEFAULT_ICON_SIZE = 12.0;
     public final static String DEFAULT_FONT_SIZE = "1em";
-    private final static CSSParser CSS_PARSER = new CSSParser();
 
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
     private String glyphFontFamily;
@@ -238,8 +235,12 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
         return getClassCssMetaData();
     }
 
+    //    public Number convert(String sizeString) {
+//        ParsedValue parsedValue = CSS_PARSER.parseExpr("", sizeString);
+//        return (Number) parsedValue.convert(getFont());
+//    }
+
     public Number convert(String sizeString) {
-        ParsedValueImpl parsedValueImpl = CSS_PARSER.parseExpr("", sizeString);
-        return (Number) parsedValueImpl.convert(getFont());
+        return (Number)Integer.valueOf(12);
     }
 }

@@ -1,7 +1,7 @@
 apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.materialstackicons.demo.StackDemo'
-
+ext.moduleName = 'de.jensd.fx.glyphs.materialstackicons'
 version '2.1-5'
 
 dependencies {
@@ -10,7 +10,9 @@ dependencies {
 }
 
 jar {
+    inputs.property("moduleName", moduleName)
     manifest {
         attributes('Main-Class': mainClassName)
+        attributes('Automatic-Module-Name': moduleName)
     }
 }
