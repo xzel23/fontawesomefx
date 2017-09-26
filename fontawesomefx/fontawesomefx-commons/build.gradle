@@ -2,4 +2,4 @@ apply plugin: 'application'
 
 mainClassName = ''
 ext.moduleName = 'de.jensd.fx.glyphs.commons'
-version = '9.0'
+version = '9.0.0'
