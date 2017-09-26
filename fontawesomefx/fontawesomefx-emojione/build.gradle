@@ -1,7 +1,7 @@
 apply plugin: 'application'
 
-mainClassName = 'de.jensd.fx.glyphs.emijione.demo.EmojiOneDemoApp'
-ext.moduleName = 'de.jensd.fx.glyphs.emijione'
+mainClassName = 'de.jensd.fx.glyphs.emojione.demo.EmojiOneDemoApp'
+ext.moduleName = 'de.jensd.fx.glyphs.emojione'
 version '2.2.7-9'
 
 dependencies {

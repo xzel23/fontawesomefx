@@ -35,7 +35,7 @@ public class EmojiOneDemoApp extends Application {
         }
         Scene scene = new Scene(new ScrollPane(iconsPane), 500, 500);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("FontAwesomeFX: Apple Color Emoji Demo");
+        primaryStage.setTitle("FontAwesomeFX: Apple Color Emoji Demo: " + EmojiOne.values().length + " Icons");
         primaryStage.show();
 
     }
