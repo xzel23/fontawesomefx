@@ -18,16 +18,6 @@ subprojects {
     group = 'de.jensd'
     sourceCompatibility = '1.9'
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-    
-    compileJava {
-        doFirst {
-            options.compilerArgs = [
-                    '--module-path', classpath.asPath,
-            ]
-            classpath = files()
-        }
-    }
-
 
     bintray {
         user = System.getenv('BINTRAY_USER')
@@ -84,6 +74,29 @@ subprojects {
 
     dependencies {
         testCompile 'junit:junit:4.10'
+    }
+
+    afterEvaluate {
+        repositories {
+            jcenter()
+        }
+
+        compileJava {
+            doFirst {
+                options.compilerArgs = [
+                        '--module-path', classpath.asPath,
+                ]
+                classpath = files()
+            }
+        }
+
+        jar {
+            inputs.property("moduleName", moduleName)
+            manifest {
+                attributes('Main-Class': mainClassName)
+                attributes('Automatic-Module-Name': moduleName)
+            }
+        }
     }
 
 }

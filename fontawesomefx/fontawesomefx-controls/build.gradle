@@ -1,14 +1,9 @@
+apply plugin: 'application'
+
+mainClassName = ''
 ext.moduleName = 'de.jensd.fx.glyphs.controls'
 version '9.0'
 
 dependencies {
     compile project(':fontawesomefx-commons')
-}
-
-jar {
-    inputs.property("moduleName", moduleName)
-    manifest {
-        attributes('Automatic-Module-Name': moduleName)
-        attributes('Automatic-Module-Name': moduleName)
-    }
 }
