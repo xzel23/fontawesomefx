@@ -13,6 +13,7 @@
  */
 package de.jensd.fx.glyphs;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,8 +27,8 @@ public class GlyphsBuilder {
 
     private GlyphsBuilder(Class<? extends GlyphIcon> clazz) {
         try {
-            glyphIcon = clazz.newInstance();
-        } catch (InstantiationException | IllegalAccessException ex) {
+            glyphIcon = clazz.getDeclaredConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
             Logger.getLogger(GlyphsBuilder.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

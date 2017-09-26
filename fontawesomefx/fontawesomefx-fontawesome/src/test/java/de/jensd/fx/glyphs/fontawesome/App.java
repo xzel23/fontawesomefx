@@ -51,7 +51,7 @@ public class App extends Application {
         VBox root = new VBox();
         root.setSpacing(10.0);
 
-        Text icon = FontAwesomeIconFactory.get().createIcon(FontAwesomeIcon.THUMBS_ALT_UP, "10em");
+        Text icon = FontAwesomeIconFactory.get().createIcon(FontAwesomeIcon.ANGELLIST, "10em");
         
         
         Button testButton = new Button();
@@ -170,7 +170,7 @@ public class App extends Application {
         HBox stackIconBox1 = new HBox();
         stackIconBox1.setSpacing(5.0);
         stackIconBox1.setPadding(new Insets(10.0));
-        stackIconBox1.getChildren().addAll(stackedIcon1, stackedIcon2, stackedIcon3, stackedIcon4, stackedIcon5, stackedIcon6, stackedIcon7);
+        //stackIconBox1.getChildren().addAll(stackedIcon1, stackedIcon2, stackedIcon3, stackedIcon4, stackedIcon5, stackedIcon6, stackedIcon7);
 
         Region iconStack1 = GlyphsStack.create()
                 .add(GlyphsBuilder.create(FontAwesomeIconView.class)
@@ -209,7 +209,7 @@ public class App extends Application {
         HBox stackIconBox2 = new HBox();
         stackIconBox2.setSpacing(5.0);
         stackIconBox2.setPadding(new Insets(10.0));
-        stackIconBox2.getChildren().addAll(iconStack1, iconStack3);
+//        stackIconBox2.getChildren().addAll(iconStack1, iconStack3);
 
         HBox basicIconBox = new HBox();
         basicIconBox.setAlignment(Pos.CENTER);

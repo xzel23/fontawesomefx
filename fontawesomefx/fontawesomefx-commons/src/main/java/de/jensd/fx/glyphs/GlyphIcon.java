@@ -16,6 +16,7 @@
  */
 package de.jensd.fx.glyphs;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,11 +25,7 @@ import java.util.logging.Logger;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.css.CssMetaData;
-import javafx.css.SimpleStyleableObjectProperty;
-import javafx.css.StyleConverter;
-import javafx.css.Styleable;
-import javafx.css.StyleableProperty;
+import javafx.css.*;
 import javafx.fxml.FXML;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -43,6 +40,7 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
 
     public final static Double DEFAULT_ICON_SIZE = 12.0;
     public final static String DEFAULT_FONT_SIZE = "1em";
+    private final static CssParser CSS_PARSER = new CssParser();
 
     private StringProperty glyphStyle; // needed as setStyle() is final in javafx.scene.text.Text 
     private String glyphFontFamily;
@@ -235,12 +233,17 @@ public abstract class GlyphIcon<T extends Enum<T> & GlyphIcons> extends Text {
         return getClassCssMetaData();
     }
 
-    //    public Number convert(String sizeString) {
-//        ParsedValue parsedValue = CSS_PARSER.parseExpr("", sizeString);
-//        return (Number) parsedValue.convert(getFont());
-//    }
-
     public Number convert(String sizeString) {
-        return (Number)Integer.valueOf(12);
+        Number size = Integer.valueOf(14);
+        try {
+            Method m = CSS_PARSER.getClass().getDeclaredMethod("parseExpr", String.class, String.class);
+            m.setAccessible(true);
+            ParsedValue parsedValue = (ParsedValue)m.invoke(CSS_PARSER, "", sizeString);
+            size =  (Number) parsedValue.convert(getFont());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return size;
     }
+
 }
