@@ -50,12 +50,12 @@ public class Icons525View extends GlyphIcon<Icons525> {
     }
 
     public Icons525View() {
-        this(Icons525.ACCESS);
+        this(Icons525.ACROBAT);
     }
 
     @Override
     public Icons525 getDefaultGlyph() {
-        return Icons525.ACCESS;
+        return Icons525.ACROBAT;
     }
 
 }
