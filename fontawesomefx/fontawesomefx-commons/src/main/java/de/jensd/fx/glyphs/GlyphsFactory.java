@@ -58,7 +58,7 @@ public class GlyphsFactory {
 
     private final void loadFont(String pathToIconFont) {
         try {
-            Font.loadFont(GlyphsFactory.class
+            Font.loadFont(getClass()
                     .getResource(pathToIconFont).openStream(), 10.0);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
