@@ -1,4 +1,5 @@
 module de.jensd.fx.glyphs.fontawesome {
+    opens de.jensd.fx.glyphs.fontawesome;
     exports de.jensd.fx.glyphs.fontawesome;
     exports de.jensd.fx.glyphs.fontawesome.utils;
     exports de.jensd.fx.glyphs.fontawesome.demo;

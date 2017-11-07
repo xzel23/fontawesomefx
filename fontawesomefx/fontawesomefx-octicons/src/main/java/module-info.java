@@ -1,4 +1,5 @@
 module de.jensd.fx.glyphs.octicons {
+    opens de.jensd.fx.glyphs.octicons;
     exports de.jensd.fx.glyphs.octicons;
     exports de.jensd.fx.glyphs.octicons.utils;
     exports de.jensd.fx.glyphs.octicons.demo;

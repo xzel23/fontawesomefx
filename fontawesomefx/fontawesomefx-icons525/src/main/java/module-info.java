@@ -1,4 +1,5 @@
 module de.jensd.fx.glyphs.iconsfivetwofive {
+    opens de.jensd.fx.glyphs.icons525;
     exports de.jensd.fx.glyphs.icons525;
     exports de.jensd.fx.glyphs.icons525.utils;
     exports de.jensd.fx.glyphs.icons525.demo;

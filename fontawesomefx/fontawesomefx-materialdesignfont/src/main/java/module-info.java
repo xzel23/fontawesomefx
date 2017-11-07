@@ -1,4 +1,5 @@
 module de.jensd.fx.glyphs.materialdesignicons {
+    opens de.jensd.fx.glyphs.materialdesignicons;
     exports de.jensd.fx.glyphs.materialdesignicons;
     exports de.jensd.fx.glyphs.materialdesignicons.utils;
     exports de.jensd.fx.glyphs.materialdesignicons.demo;

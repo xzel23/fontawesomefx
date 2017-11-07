@@ -1,4 +1,5 @@
 module de.jensd.fx.glyphs.weathericons {
+    opens de.jensd.fx.glyphs.weathericons;
     exports de.jensd.fx.glyphs.weathericons;
     exports de.jensd.fx.glyphs.weathericons.utils;
     exports de.jensd.fx.glyphs.weathericons.demo;
