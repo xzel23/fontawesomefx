@@ -2,7 +2,7 @@ apply plugin: 'application'
 
 mainClassName = ''
 ext.moduleName = 'de.jensd.fx.glyphs.controls'
-version '9.1.1'
+version '9.1.2'
 
 dependencies {
     compile project(':fontawesomefx-commons')

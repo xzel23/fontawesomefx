@@ -1,0 +1,19 @@
+
+ext{
+    artifactGroupId = 'de.jensd'
+    artifactName = 'FontAwesomeFX'
+    artifactId = 'mqttfx-payload-decoders'
+    artifactVersion = '9.1.1'
+    artifactWebSiteUrl = 'https://bitbucket.org/Jerady/fontawesomefx/overview'
+    artifactGitUrl = 'https://Jerady@bitbucket.org/Jerady/fontawesomefx.git'
+    artifactUserOrg = 'jerady'
+    artifactPublications = ['mavenJava']
+    artifactIssueTrackerUrl = 'https://bitbucket.org/Jerady/fontawesomefx/issues'
+    artifactLicenses = ['Apache-2.0']
+    artifactDesc = '$artifactId $artifactVersion'
+    artifactVcsTag = '$artifactId-$artifactVersion'
+    artifactDeveloperId = 'developer-id'
+    artifactDeveloperName = 'Jens Deters'
+    artifactDeveloperEmail = 'mail@jensd.de'
+    artifactDescription = 'Provide WebFont Icons for JavaFX Apps'
+}
