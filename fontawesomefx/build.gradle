@@ -62,6 +62,7 @@ subprojects {
             version {
                 gpg {
                     sign = true
+                    passphrase = System.getenv('SIGNING_PASSWORD')
                 }
                 name = '9.1.2'
                 desc = 'FontAwesomeFX 9.1.2'
