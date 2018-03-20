@@ -9,3 +9,8 @@ bintray.properties
 *.iml 
 private/
 out/
+**/.settings
+**/.classpath
+**/.gitignore
+**/.project
+**/.DS_Store
