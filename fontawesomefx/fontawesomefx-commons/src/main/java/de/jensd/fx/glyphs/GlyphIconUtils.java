@@ -1,22 +1,46 @@
 package de.jensd.fx.glyphs;
 
-import javafx.css.CssParser;
-import javafx.css.Stylesheet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javafx.scene.text.Font;
 
 public class GlyphIconUtils {
 
-    private final static CssParser CSS_PARSER = new CssParser();
-    private final static Number DEFAULT_SIZE = 12.0;
+    private static final double DEFAULT_SIZE = 12.0;
+
+    private static final Pattern PATTERN = Pattern.compile("(?<number>([\\d]+(\\.\\d+)?))(?<unit>[a-z%]+)");
 
     public static Number convert(String sizeString, Font font) {
-        Stylesheet stylesheet = CSS_PARSER.parse("{-fx-font-size: ".concat(sizeString).concat(";}"));
-        if(stylesheet.getRules().isEmpty()){
+        if (sizeString.isEmpty()) {
             return DEFAULT_SIZE;
         }
-        else if(stylesheet.getRules().get(0).getDeclarations().isEmpty()){
-            return DEFAULT_SIZE;
+
+        // extract number and unit
+        Matcher matcher = PATTERN.matcher(sizeString);
+
+        if (!matcher.matches()) {
+            throw new IllegalArgumentException("invlalid size string: '"+sizeString+"'");
         }
-        return (Number)stylesheet.getRules().get(0).getDeclarations().get(0).getParsedValue().convert(font);
+
+        String numberString = matcher.group("number");
+        double sz = Double.parseDouble(numberString);
+
+        String unit = matcher.group("unit");
+
+        // do the conversion
+        double baseSize = font.getSize();
+        switch (unit) {
+        case "em":
+            return baseSize * sz;
+        case "px":
+            return sz;
+        case "pt":
+            return sz*16/12;
+        case "%":
+            return  baseSize * sz/100.0;
+        default:
+            throw new IllegalArgumentException("unknown size unit: '"+unit+"'");
+        }
     }
 }
