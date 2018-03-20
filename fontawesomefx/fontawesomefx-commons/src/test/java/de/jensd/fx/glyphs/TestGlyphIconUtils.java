@@ -28,6 +28,20 @@ public class TestGlyphIconUtils {
     }
 
     @Test
+    public void testSizeConverterPC(){
+        String em ="1pc";
+        Number sizeNumber =  GlyphIconUtils.convert(em, new Text().getFont());
+        assertTrue(sizeNumber.doubleValue() == 16.0);
+    }
+
+    @Test
+    public void testSizeConverterPercent(){
+        String em ="50%";
+        Number sizeNumber =  GlyphIconUtils.convert(em, new Text().getFont());
+        assertTrue(sizeNumber.doubleValue() == 6.5);
+    }
+
+    @Test
     public void testConverterInvalidSizeString(){
         String em ="3xxx";
         Number sizeNumber =  GlyphIconUtils.convert(em, new Text().getFont());
