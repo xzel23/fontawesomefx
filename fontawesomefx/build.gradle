@@ -1,14 +1,9 @@
+plugins {
+    id "com.jfrog.bintray" version "1.8.0"
+}
+
 apply plugin: 'base'
 apply from: 'deploy.gradle'
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
-    }
-}
 
 // Create the pom configuration:
 def pomConfig = {
@@ -48,11 +43,14 @@ subprojects {
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
     bintray {
-	    user = findProperty('BINTRAY_USER') ?: 'NONE'
-	    key = findProperty('BINTRAY_KEY') ?: 'NONE'
+        user = findProperty('BINTRAY_USER') ?: 'NONE'
+        key = findProperty('BINTRAY_KEY') ?: 'NONE'
+
+        dryRun = false
+        override = false
+        publish = false
+
         pkg {
-		    //dryRun = true
-		    
             repo = 'public'
             name = artifactName
             userOrg = artifactUserOrg
