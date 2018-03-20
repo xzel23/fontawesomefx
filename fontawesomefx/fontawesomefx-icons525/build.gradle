@@ -2,7 +2,7 @@ apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.icons525.demo.Icons525DemoApp'
 ext.moduleName = 'de.jensd.fx.glyphs.iconsfivetwofive'
-version '4.2.0-9.1.2'
+version '4.2.0-9.1.2-jdk8'
 
 dependencies {
     compile project(':fontawesomefx-commons')
