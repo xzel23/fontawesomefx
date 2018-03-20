@@ -43,7 +43,8 @@ subprojects {
     }
 
     group = artifactGroupId
-    sourceCompatibility = '1.9'
+    sourceCompatibility = '8'
+    targetCompatibility = '8'
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
     bintray {
@@ -64,9 +65,9 @@ subprojects {
                     sign = true
                     passphrase = System.getenv('SIGNING_PASSWORD')
                 }
-                name = '9.1.2'
-                desc = 'FontAwesomeFX 9.1.2'
-                vcsTag = 'fontawesomefx-9.1.2'
+                name = '9.1.2-jdk8'
+                desc = 'FontAwesomeFX 9.1.2-jdk8'
+                vcsTag = 'fontawesomefx-9.1.2-jdk8'
             }
         }
     }
@@ -118,27 +119,32 @@ subprojects {
             jcenter()
         }
 
-        compileJava {
+        task compileModuleInfo (type: JavaCompile) {
             doFirst {
                 options.compilerArgs = [
-                        '--module-path', classpath.asPath,
+                    '--module-path', classpath.asPath,
+                    '--add-modules', 'ALL-SYSTEM',
+                    '-d', sourceSets.main.output.classesDirs.asPath
                 ]
-                classpath = files()
             }
-        }
-
-        test {
+            
             inputs.property("moduleName", moduleName)
-            doFirst {
-                jvmArgs = [
-                        '--module-path', classpath.asPath,
-                        '--add-modules', 'ALL-MODULE-PATH',
-                        '--add-reads', "$moduleName=junit",
-                        '--patch-module', "$moduleName=" + files(sourceSets.test.java.outputDir).asPath,
-                ]
-                classpath = files()
-            }
+
+            sourceCompatibility = 9
+            targetCompatibility = 9
+
+            source = sourceSets.main.java.srcDirs
+            classpath = sourceSets.main.compileClasspath 
+            include '**/module-info.java'
+            destinationDir = sourceSets.main.output.classesDirs.singleFile
         }
+		
+        sourceSets.main.java { 
+            exclude '**/module-info.java'
+        }
+     
+		compileModuleInfo.dependsOn compileJava
+		assemble.dependsOn compileModuleInfo
 
         jar {
             inputs.property("moduleName", moduleName)
