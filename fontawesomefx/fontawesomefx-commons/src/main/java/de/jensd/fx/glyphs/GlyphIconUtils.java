@@ -40,7 +40,8 @@ public class GlyphIconUtils {
         case "%":
             return  baseSize * sz/100.0;
         default:
-            throw new IllegalArgumentException("unknown size unit: '"+unit+"'");
+            // Maybe  this should be: throw new IllegalArgumentException("unknown size unit: '"+unit+"'");
+            return DEFAULT_SIZE;
         }
     }
 }
