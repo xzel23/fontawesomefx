@@ -21,3 +21,7 @@ These are issues of the original version that I think should be solved with my c
 - [#54: Illegal reflective access with fontawesomefx 9.0.0 (Java 9) when setting size in FXML](https://bitbucket.org/Jerady/fontawesomefx/issues/54/illegal-reflective-access-with)
 
 - [#55: Incompatible with Java 8](https://bitbucket.org/Jerady/fontawesomefx/issues/55/incompatible-with-java-8)
+
+## Binaries
+
+Binaries are available at [bintray](https://bintray.com/dua3/public/FontAwesomeFX).
