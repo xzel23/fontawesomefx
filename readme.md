@@ -4,6 +4,8 @@ I forked FontAwesomeFX to create a version that is compatible across different v
 
 ## Changes
 
+All my changes were done on the **9.1.2** branch!
+
  - replaced the font-size parsing code in `GlyphIconUtils` so that it does not rely on an internal package. This makes it possible to use the same code for different JDK versions.
  
  - changed the gradle build scripts to produce JDK 8 compatible class files, with the exception of the different `module-info.java` files that must be compiled with Java 9 compatibility.
