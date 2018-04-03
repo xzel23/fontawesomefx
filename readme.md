@@ -24,6 +24,6 @@ These are issues of the original version that I think should be solved with my c
 
 - [#55: Incompatible with Java 8](https://bitbucket.org/Jerady/fontawesomefx/issues/55/incompatible-with-java-8)
 
-## Binaries
+## Binaries [ ![Download](https://api.bintray.com/packages/dua3/public/FontAwesomeFX/images/download.svg) ](https://bintray.com/dua3/public/FontAwesomeFX/_latestVersion)
 
 Binaries are available at [bintray](https://bintray.com/dua3/public/FontAwesomeFX).
