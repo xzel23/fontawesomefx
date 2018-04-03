@@ -65,9 +65,9 @@ subprojects {
                     sign = true
                     passphrase = System.getenv('SIGNING_PASSWORD')
                 }
-                name = '9.1.2-jdk8'
-                desc = 'FontAwesomeFX 9.1.2-jdk8'
-                vcsTag = 'fontawesomefx-9.1.2-jdk8'
+                name = '9.1.2-jdk8-1'
+                desc = 'FontAwesomeFX 9.1.2-jdk8-1'
+                vcsTag = 'fontawesomefx-9.1.2-jdk8-1'
             }
         }
     }
