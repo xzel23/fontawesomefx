@@ -9,7 +9,7 @@ public class GlyphIconUtils {
 
     private static final double DEFAULT_SIZE = 12.0;
 
-    private static final Pattern PATTERN = Pattern.compile("(?<number>([\\d]+(\\.\\d+)?))(?<unit>[a-z]+|%)");
+    private static final Pattern PATTERN = Pattern.compile("(?<number>([\\d]+(\\.\\d+)?))(?<unit>[a-z]*|%)");
 
     public static Number convert(String sizeString, Font font) {
     		/*
@@ -83,6 +83,7 @@ public class GlyphIconUtils {
             return baseSize * sz;        // relative to base font size
         case "%":
         		return  baseSize * sz/100.0; // relative to base font size (percent)
+        case "":                         // treat as px
         case "px":
             return sz;                   // absolute
         case "pt":
