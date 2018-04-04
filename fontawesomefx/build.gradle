@@ -1,9 +1,23 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    //maven { url  "https://dl.bintray.com/dua3/public" }
+  }  
+  dependencies {
+    classpath group: 'com.dua3.gradle.jpms', name: 'JpmsGradlePlugin', version: '0.1.2'
+  }
+}
+
 plugins {
     id "com.jfrog.bintray" version "1.8.0"
 }
 
 apply plugin: 'base'
 apply from: 'deploy.gradle'
+
+subprojects {
+    apply plugin: 'com.dua3.gradle.jpms'
+}
 
 // Create the pom configuration:
 def pomConfig = {
@@ -118,42 +132,6 @@ subprojects {
         repositories {
             jcenter()
         }
-
-        task compileModuleInfo (type: JavaCompile) {
-            doFirst {
-                options.compilerArgs = [
-                    '--module-path', classpath.asPath,
-                    '--add-modules', 'ALL-SYSTEM',
-                    '-d', sourceSets.main.output.classesDirs.asPath
-                ]
-            }
-            
-            inputs.property("moduleName", moduleName)
-
-            sourceCompatibility = 9
-            targetCompatibility = 9
-
-            source = sourceSets.main.java.srcDirs
-            classpath = sourceSets.main.compileClasspath 
-            include '**/module-info.java'
-            destinationDir = sourceSets.main.output.classesDirs.singleFile
-        }
-		
-        sourceSets.main.java { 
-            exclude '**/module-info.java'
-        }
-     
-		compileModuleInfo.dependsOn compileJava
-		assemble.dependsOn compileModuleInfo
-
-        jar {
-            inputs.property("moduleName", moduleName)
-            manifest {
-                attributes('Main-Class': mainClassName)
-                attributes('Automatic-Module-Name': moduleName)
-            }
-        }
-
     }
 
 }
