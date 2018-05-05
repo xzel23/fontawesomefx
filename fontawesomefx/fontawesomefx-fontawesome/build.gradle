@@ -2,7 +2,7 @@ apply plugin: 'application'
 
 mainClassName = 'de.jensd.fx.glyphs.fontawesome.demo.FontAwesomeIconsDemoApp'
 ext.moduleName = 'de.jensd.fx.glyphs.fontawesome'
-version '4.7.0-9.1.2-jdk8-1'
+version '4.7.0-9.1.2-jpms'
 
 dependencies {
     compile project(':fontawesomefx-commons')

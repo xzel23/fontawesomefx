@@ -3,7 +3,7 @@ ext{
     artifactGroupId = 'de.jensd'
     artifactName = 'FontAwesomeFX'
     artifactId = 'mqttfx-payload-decoders'
-    artifactVersion = '9.1.2-jdk8-1'
+    artifactVersion = '9.1.2-jpms'
     artifactWebSiteUrl = 'https://github.com/xzel23/fontawesomefx'
     artifactGitUrl = 'https://github.com/xzel23/fontawesomefx.git'
     artifactUserOrg = 'dua3'

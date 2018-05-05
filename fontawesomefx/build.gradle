@@ -1,23 +1,10 @@
-buildscript {
-  repositories {
-    mavenLocal()
-    //maven { url  "https://dl.bintray.com/dua3/public" }
-  }  
-  dependencies {
-    classpath group: 'com.dua3.gradle.jpms', name: 'JpmsGradlePlugin', version: '0.2.2'
-  }
-}
-
 plugins {
-    id "com.jfrog.bintray" version "1.8.0"
+  id 'com.jfrog.bintray' version "1.8.0"
+  id 'com.dua3.gradle.jpms' version "0.3.1"
 }
 
 apply plugin: 'base'
 apply from: 'deploy.gradle'
-
-subprojects {
-    apply plugin: 'com.dua3.gradle.jpms'
-}
 
 // Create the pom configuration:
 def pomConfig = {
@@ -42,6 +29,7 @@ def pomConfig = {
 }
 
 subprojects {
+    apply plugin: 'com.dua3.gradle.jpms'
     apply plugin: 'maven-publish'
     apply plugin: 'com.jfrog.bintray'
     apply plugin: "java"
@@ -79,9 +67,9 @@ subprojects {
                     sign = true
                     passphrase = System.getenv('SIGNING_PASSWORD')
                 }
-                name = '9.1.2-jdk8-1'
-                desc = 'FontAwesomeFX 9.1.2-jdk8-1'
-                vcsTag = 'fontawesomefx-9.1.2-jdk8-1'
+                name = '9.1.2-jpms'
+                desc = 'FontAwesomeFX 9.1.2-jpms'
+                vcsTag = 'fontawesomefx-9.1.2-jpms'
             }
         }
     }
@@ -134,8 +122,4 @@ subprojects {
         }
     }
 
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.2'
 }
