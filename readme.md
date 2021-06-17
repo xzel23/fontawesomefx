@@ -1,3 +1,10 @@
+**IMPORTANT NOTE**
+
+I stopped updating this fork as I do not use FontAwesomeFX in my projects anymore.
+
+-----
+
+
 # Fork of [FontAwesomeFX](https://bitbucket.org/Jerady/fontawesomefx)
 
 I forked FontAwesomeFX to create a version that is compatible across different versions of the JDK and fully modularized.
